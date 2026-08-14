@@ -8,7 +8,7 @@
   <meta name="description" content="IFEM is a methodology for explicit interfaces, enforceable contracts, and controlled parallel software development." />
   <link rel="canonical" href="https://ifem-doctrine.github.io/" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-  <link rel="stylesheet" href="./assets/styles.css?v=20260814-hero" />
+  <link rel="stylesheet" href="./assets/styles.css?v=20260814-interactive" />
   <meta property="og:title" content="IFEM — Interface-First Execution Methodology" />
   <meta property="og:description" content="Make interfaces, contracts, and verification boundaries explicit before parallel implementation begins." />
   <meta property="og:type" content="website" />
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="hero-visual hero-cinematic" aria-label="Animated diagram of four system components sending contract signals into one explicit boundary">
+      <div id="hero-system" class="hero-visual hero-cinematic hero-system" data-hero-state="layers" aria-label="Interactive diagram of four system components coordinating through one explicit contract">
         <div class="hv-meta"><span>IFEM / live system map</span><span class="hv-meta-live"><i></i> Contract active</span></div>
         <div class="hv-radar" aria-hidden="true"></div>
         <div class="hv-scanline" aria-hidden="true"></div>
@@ -70,6 +70,24 @@
         </div>
         <div class="hv-bottom"><span><i></i> Signals synchronized</span><span>04 nodes / 01 contract</span></div>
       </div>
+
+      <section class="hero-explainer" aria-labelledby="hero-explainer-title">
+        <div class="hero-explainer-copy">
+          <p class="hero-explainer-kicker">Interactive walkthrough</p>
+          <h2 id="hero-explainer-title">From intent to a boundary that <em>holds.</em></h2>
+          <p id="hero-explainer-text" class="hero-explainer-text" aria-live="polite">Start with the layers: the architect sets intent, the contract translates it into a boundary, and people or agents implement inside that boundary.</p>
+        </div>
+        <div class="hero-explainer-controls" aria-label="IFEM explanatory steps">
+          <div class="hero-step-list" role="group" aria-label="Choose an IFEM explanation">
+            <button class="hero-step is-active" type="button" aria-pressed="true" data-hero-state="layers" data-title="Layer the system" data-copy="Start with the layers: the architect sets intent, the contract translates it into a boundary, and people or agents implement inside that boundary."><span>01</span> Layers</button>
+            <button class="hero-step" type="button" aria-pressed="false" data-hero-state="interfaces" data-title="Make interfaces explicit" data-copy="Trace the handoffs. Client, API, domain, and state can evolve independently only when each responsibility and direction of travel is visible."><span>02</span> Interfaces</button>
+            <button class="hero-step" type="button" aria-pressed="false" data-hero-state="contract" data-title="Encode the contract" data-copy="The contract turns an interface into an enforceable agreement: schema, ownership, error behavior, compatibility, and acceptance criteria become one shared source of truth."><span>03</span> Contract</button>
+            <button class="hero-step" type="button" aria-pressed="false" data-hero-state="freeze" data-title="Freeze before parallel work" data-copy="Freezing locks the agreed boundary. Every contributor can now execute at speed inside their scope, while changes to the boundary require an explicit new version."><span>04</span> Freeze</button>
+          </div>
+          <button class="freeze-action" type="button" data-freeze aria-describedby="freeze-status"><span aria-hidden="true">▣</span> Freeze contract <b>v2.2</b></button>
+          <p id="freeze-status" class="freeze-status" aria-live="polite">Ready to freeze the current agreement.</p>
+        </div>
+      </section>
     </section>
 
     <section class="proof-strip shell" aria-label="IFEM core principles">
@@ -238,7 +256,7 @@
       </div>
     </section>
   </main>
-  <script src="./assets/nav.js?v=20260814-hero"></script>
-  <script src="./assets/shared.js?v=20260814-hero"></script>
+  <script src="./assets/nav.js?v=20260814-interactive"></script>
+  <script src="./assets/shared.js?v=20260814-interactive"></script>
 </body>
 </html>

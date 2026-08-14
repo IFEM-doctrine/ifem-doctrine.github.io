@@ -104,3 +104,52 @@ document.documentElement.classList.add('motion-ready');
   }, { threshold: 0.3 });
   observer.observe(diagram);
 })();
+
+
+/* Interactive hero: explain layers, interfaces, contracts, and the freeze mechanism. */
+(function () {
+  const system = document.querySelector('.hero-system');
+  const steps = Array.from(document.querySelectorAll('.hero-step'));
+  const freezeButton = document.querySelector('[data-freeze]');
+  const heading = document.querySelector('#hero-explainer-title');
+  const copy = document.querySelector('#hero-explainer-text');
+  const status = document.querySelector('#freeze-status');
+  if (!system || !steps.length || !heading || !copy) return;
+
+  const applyState = (state, selectedStep) => {
+    system.dataset.heroState = state;
+    steps.forEach((step) => {
+      const active = step === selectedStep;
+      step.classList.toggle('is-active', active);
+      step.setAttribute('aria-pressed', String(active));
+    });
+    if (selectedStep) {
+      heading.textContent = selectedStep.dataset.title || 'Interactive walkthrough';
+      copy.classList.remove('is-changing');
+      void copy.offsetWidth;
+      copy.textContent = selectedStep.dataset.copy || '';
+      copy.classList.add('is-changing');
+    }
+  };
+
+  steps.forEach((step) => step.addEventListener('click', () => {
+    applyState(step.dataset.heroState || 'layers', step);
+    if (status) status.textContent = step.dataset.heroState === 'freeze'
+      ? 'Ready to lock this agreement as an explicit version.'
+      : 'Select Freeze contract to lock the current agreement.';
+    if (freezeButton) freezeButton.innerHTML = '<span aria-hidden="true">▣</span> Freeze contract <b>v2.2</b>';
+  }));
+
+  if (freezeButton) {
+    freezeButton.addEventListener('click', () => {
+      const freezeStep = steps.find((step) => step.dataset.heroState === 'freeze') || steps[0];
+      applyState('freeze', freezeStep);
+      system.classList.remove('is-freezing');
+      void system.offsetWidth;
+      system.classList.add('is-freezing');
+      freezeButton.innerHTML = '<span aria-hidden="true">✓</span> Contract frozen <b>v2.2</b>';
+      if (status) status.textContent = 'Contract v2.2 is frozen. Parallel work is now bounded by the explicit agreement.';
+      window.setTimeout(() => system.classList.remove('is-freezing'), 1100);
+    });
+  }
+})();

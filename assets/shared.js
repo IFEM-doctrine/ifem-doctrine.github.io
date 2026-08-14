@@ -1,6 +1,9 @@
 /* ── IFEM shared behavior: LTR animation controller ── */
 'use strict';
 
+/* Keep all explanatory content visible by default; enable entrance motion only after JS is ready. */
+document.documentElement.classList.add('motion-ready');
+
 /* Reveal on scroll */
 (function () {
   const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');

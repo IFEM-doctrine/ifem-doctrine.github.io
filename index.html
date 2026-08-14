@@ -8,7 +8,7 @@
   <meta name="description" content="IFEM is a methodology for explicit interfaces, enforceable contracts, and controlled parallel software development." />
   <link rel="canonical" href="https://ifem-doctrine.github.io/" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-  <link rel="stylesheet" href="./assets/styles.css?v=20260814-ltr" />
+  <link rel="stylesheet" href="./assets/styles.css?v=20260814-diagramfix" />
   <meta property="og:title" content="IFEM — Interface-First Execution Methodology" />
   <meta property="og:description" content="Make interfaces, contracts, and verification boundaries explicit before parallel implementation begins." />
   <meta property="og:type" content="website" />
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal-right" aria-label="Animated diagram of four system components coordinating through one explicit contract">
+      <div class="hero-visual" aria-label="Animated diagram of four system components coordinating through one explicit contract">
         <svg class="hv-svg" viewBox="0 0 600 620" preserveAspectRatio="none" aria-hidden="true">
           <path class="hv-wire" d="M115 110 C190 160 210 230 300 310" />
           <path class="hv-wire" d="M485 110 C410 160 390 230 300 310" />
@@ -66,6 +66,51 @@
       <div class="proof-strip-item reveal"><span class="proof-num">01</span><strong>Interfaces before implementation</strong></div>
       <div class="proof-strip-item reveal"><span class="proof-num">02</span><strong>Contracts before coordination</strong></div>
       <div class="proof-strip-item reveal"><span class="proof-num">03</span><strong>Evidence before acceptance</strong></div>
+    </section>
+
+    <section class="diagram-gallery" aria-labelledby="diagrams-title">
+      <div class="shell">
+        <div class="section-header diagram-gallery-header">
+          <div><p class="eyebrow">IFEM, made visible</p><h2 id="diagrams-title">Three diagrams. One enforceable agreement.</h2></div>
+          <p>These live diagrams show how intent becomes a contract, how contracts make independent work safe, and how evidence governs both human and AI implementation.</p>
+        </div>
+        <div class="diagram-gallery-grid">
+          <article class="concept-diagram contract-map" aria-label="Diagram showing the contract layer between architectural intent and implementation">
+            <div class="cd-head"><span>01 · Contract layer</span><i>Live</i></div>
+            <div class="contract-layer-stack">
+              <div class="stack-row stack-intent"><span>Human intent</span><b>Outcome · constraints · scope</b></div>
+              <div class="stack-connector">↓</div>
+              <div class="stack-row stack-contract"><span>Frozen interface contract</span><b>Schema · ownership · errors · acceptance</b></div>
+              <div class="stack-connector">↓</div>
+              <div class="stack-row stack-build"><span>Bounded implementation</span><b>Human team · service · AI agent</b></div>
+            </div>
+            <p class="cd-caption">The contract is the stable handoff between architecture and execution.</p>
+          </article>
+
+          <article class="concept-diagram coordination-map" aria-label="Diagram showing parallel human and AI work coordinated through a shared contract">
+            <div class="cd-head"><span>02 · Parallel coordination</span><i>Sync</i></div>
+            <div class="coord-contract">One shared contract</div>
+            <div class="coord-lanes">
+              <div class="coord-lane"><span class="lane-dot lane-dot-human"></span><b>Human engineer</b><em></em><em></em><em></em></div>
+              <div class="coord-lane"><span class="lane-dot lane-dot-service"></span><b>Service team</b><em></em><em></em><em></em></div>
+              <div class="coord-lane"><span class="lane-dot lane-dot-ai"></span><b>AI coding agent</b><em></em><em></em><em></em></div>
+            </div>
+            <div class="coord-evidence"><span>✓</span> Evidence returns to the same boundary</div>
+          </article>
+
+          <article class="concept-diagram verification-map" aria-label="Diagram showing a continuous verification cycle from changed implementation through acceptance decision">
+            <div class="cd-head"><span>03 · Continuous verification</span><i>Evidence</i></div>
+            <div class="verify-orbit">
+              <div class="orbit-step orbit-build">Change</div>
+              <div class="orbit-step orbit-schema">Schema</div>
+              <div class="orbit-step orbit-tests">Tests</div>
+              <div class="orbit-step orbit-accept">Accept</div>
+              <div class="orbit-core">Contract<br /><strong>decides</strong></div>
+            </div>
+            <p class="cd-caption">Verification replaces late integration as the coordination layer.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section class="doctrine-section">
@@ -114,7 +159,7 @@
           <blockquote><strong>The model proposes.</strong><br />The contract constrains.<br /><b>Verification decides.</b></blockquote>
           <a class="button btn-secondary" href="ai.html">Explore AI governance <span aria-hidden="true">→</span></a>
         </div>
-        <div class="gov-stack reveal-right" aria-label="Animated governance flow from human architect through contract to AI agent and verification">
+        <div class="gov-stack" aria-label="Animated governance flow from human architect through contract to AI agent and verification">
           <div class="gov-layer"><span class="gov-num">01</span><div><strong>Human architect</strong><small>Intent &amp; constraints</small></div></div>
           <div class="gov-arrow-row">↓</div>
           <div class="gov-layer gl-contract"><span class="gov-num">02</span><div><strong>IFEM contract layer</strong><small>Scope, schema &amp; acceptance</small></div></div>
@@ -183,7 +228,7 @@
       </div>
     </section>
   </main>
-  <script src="./assets/nav.js?v=20260814-ltr"></script>
-  <script src="./assets/shared.js?v=20260814-ltr"></script>
+  <script src="./assets/nav.js?v=20260814-diagramfix"></script>
+  <script src="./assets/shared.js?v=20260814-diagramfix"></script>
 </body>
 </html>

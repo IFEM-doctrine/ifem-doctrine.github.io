@@ -8,7 +8,7 @@
   <meta name="description" content="The five IFEM phases: define intent, freeze interfaces, encode contracts, execute in parallel, and verify evidence." />
   <link rel="canonical" href="https://ifem-doctrine.github.io/method.html" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-  <link rel="stylesheet" href="./assets/styles.css?v=20260814-ltr" />
+  <link rel="stylesheet" href="./assets/styles.css?v=20260814-diagramfix" />
 </head>
 <body>
   <main id="main">
@@ -39,7 +39,7 @@
             <h2>Freeze interfaces</h2>
             <p class="phase-sub">Make dependencies and responsibilities explicit enough for independent work to begin.</p>
             <p>Interface definition translates intent into system structure. Each interface specifies a boundary between two components: what crosses the boundary, in which direction, under what conditions, and with what guarantees. An interface is frozen when both sides agree on its specification and commit to implementing against it rather than around it.</p>
-            <div class="anim-freeze reveal" aria-label="Animated interface freeze: Client and Service join through a contract locked boundary">
+            <div class="anim-freeze" aria-label="Animated interface freeze: Client and Service join through a contract locked boundary">
               <p class="anim-freeze-title">Phase 02 · Interface freeze</p>
               <div class="freeze-components">
                 <div class="freeze-comp"><small>Producer</small><strong>Service</strong></div>
@@ -69,7 +69,7 @@
             <h2>Execute in parallel</h2>
             <p class="phase-sub">Build behind bounded interfaces instead of inventing shared behavior midstream.</p>
             <p>With intent defined, interfaces frozen, and contracts encoded, implementation can proceed in parallel across every bounded scope. Each team or agent works against its contract, not against assumptions about what neighboring scopes are doing. The contract is the coordination artifact required during implementation — no shared implementation details and no undocumented assumptions.</p>
-            <div class="anim-parallel reveal" aria-label="Animated demonstration of three parallel implementation lanes coordinated by one contract">
+            <div class="anim-parallel" aria-label="Animated demonstration of three parallel implementation lanes coordinated by one contract">
               <p class="anim-parallel-title">Phase 04 · Bounded parallel execution</p>
               <div class="parallel-contract-bar">One explicit contract · shared source of truth</div>
               <div class="parallel-lanes">
@@ -90,7 +90,7 @@
             <h2>Verify evidence</h2>
             <p class="phase-sub">Use contract checks, CI, integration tests, and runtime controls where appropriate.</p>
             <p>Verification is the phase in which implementations produce evidence that they satisfy their contracts. The evidence depends on the nature of the contract: schema validation for data contracts, contract tests for APIs, integration probes for runtime contracts, and formal verification where safety demands it. The requirement is not one technique — it is that evidence exists and is checked automatically.</p>
-            <div class="anim-verify reveal" aria-label="Animated verification pipeline showing schema, behavior, integration, and runtime checks progressing to acceptance">
+            <div class="anim-verify" aria-label="Animated verification pipeline showing schema, behavior, integration, and runtime checks progressing to acceptance">
               <p class="anim-freeze-title">Phase 05 · Continuous evidence pipeline</p>
               <div class="verify-flow">
                 <div class="verify-step"><span class="vs-icon">1</span><span>Validate interface schema</span></div>
@@ -107,7 +107,7 @@
       </div>
     </section>
   </main>
-  <script src="./assets/nav.js?v=20260814-ltr"></script>
-  <script src="./assets/shared.js?v=20260814-ltr"></script>
+  <script src="./assets/nav.js?v=20260814-diagramfix"></script>
+  <script src="./assets/shared.js?v=20260814-diagramfix"></script>
 </body>
 </html>

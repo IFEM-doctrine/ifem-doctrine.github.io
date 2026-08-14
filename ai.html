@@ -8,7 +8,7 @@
   <meta name="description" content="How IFEM governs AI-assisted software engineering with explicit contracts, bounded authority, and continuous verification." />
   <link rel="canonical" href="https://ifem-doctrine.github.io/ai.html" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-  <link rel="stylesheet" href="./assets/styles.css?v=20260814-ltr" />
+  <link rel="stylesheet" href="./assets/styles.css?v=20260814-diagramfix" />
 </head>
 <body>
   <main id="main">
@@ -39,7 +39,7 @@
 
           <h2 id="governance">The governance model</h2>
           <p>IFEM provides a governance model that does not depend on an agent’s judgment about architectural authority. The model has four layers. Each layer makes the limits of the layer below it explicit.</p>
-          <div class="governance-diagram reveal" aria-label="Four layers of IFEM AI governance">
+          <div class="governance-diagram" aria-label="Four layers of IFEM AI governance">
             <div class="gov-d-layer"><span class="gov-d-num">01</span><div><strong>Human architect</strong><p>Defines intent, constraints, scope, and system boundaries. Holds architectural authority.</p></div></div>
             <div class="gov-d-arrow">↓</div>
             <div class="gov-d-layer gdl-contract"><span class="gov-d-num">02</span><div><strong>IFEM contract layer</strong><p>Encodes interfaces, schemas, ownership rules, and acceptance criteria. Bounds implementation authority.</p></div></div>
@@ -51,7 +51,7 @@
 
           <h2 id="coordination">Human + AI coordination</h2>
           <p>The contract layer is what turns a prompt-driven workflow into a governed engineering workflow. A human architect remains responsible for intent and boundaries. The AI agent remains free to make implementation decisions inside the contract. The contract becomes the stable handoff between them.</p>
-          <div class="anim-parallel reveal" aria-label="Animated human and AI teams working in parallel under one contract">
+          <div class="anim-parallel" aria-label="Animated human and AI teams working in parallel under one contract">
             <p class="anim-parallel-title">Animated coordination model</p>
             <div class="parallel-contract-bar">Human intent + explicit contract + automated evidence</div>
             <div class="parallel-lanes">
@@ -65,7 +65,7 @@
 
           <h2 id="control">Verification as control</h2>
           <p>In a conventional team, verification is often treated as a quality gate at the end of implementation. In an IFEM-governed AI workflow, verification is a control mechanism. It continuously enforces the contract layer and gives the agent immediate, precise feedback about whether its output stays within the agreed boundary.</p>
-          <div class="anim-verify reveal" aria-label="Continuous AI contract verification pipeline">
+          <div class="anim-verify" aria-label="Continuous AI contract verification pipeline">
             <p class="anim-freeze-title">Continuous agent evidence loop</p>
             <div class="verify-flow">
               <div class="verify-step"><span class="vs-icon">1</span><span>Check generated schema against the contract</span></div>
@@ -88,7 +88,7 @@
       </div>
     </section>
   </main>
-  <script src="./assets/nav.js?v=20260814-ltr"></script>
-  <script src="./assets/shared.js?v=20260814-ltr"></script>
+  <script src="./assets/nav.js?v=20260814-diagramfix"></script>
+  <script src="./assets/shared.js?v=20260814-diagramfix"></script>
 </body>
 </html>

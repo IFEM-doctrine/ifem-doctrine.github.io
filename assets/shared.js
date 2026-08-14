@@ -116,6 +116,30 @@ document.documentElement.classList.add('motion-ready');
   const status = document.querySelector('#freeze-status');
   if (!system || !steps.length || !heading || !copy) return;
 
+  const systemSvg = system.querySelector('.hv-svg');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let isSystemVisible = true;
+
+  const syncAmbientMotion = () => {
+    const paused = reducedMotion.matches || !isSystemVisible || document.hidden;
+    system.classList.toggle('is-ambient-paused', paused);
+    if (systemSvg && typeof systemSvg.pauseAnimations === 'function' && typeof systemSvg.unpauseAnimations === 'function') {
+      if (paused && !systemSvg.animationsPaused()) systemSvg.pauseAnimations();
+      if (!paused && systemSvg.animationsPaused()) systemSvg.unpauseAnimations();
+    }
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(([entry]) => {
+      isSystemVisible = entry.isIntersecting;
+      syncAmbientMotion();
+    }, { threshold: 0.1 });
+    observer.observe(system);
+  }
+  reducedMotion.addEventListener('change', syncAmbientMotion);
+  document.addEventListener('visibilitychange', syncAmbientMotion);
+  syncAmbientMotion();
+
   const applyState = (state, selectedStep) => {
     system.dataset.heroState = state;
     steps.forEach((step) => {

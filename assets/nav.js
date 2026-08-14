@@ -1,10 +1,6 @@
 /* IFEM shared LTR navigation and footer */
 (function () {
-  const mark = `<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M28 72V28H72 M128 28H172V72 M172 128V172H128 M72 172H28V128" stroke="#1257D6" stroke-width="18" stroke-linecap="square"/>
-    <path d="M62 96V62H96 M104 62H138V96 M138 104V138H104 M96 138H62V104" stroke="#10233E" stroke-width="16" stroke-linecap="square"/>
-    <circle cx="100" cy="100" r="18" fill="#74C69D"/>
-  </svg>`;
+  const mark = `<img class="ifem-logo" src="/assets/ifem-doctrine-logo.png" alt="" width="1254" height="1254" />`;
 
   const header = `
     <a class="skip-link" href="#main">Skip to content</a>

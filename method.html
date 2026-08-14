@@ -1,133 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f7f4" />
   <title>Method — IFEM</title>
-  <meta name="description" content="The five phases of the Interface-First Execution Methodology: from defining intent to verifying evidence against explicit contracts."/>
-  <link rel="canonical" href="https://ifem-doctrine.github.io/method.html"/>
-  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg"/>
-  <link rel="stylesheet" href="./assets/styles.css"/>
+  <meta name="description" content="The five IFEM phases: define intent, freeze interfaces, encode contracts, execute in parallel, and verify evidence." />
+  <link rel="canonical" href="https://ifem-doctrine.github.io/method.html" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="stylesheet" href="./assets/styles.css" />
 </head>
 <body>
-<main id="main">
+  <main id="main">
+    <section class="page-hero shell">
+      <div class="page-hero-inner reveal-left">
+        <p class="eyebrow">IFEM / Method</p>
+        <h1>A controlled path from <em>intent to execution.</em></h1>
+        <p class="page-lede">IFEM translates architectural intent into constraints that independent contributors — human or AI — can implement, test, and enforce without redefining the system along the way.</p>
+      </div>
+    </section>
 
-  <section class="page-hero shell">
-    <div class="page-hero-inner">
-      <p class="eyebrow">IFEM / Method</p>
-      <h1>A controlled path from <em>intent to execution.</em></h1>
-      <p class="page-lede">IFEM turns architectural intent into constraints that independent contributors — human or AI — can implement, test, and enforce without redefining the system along the way.</p>
-    </div>
-  </section>
+    <section class="method-phases shell">
+      <div class="phase-list">
+        <article class="phase-detail reveal" id="phase-01">
+          <div class="phase-marker"><span class="phase-num-badge">01</span><span class="phase-connector"></span></div>
+          <div class="phase-body">
+            <h2>Define intent</h2>
+            <p class="phase-sub">State the system outcome and constraints before implementation choices take over.</p>
+            <p>Intent definition is the first and most consequential phase of IFEM. Before any interface is drawn or contract is written, the system outcome must be stated in terms independent of implementation technology. This means specifying what the system must accomplish, what constraints it must operate within, and what trade-offs are acceptable — without committing to how any requirement will be met.</p>
+            <p>Intent that is not documented before implementation begins is reconstructed from the implementation after the fact. That reconstruction is incomplete and biased toward what was built rather than what was needed. IFEM treats undocumented intent as a coordination risk, not a planning shortcut.</p>
+            <div class="phase-outputs"><p class="phase-outputs-label">Typical outputs</p><div class="phase-output-tags"><span>System outcome statement</span><span>Constraint inventory</span><span>Accepted trade-offs</span><span>Scope boundaries</span></div></div>
+          </div>
+        </article>
 
-  <section class="method-phases shell">
-    <div class="phase-list">
-
-      <article class="phase-detail reveal" id="phase-01">
-        <div class="phase-marker"><span>01</span><div class="phase-line"></div></div>
-        <div class="phase-body">
-          <h2>Define intent</h2>
-          <p class="phase-sub">State the system outcome and its constraints before implementation choices take over.</p>
-          <p>Intent definition is the first and most consequential phase of IFEM. Before any interface is drawn or any contract is written, the system outcome must be stated in terms that are independent of implementation technology. This means specifying what the system must accomplish, what constraints it must operate within, and what trade-offs are acceptable — without committing to how any of those requirements will be met.</p>
-          <p>Intent that is not documented before implementation begins will be reconstructed from the implementation after the fact. That reconstruction is always incomplete and always biased toward what was built rather than what was needed. IFEM treats undocumented intent as a coordination risk, not a planning shortcut.</p>
-          <div class="phase-outputs">
-            <p class="phase-outputs-label">Typical outputs</p>
-            <div class="phase-output-list">
-              <span>System outcome statement</span>
-              <span>Constraint inventory</span>
-              <span>Accepted trade-offs</span>
-              <span>Scope boundary definition</span>
+        <article class="phase-detail reveal" id="phase-02">
+          <div class="phase-marker"><span class="phase-num-badge">02</span><span class="phase-connector"></span></div>
+          <div class="phase-body">
+            <h2>Freeze interfaces</h2>
+            <p class="phase-sub">Make dependencies and responsibilities explicit enough for independent work to begin.</p>
+            <p>Interface definition translates intent into system structure. Each interface specifies a boundary between two components: what crosses the boundary, in which direction, under what conditions, and with what guarantees. An interface is frozen when both sides agree on its specification and commit to implementing against it rather than around it.</p>
+            <div class="anim-freeze reveal" aria-label="Animated interface freeze: Client and Service join through a contract locked boundary">
+              <p class="anim-freeze-title">Phase 02 · Interface freeze</p>
+              <div class="freeze-components">
+                <div class="freeze-comp"><small>Producer</small><strong>Service</strong></div>
+                <div class="freeze-bridge"><span class="freeze-line"></span><span class="freeze-badge">Versioned contract</span><span class="freeze-line"></span></div>
+                <div class="freeze-comp"><small>Consumer</small><strong>Client</strong></div>
+              </div>
             </div>
+            <p>Freezing does not mean permanent. Interfaces can be versioned and evolved. It means neither side can change the boundary unilaterally. Any change requires explicit renegotiation and a new version. That constraint makes parallel work safe because the boundary will not shift beneath either team.</p>
+            <div class="phase-outputs"><p class="phase-outputs-label">Typical outputs</p><div class="phase-output-tags"><span>Interface specifications</span><span>Dependency map</span><span>Ownership assignments</span><span>Versioning policy</span></div></div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="phase-detail reveal" id="phase-02">
-        <div class="phase-marker"><span>02</span><div class="phase-line"></div></div>
-        <div class="phase-body">
-          <h2>Freeze interfaces</h2>
-          <p class="phase-sub">Make dependencies and responsibilities explicit enough for independent work to begin.</p>
-          <p>Interface definition translates intent into system structure. Each interface specifies a boundary between two components: what crosses the boundary, in which direction, under what conditions, and with what guarantees. An interface is frozen when both sides of the boundary agree on its specification and commit to implementing against it rather than around it.</p>
-          <p>Freezing does not mean permanent. Interfaces can be versioned and evolved. But a frozen interface is one that cannot be changed unilaterally by either side — any change requires explicit renegotiation and a new version. This constraint is what makes parallel work safe: each side can implement at full speed because the boundary will not shift beneath them.</p>
-          <div class="phase-outputs">
-            <p class="phase-outputs-label">Typical outputs</p>
-            <div class="phase-output-list">
-              <span>Interface specifications</span>
-              <span>Dependency map</span>
-              <span>Ownership assignments</span>
-              <span>Versioning policy</span>
+        <article class="phase-detail phase-featured reveal" id="phase-03">
+          <div class="phase-marker"><span class="phase-num-badge">03</span><span class="phase-connector"></span></div>
+          <div class="phase-body">
+            <h2>Encode contracts</h2>
+            <p class="phase-sub">Specify schemas, ownership, error behavior, compatibility rules, and acceptance criteria.</p>
+            <p>A contract is a frozen interface with enforcement. Where an interface specification describes the shape of a boundary, a contract specifies the rules that govern behavior at that boundary: every data schema, field owner, error outcome, compatibility guarantee, and acceptance criterion that determines whether an implementation satisfies the agreement.</p>
+            <p>Contracts are the central artifact of IFEM. They are the source of truth for implementation decisions inside a bounded scope, the basis for every verification check, and the evidence that independently produced work can be integrated safely.</p>
+            <div class="phase-outputs"><p class="phase-outputs-label">Typical outputs</p><div class="phase-output-tags"><span>Schema definitions</span><span>Error catalogues</span><span>Compatibility matrices</span><span>Acceptance criteria</span><span>Contract tests</span></div></div>
+          </div>
+        </article>
+
+        <article class="phase-detail reveal" id="phase-04">
+          <div class="phase-marker"><span class="phase-num-badge">04</span><span class="phase-connector"></span></div>
+          <div class="phase-body">
+            <h2>Execute in parallel</h2>
+            <p class="phase-sub">Build behind bounded interfaces instead of inventing shared behavior midstream.</p>
+            <p>With intent defined, interfaces frozen, and contracts encoded, implementation can proceed in parallel across every bounded scope. Each team or agent works against its contract, not against assumptions about what neighboring scopes are doing. The contract is the coordination artifact required during implementation — no shared implementation details and no undocumented assumptions.</p>
+            <div class="anim-parallel reveal" aria-label="Animated demonstration of three parallel implementation lanes coordinated by one contract">
+              <p class="anim-parallel-title">Phase 04 · Bounded parallel execution</p>
+              <div class="parallel-contract-bar">One explicit contract · shared source of truth</div>
+              <div class="parallel-lanes">
+                <div class="parallel-lane"><div class="lane-header">Client team</div><div class="lane-progress"><div class="lane-bar"><div class="lane-bar-fill"></div></div><div class="lane-bar"><div class="lane-bar-fill"></div></div><div class="lane-bar"><div class="lane-bar-fill"></div></div></div></div>
+                <div class="parallel-lane"><div class="lane-header">API team</div><div class="lane-progress"><div class="lane-bar"><div class="lane-bar-fill"></div></div><div class="lane-bar"><div class="lane-bar-fill"></div></div><div class="lane-bar"><div class="lane-bar-fill"></div></div></div></div>
+                <div class="parallel-lane"><div class="lane-header">AI agent</div><div class="lane-progress"><div class="lane-bar"><div class="lane-bar-fill"></div></div><div class="lane-bar"><div class="lane-bar-fill"></div></div><div class="lane-bar"><div class="lane-bar-fill"></div></div></div></div>
+              </div>
+              <div class="parallel-verify">✓ Independent work, synchronized by the contract</div>
             </div>
+            <p>For AI-assisted teams, this phase provides the most direct value. A coding agent operating within a bounded contract cannot make architectural decisions that affect other scopes. Its authority is limited to its implementation, and its output is evaluated against explicit acceptance criteria rather than informal expectations.</p>
+            <div class="phase-outputs"><p class="phase-outputs-label">Typical outputs</p><div class="phase-output-tags"><span>Bounded implementations</span><span>Contract-aligned code</span><span>Scope-local test suites</span><span>Integration-ready artifacts</span></div></div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="phase-detail reveal featured-phase" id="phase-03">
-        <div class="phase-marker"><span>03</span><div class="phase-line"></div></div>
-        <div class="phase-body">
-          <h2>Encode contracts</h2>
-          <p class="phase-sub">Specify schemas, ownership, error behavior, compatibility rules, and acceptance criteria.</p>
-          <p>A contract is a frozen interface with enforcement. Where an interface specification describes the shape of a boundary, a contract specifies the rules that govern behavior at that boundary: the schema of every data structure that crosses it, the ownership of each field, the error codes and their semantics, the compatibility guarantees across versions, and the acceptance criteria that determine whether an implementation satisfies the agreement.</p>
-          <p>Contracts are the central artifact of IFEM. They are the source of truth for every implementation decision made within a bounded scope, the basis for every verification check, and the evidence that independent work can be integrated safely. A system with explicit contracts can be parallelized aggressively. A system without them cannot be parallelized safely at any speed.</p>
-          <div class="phase-outputs">
-            <p class="phase-outputs-label">Typical outputs</p>
-            <div class="phase-output-list">
-              <span>Schema definitions</span>
-              <span>Error catalogs</span>
-              <span>Compatibility matrices</span>
-              <span>Acceptance criteria</span>
-              <span>Contract test suites</span>
+        <article class="phase-detail reveal" id="phase-05">
+          <div class="phase-marker"><span class="phase-num-badge">05</span></div>
+          <div class="phase-body">
+            <h2>Verify evidence</h2>
+            <p class="phase-sub">Use contract checks, CI, integration tests, and runtime controls where appropriate.</p>
+            <p>Verification is the phase in which implementations produce evidence that they satisfy their contracts. The evidence depends on the nature of the contract: schema validation for data contracts, contract tests for APIs, integration probes for runtime contracts, and formal verification where safety demands it. The requirement is not one technique — it is that evidence exists and is checked automatically.</p>
+            <div class="anim-verify reveal" aria-label="Animated verification pipeline showing schema, behavior, integration, and runtime checks progressing to acceptance">
+              <p class="anim-freeze-title">Phase 05 · Continuous evidence pipeline</p>
+              <div class="verify-flow">
+                <div class="verify-step"><span class="vs-icon">1</span><span>Validate interface schema</span></div>
+                <div class="verify-step"><span class="vs-icon">2</span><span>Run contract behavior checks</span></div>
+                <div class="verify-step"><span class="vs-icon">3</span><span>Probe integration boundary</span></div>
+                <div class="verify-step"><span class="vs-icon">4</span><span>Accept evidence at runtime</span></div>
+              </div>
             </div>
+            <p>When verification is continuous and automated, it replaces the integration event as the coordination mechanism. Conflicts are found at the contract boundary rather than the system boundary. The cost of a conflict becomes proportional to the scope of the contract, not to the scope of the system.</p>
+            <div class="phase-outputs"><p class="phase-outputs-label">Typical outputs</p><div class="phase-output-tags"><span>Contract test results</span><span>Schema validation reports</span><span>Integration evidence</span><span>Runtime assertion logs</span><span>Acceptance decisions</span></div></div>
+            <div class="doc-links"><a class="button btn-primary" href="https://doi.org/10.5281/zenodo.21330255">Read the Runtime Manual ↗</a><a class="button btn-secondary" href="ai.html">IFEM + AI engineering →</a></div>
           </div>
-        </div>
-      </article>
-
-      <article class="phase-detail reveal" id="phase-04">
-        <div class="phase-marker"><span>04</span><div class="phase-line"></div></div>
-        <div class="phase-body">
-          <h2>Execute in parallel</h2>
-          <p class="phase-sub">Build behind bounded interfaces instead of inventing shared behavior midstream.</p>
-          <p>With intent defined, interfaces frozen, and contracts encoded, implementation can proceed in parallel across all bounded scopes. Each team or agent works against the contract for its scope, not against assumptions about what neighboring scopes are doing. The contract is the only coordination artifact required during implementation — no synchronization meetings, no shared implementation details, no undocumented assumptions.</p>
-          <p>For AI-assisted teams, this phase is where IFEM provides its most direct value. A coding agent operating within a bounded contract cannot make architectural decisions that affect other scopes. Its authority is limited to the implementation of its contract, and its output is evaluated against the contract's acceptance criteria rather than against informal expectations.</p>
-          <div class="phase-outputs">
-            <p class="phase-outputs-label">Typical outputs</p>
-            <div class="phase-output-list">
-              <span>Bounded implementations</span>
-              <span>Contract-aligned code</span>
-              <span>Scope-local test suites</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="phase-detail reveal" id="phase-05">
-        <div class="phase-marker"><span>05</span></div>
-        <div class="phase-body">
-          <h2>Verify evidence</h2>
-          <p class="phase-sub">Use contract checks, CI, integration tests, and runtime controls where appropriate.</p>
-          <p>Verification is the phase in which implementations produce evidence that they satisfy their contracts. The form of evidence depends on the nature of the contract: schema validation for data contracts, contract test suites for API contracts, integration probes for runtime contracts, and formal verification for safety-critical contracts. The requirement is not a specific verification technique — it is that evidence exists and is checked automatically.</p>
-          <p>When verification is continuous and automated, it replaces the integration event as the coordination mechanism. Conflicts are discovered at the contract boundary, not at the system boundary. The cost of a conflict is proportional to the scope of the contract, not to the scope of the system. This is the structural advantage that IFEM provides over integration-first coordination.</p>
-          <div class="phase-outputs">
-            <p class="phase-outputs-label">Typical outputs</p>
-            <div class="phase-output-list">
-              <span>Contract test results</span>
-              <span>Schema validation reports</span>
-              <span>Integration evidence</span>
-              <span>Runtime assertion logs</span>
-              <span>Acceptance decisions</span>
-            </div>
-          </div>
-          <div class="doc-links">
-            <a class="button button-primary" href="https://doi.org/10.5281/zenodo.21330255">Read the Runtime Manual ↗</a>
-            <a class="button button-secondary" href="ai.html">IFEM + AI engineering →</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-</main>
-<script src="./assets/nav.js"></script>
-<script src="./assets/shared.js"></script>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="./assets/nav.js"></script>
+  <script src="./assets/shared.js"></script>
 </body>
 </html>

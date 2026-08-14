@@ -8,7 +8,7 @@
   <meta name="description" content="IFEM is a methodology for explicit interfaces, enforceable contracts, and controlled parallel software development." />
   <link rel="canonical" href="https://ifem-doctrine.github.io/" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-  <link rel="stylesheet" href="./assets/styles.css?v=20260814-diagramfix" />
+  <link rel="stylesheet" href="./assets/styles.css?v=20260814-hero" />
   <meta property="og:title" content="IFEM — Interface-First Execution Methodology" />
   <meta property="og:description" content="Make interfaces, contracts, and verification boundaries explicit before parallel implementation begins." />
   <meta property="og:type" content="website" />
@@ -41,24 +41,34 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Animated diagram of four system components coordinating through one explicit contract">
+      <div class="hero-visual hero-cinematic" aria-label="Animated diagram of four system components sending contract signals into one explicit boundary">
+        <div class="hv-meta"><span>IFEM / live system map</span><span class="hv-meta-live"><i></i> Contract active</span></div>
+        <div class="hv-radar" aria-hidden="true"></div>
+        <div class="hv-scanline" aria-hidden="true"></div>
         <svg class="hv-svg" viewBox="0 0 600 620" preserveAspectRatio="none" aria-hidden="true">
-          <path class="hv-wire" d="M115 110 C190 160 210 230 300 310" />
-          <path class="hv-wire" d="M485 110 C410 160 390 230 300 310" />
-          <path class="hv-wire" d="M115 510 C190 450 210 385 300 310" />
-          <path class="hv-wire" d="M485 510 C410 450 390 385 300 310" />
+          <path id="hv-path-client" class="hv-wire" d="M115 110 C190 160 210 230 300 310" />
+          <path id="hv-path-service" class="hv-wire" d="M485 110 C410 160 390 230 300 310" />
+          <path id="hv-path-domain" class="hv-wire" d="M115 510 C190 450 210 385 300 310" />
+          <path id="hv-path-db" class="hv-wire" d="M485 510 C410 450 390 385 300 310" />
+          <circle class="hv-packet" r="4"><animateMotion dur="3.8s" begin="0s" repeatCount="indefinite" path="M115 110 C190 160 210 230 300 310" /></circle>
+          <circle class="hv-packet" r="4"><animateMotion dur="3.8s" begin=".95s" repeatCount="indefinite" path="M485 110 C410 160 390 230 300 310" /></circle>
+          <circle class="hv-packet" r="4"><animateMotion dur="3.8s" begin="1.9s" repeatCount="indefinite" path="M115 510 C190 450 210 385 300 310" /></circle>
+          <circle class="hv-packet" r="4"><animateMotion dur="3.8s" begin="2.85s" repeatCount="indefinite" path="M485 510 C410 450 390 385 300 310" /></circle>
         </svg>
-        <div class="hv-card hv-node-client"><small>01 · Client</small><strong>Mobile UI</strong></div>
-        <div class="hv-card hv-node-service"><small>02 · Service</small><strong>API Gateway</strong></div>
-        <div class="hv-card hv-node-domain"><small>03 · Core</small><strong>Domain Logic</strong></div>
-        <div class="hv-card hv-node-db"><small>04 · State</small><strong>Database</strong></div>
+        <div class="hv-card hv-node-client"><span class="hv-node-light"></span><small>01 · Client</small><strong>Mobile UI</strong><em>Request</em></div>
+        <div class="hv-card hv-node-service"><span class="hv-node-light"></span><small>02 · Service</small><strong>API Gateway</strong><em>Route</em></div>
+        <div class="hv-card hv-node-domain"><span class="hv-node-light"></span><small>03 · Core</small><strong>Domain Logic</strong><em>Rules</em></div>
+        <div class="hv-card hv-node-db"><span class="hv-node-light"></span><small>04 · State</small><strong>Database</strong><em>Persist</em></div>
         <div class="hv-contract">
+          <span class="hv-orbit hv-orbit-one" aria-hidden="true"></span><span class="hv-orbit hv-orbit-two" aria-hidden="true"></span>
           <p class="hv-contract-kicker">Interface contract</p>
           <h3>Explicit<br />boundary</h3>
+          <div class="hv-lock-pill"><i>●</i> Locked &amp; versioned</div>
           <div class="hv-contract-row"><span>Schema</span><b>✓</b></div>
           <div class="hv-contract-row"><span>Ownership</span><b>✓</b></div>
           <div class="hv-contract-row"><span>Verification</span><b>✓</b></div>
         </div>
+        <div class="hv-bottom"><span><i></i> Signals synchronized</span><span>04 nodes / 01 contract</span></div>
       </div>
     </section>
 
@@ -228,7 +238,7 @@
       </div>
     </section>
   </main>
-  <script src="./assets/nav.js?v=20260814-diagramfix"></script>
-  <script src="./assets/shared.js?v=20260814-diagramfix"></script>
+  <script src="./assets/nav.js?v=20260814-hero"></script>
+  <script src="./assets/shared.js?v=20260814-hero"></script>
 </body>
 </html>

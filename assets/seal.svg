@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="IFEM Contract Seal">
+  <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="9"/>
+  <circle cx="100" cy="100" r="68" fill="none" stroke="currentColor" stroke-width="3" opacity=".55"/>
+  <line x1="100" y1="22" x2="100" y2="178" stroke="currentColor" stroke-width="2" opacity=".28"/>
+  <line x1="22" y1="100" x2="178" y2="100" stroke="currentColor" stroke-width="2" opacity=".28"/>
+  <circle cx="100" cy="22" r="5" fill="currentColor"/>
+  <circle cx="178" cy="100" r="5" fill="currentColor"/>
+  <circle cx="100" cy="178" r="5" fill="currentColor"/>
+  <circle cx="22" cy="100" r="5" fill="currentColor"/>
+  <circle cx="100" cy="100" r="40" fill="currentColor"/>
+  <line x1="100" y1="72" x2="100" y2="128" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  <line x1="78" y1="83" x2="122" y2="83" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  <line x1="78" y1="117" x2="122" y2="117" stroke="white" stroke-width="7" stroke-linecap="round"/>
+</svg>

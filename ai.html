@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI Engineering — IFEM</title>
+  <meta name="description" content="How IFEM governs AI-assisted software engineering: bounding coding agents with explicit contracts, scopes, and verification requirements."/>
+  <link rel="canonical" href="https://ifem-doctrine.github.io/ai.html"/>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg"/>
+  <link rel="stylesheet" href="./assets/styles.css"/>
+</head>
+<body>
+<main id="main">
+
+  <section class="page-hero page-hero-dark shell">
+    <div class="page-hero-inner">
+      <p class="eyebrow">IFEM / AI engineering</p>
+      <h1>Give the model room to execute — <em>not room to redefine.</em></h1>
+      <p class="page-lede">Coding agents can produce implementation rapidly. IFEM makes the permitted scope, contract, and proof of correctness visible before the agent begins — reducing the surface area in which it is allowed to improvise.</p>
+    </div>
+  </section>
+
+  <section class="content-section shell">
+    <div class="prose-grid">
+      <aside class="section-nav" aria-label="AI engineering sections">
+        <p>On this page</p>
+        <a href="#problem">The problem with speed</a>
+        <a href="#governance">The governance model</a>
+        <a href="#contract-layer">The contract layer</a>
+        <a href="#verification">Verification as control</a>
+        <a href="#principles">Governing principles</a>
+      </aside>
+      <article class="prose">
+
+        <h2 id="problem">The problem with speed</h2>
+        <p>AI coding agents can generate implementation faster than any human team. This speed is genuinely useful — but it is not free. An agent that is not bounded by an explicit interface contract will make architectural decisions within its scope that are invisible to contributors working in adjacent scopes. Those decisions accumulate silently until integration, at which point the cost of resolving them is proportional to the amount of implementation produced — not to the complexity of the original disagreement.</p>
+        <p>The problem is not that agents make wrong decisions. The problem is that they make decisions that are outside their authority, and that those decisions are not visible until they conflict with decisions made elsewhere. Speed amplifies this problem because more implementation is produced before the conflict is discovered.</p>
+        <blockquote><strong>The model proposes.</strong><br/>The contract constrains.<br/><b>Verification decides.</b></blockquote>
+
+        <h2 id="governance">The governance model</h2>
+        <p>IFEM provides a governance model for AI-assisted engineering that does not depend on the agent's judgment about architectural decisions. The model has four layers, each of which limits the authority of the layer below it.</p>
+
+        <div class="governance-diagram reveal">
+          <div class="gov-layer human"><span>01</span><div><strong>Human architect</strong><p>Defines intent, constraints, and system boundaries. Has full architectural authority.</p></div></div>
+          <div class="gov-arrow">↓</div>
+          <div class="gov-layer contract"><span>02</span><div><strong>IFEM contract layer</strong><p>Translates architectural intent into explicit interfaces, schemas, ownership rules, and acceptance criteria. Limits agent authority to the bounded scope.</p></div></div>
+          <div class="gov-arrow">↓</div>
+          <div class="gov-layer agent"><span>03</span><div><strong>AI coding agent</strong><p>Implements within the bounded scope. Cannot make decisions that affect other scopes. Produces implementation evidence.</p></div></div>
+          <div class="gov-arrow">↓</div>
+          <div class="gov-layer verify"><span>04</span><div><strong>Verification</strong><p>Checks implementation evidence against contract acceptance criteria. Accepts or rejects. Does not negotiate.</p></div></div>
+        </div>
+
+        <h2 id="contract-layer">The contract layer</h2>
+        <p>The contract layer is what makes the governance model work. Without it, the human architect's intent is communicated to the agent through natural language instructions that the agent interprets, extends, and sometimes overrides based on its training. With it, the intent is encoded in a formal specification that the agent implements against and that verification checks automatically.</p>
+        <p>A contract for an AI coding agent specifies the same elements as a contract for a human engineer: the interface the agent must implement, the schema of every data structure it produces or consumes, the error behavior it must exhibit, the compatibility rules it must respect, and the acceptance criteria its output must satisfy. The agent's authority is limited to implementation decisions within those constraints. Decisions outside those constraints require explicit renegotiation with the human architect — they cannot be made unilaterally.</p>
+
+        <h2 id="verification">Verification as control</h2>
+        <p>In a human engineering team, verification is often treated as a quality gate — a check that runs after implementation is complete. In an AI-assisted team operating under IFEM, verification is a control mechanism. It is the automated enforcement of the contract layer, and it runs continuously rather than at the end of a development cycle.</p>
+        <p>When verification is continuous, the agent receives immediate feedback on whether its output satisfies the contract. This feedback is more precise than a human code review and more consistent than informal acceptance criteria. It also scales: a team of ten agents can be governed by the same verification infrastructure as a team of one, without additional coordination overhead.</p>
+
+        <h2 id="principles">Governing principles for AI-assisted teams</h2>
+        <div class="principle-grid">
+          <div class="principle-card reveal">
+            <span>01</span>
+            <h3>Define the contract before the prompt</h3>
+            <p>The contract is the authoritative specification for the agent's work. The prompt is a delivery mechanism for the contract, not a substitute for it. An agent working from a prompt without a contract is an agent with unbounded authority.</p>
+          </div>
+          <div class="principle-card reveal">
+            <span>02</span>
+            <h3>Scope limits authority</h3>
+            <p>Each agent operates within a bounded scope. Decisions within the scope are the agent's to make. Decisions that affect other scopes require explicit renegotiation. The scope boundary is defined by the contract, not by the agent's judgment.</p>
+          </div>
+          <div class="principle-card reveal">
+            <span>03</span>
+            <h3>Evidence replaces trust</h3>
+            <p>An agent's output is not accepted because it looks correct. It is accepted because it produces verifiable evidence that it satisfies the contract. Trust in the agent's judgment is not a substitute for contract verification.</p>
+          </div>
+          <div class="principle-card reveal">
+            <span>04</span>
+            <h3>Verification is non-negotiable</h3>
+            <p>An agent that cannot be verified against a contract cannot be used safely in a parallel execution environment. If verification infrastructure does not exist for a scope, that scope must be implemented by a human engineer until it does.</p>
+          </div>
+        </div>
+
+        <div class="doc-links reveal">
+          <a class="button button-primary" href="https://doi.org/10.5281/zenodo.20621561">Read the primary publication ↗</a>
+          <a class="button button-secondary" href="publications.html">View all publications →</a>
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+</main>
+<script src="./assets/nav.js"></script>
+<script src="./assets/shared.js"></script>
+</body>
+</html>

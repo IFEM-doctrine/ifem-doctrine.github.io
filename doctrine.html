@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Doctrine — IFEM</title>
+  <meta name="description" content="The IFEM doctrine: why parallel work fails at the unspoken boundary, and how explicit interfaces, contracts, and verification change the coordination model."/>
+  <link rel="canonical" href="https://ifem-doctrine.github.io/doctrine.html"/>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg"/>
+  <link rel="stylesheet" href="./assets/styles.css"/>
+</head>
+<body>
+<main id="main">
+
+  <section class="page-hero shell">
+    <div class="page-hero-inner">
+      <p class="eyebrow">IFEM / Doctrine</p>
+      <h1>Parallel work fails at the <em>unspoken boundary.</em></h1>
+      <p class="page-lede">The doctrine is not a process prescription. It is a diagnosis of where software coordination breaks down, and a set of principles that change the failure mode before it compounds.</p>
+    </div>
+  </section>
+
+  <section class="content-section shell">
+    <div class="prose-grid">
+      <aside class="section-nav" aria-label="Doctrine sections">
+        <p>On this page</p>
+        <a href="#diagnosis">The diagnosis</a>
+        <a href="#principles">Core principles</a>
+        <a href="#contrast">Contrast</a>
+        <a href="#roles">Who it applies to</a>
+      </aside>
+      <article class="prose">
+
+        <h2 id="diagnosis">The diagnosis</h2>
+        <p>When engineering teams divide responsibilities without making the boundaries between those responsibilities explicit, they create a shared assumption space. That space is invisible, undocumented, and inconsistent across contributors. As implementation proceeds, each side fills the assumption space differently. The failure does not appear immediately — it appears at integration, when the assumptions are finally compared and found to be incompatible.</p>
+        <p>The same failure mode applies to AI-assisted engineering. A coding agent that is not bounded by an explicit interface contract will make architectural decisions within its scope that conflict with decisions made by other agents or human contributors working in adjacent scopes. Speed of generation does not reduce this risk — it amplifies it, because more implementation is produced before the conflict is discovered.</p>
+        <blockquote>The boundary is the coordination mechanism. If the boundary is not explicit, coordination is accidental.</blockquote>
+
+        <h2 id="principles">Core principles</h2>
+
+        <div class="principle-grid">
+          <div class="principle-card reveal">
+            <span>01</span>
+            <h3>Interfaces before implementation</h3>
+            <p>The shape of the boundary between components must be agreed upon before either side is built. An interface defined after the fact is a description of what was built, not an agreement about what should be built. IFEM requires that interfaces are defined, reviewed, and frozen before implementation begins in any bounded scope.</p>
+          </div>
+          <div class="principle-card reveal">
+            <span>02</span>
+            <h3>Contracts before coordination</h3>
+            <p>A contract is an interface with enforcement. It specifies not only the shape of the boundary but the ownership of each element, the error behavior, the compatibility rules, and the acceptance criteria that determine whether an implementation satisfies the agreement. Coordination without contracts is negotiation that must be repeated at every integration point.</p>
+          </div>
+          <div class="principle-card reveal">
+            <span>03</span>
+            <h3>Evidence before acceptance</h3>
+            <p>An implementation is not complete when it compiles or when it passes a unit test. It is complete when it produces verifiable evidence that it satisfies the contract it was built against. Evidence may take the form of contract tests, integration probes, schema validation, or runtime assertions — the form is secondary to the requirement that evidence exists and is checked.</p>
+          </div>
+          <div class="principle-card reveal">
+            <span>04</span>
+            <h3>Boundaries define authority</h3>
+            <p>Within a bounded scope, the implementing team or agent has full authority over implementation decisions. Outside that scope, they have no authority. This separation is what makes parallel work safe: each contributor can move at full speed within their boundary because the contract prevents their decisions from silently affecting neighboring scopes.</p>
+          </div>
+          <div class="principle-card reveal">
+            <span>05</span>
+            <h3>Verification is the coordination layer</h3>
+            <p>In an implementation-first approach, integration is the coordination layer — the moment when assumptions are compared and conflicts resolved. IFEM replaces integration-as-coordination with verification-as-coordination. When contracts are explicit and evidence is required, the coordination happens continuously and automatically, rather than in a single high-stakes integration event.</p>
+          </div>
+        </div>
+
+        <h2 id="contrast">The contrast</h2>
+        <p>The distinction between implementation-first and interface-first is not a matter of preference or style. It is a structural difference in when and how coordination costs are paid.</p>
+
+        <div class="contrast-table-wrap reveal">
+          <table class="contrast-table">
+            <thead><tr><th>Dimension</th><th>Implementation-first</th><th>Interface-first (IFEM)</th></tr></thead>
+            <tbody>
+              <tr><td>When boundaries are defined</td><td>After implementation, by inspection</td><td>Before implementation, by agreement</td></tr>
+              <tr><td>Coordination mechanism</td><td>Integration events and rework</td><td>Contracts and continuous verification</td></tr>
+              <tr><td>Failure discovery point</td><td>Late — at integration or in production</td><td>Early — at contract definition or CI</td></tr>
+              <tr><td>Parallel work safety</td><td>Low — shared assumptions drift silently</td><td>High — contracts bound each scope</td></tr>
+              <tr><td>AI agent authority</td><td>Unbounded — agent improvises architecture</td><td>Bounded — agent implements within contract</td></tr>
+              <tr><td>Ownership clarity</td><td>Emergent — discovered through conflict</td><td>Explicit — specified in contract</td></tr>
+              <tr><td>Acceptance criteria</td><td>Informal — "it works"</td><td>Formal — evidence against contract</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="roles">Who the doctrine applies to</h2>
+        <p>The IFEM doctrine is not specific to a role, team size, or technology stack. The coordination problem it addresses appears wherever independent contributors share a system boundary — whether those contributors are human engineers, AI coding agents, or both.</p>
+        <p>Engineering leaders apply the doctrine by requiring that ownership, integration boundaries, and delivery expectations are made explicit before work begins at scale. Software engineers apply it by refusing to treat neighboring components as undocumented moving targets. AI-assisted teams apply it by constraining agents with contracts, scopes, and evidence requirements rather than relying on the agent's judgment about architectural decisions. Students apply it by learning that architecture is a discipline of boundaries, not a collection of implementation patterns.</p>
+        <p>The doctrine is documented in full in the primary publication. The runtime manual covers operational application of the doctrine in production environments.</p>
+
+        <div class="doc-links reveal">
+          <a class="button button-primary" href="https://doi.org/10.5281/zenodo.20621561">Read the primary publication ↗</a>
+          <a class="button button-secondary" href="method.html">Explore the method →</a>
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+</main>
+<script src="./assets/nav.js"></script>
+<script src="./assets/shared.js"></script>
+</body>
+</html>

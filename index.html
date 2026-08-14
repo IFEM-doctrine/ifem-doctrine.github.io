@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IFEM — Interface-First Execution Methodology</title>
+  <meta name="description" content="Interface-First Execution Methodology (IFEM) by Soheil Mozaffari: a rigorous framework for explicit interfaces, enforceable contracts, and controlled parallel software development." />
+  <link rel="canonical" href="https://ifem-doctrine.github.io/" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+
+  <meta property="og:title" content="IFEM — Interface-First Execution Methodology" />
+  <meta property="og:description" content="A framework for making interfaces, contracts, and verification boundaries explicit before parallel implementation begins." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ifem-doctrine.github.io/" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://ifem-doctrine.github.io/#soheil-muzaffari",
+        "name": "Soheil Mozaffari",
+        "url": "https://ifem-doctrine.github.io/",
+        "sameAs": [
+          "https://orcid.org/0009-0001-2428-1295",
+          "https://github.com/so-muzaff",
+          "https://www.linkedin.com/in/su-muzaff/"
+        ]
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://doi.org/10.5281/zenodo.20621561",
+        "name": "Interface-First Execution Methodology (IFEM): A Unified Framework for High-Parallelism, AI-Assisted Software Engineering (Version 2.2)",
+        "author": {"@id": "https://ifem-doctrine.github.io/#soheil-muzaffari"},
+        "identifier": "https://doi.org/10.5281/zenodo.20621561",
+        "url": "https://doi.org/10.5281/zenodo.20621561"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="IFEM home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- outer cobalt open frame -->
+            <path d="M28 72V28H72  M128 28H172V72  M172 128V172H128  M72 172H28V128" stroke="#1257D6" stroke-width="18" stroke-linecap="square"/>
+            <!-- inner navy open frame -->
+            <path d="M62 96V62H96  M104 62H138V96  M138 104V138H104  M96 138H62V104" stroke="#10233E" stroke-width="16" stroke-linecap="square"/>
+            <!-- mint verification dot -->
+            <circle cx="100" cy="100" r="18" fill="#74C69D"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>IFEM</strong>
+          <small>Interface-First Execution Methodology</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="doctrine.html">Doctrine</a>
+        <a href="method.html">Method</a>
+        <a href="ai.html">AI engineering</a>
+        <a href="publications.html">Publications</a>
+        <a href="author.html">Author</a>
+      </nav>
+      <a class="nav-cta" href="https://doi.org/10.5281/zenodo.20621561">Read v2.2 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-copy">
+        <div class="hero-meta"><span>Research methodology</span><i></i><span>Version 2.2</span></div>
+        <h1>Design the agreement<br />before you scale <em>the work.</em></h1>
+        <p class="hero-lede"><strong>Interface-First Execution Methodology (IFEM)</strong> makes interfaces, responsibilities, and verification boundaries explicit before parallel implementation begins—so every team, service, and agent works against the same system agreement.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="method.html">Explore the method <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="https://doi.org/10.5281/zenodo.20621561">Read the publication <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-identity">
+          <span class="hero-seal" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 72V28H72  M128 28H172V72  M172 128V172H128  M72 172H28V128" stroke="#1257D6" stroke-width="18" stroke-linecap="square"/>
+            <path d="M62 96V62H96  M104 62H138V96  M138 104V138H104  M96 138H62V104" stroke="#10233E" stroke-width="16" stroke-linecap="square"/>
+            <circle cx="100" cy="100" r="18" fill="#74C69D"/>
+          </svg>
+        </span>
+          <div><span>Developed by</span><strong>Soheil Mozaffari</strong></div>
+          <a href="https://orcid.org/0009-0001-2428-1295">ORCID <b>0009-0001-2428-1295</b> <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="system-visual" aria-label="Illustration of system interfaces converging on an explicit contract">
+        <div class="visual-header"><span>01 / System agreement</span><span>Live specification</span></div>
+        <div class="diagram-grid" aria-hidden="true"></div>
+        <svg class="diagram-lines" viewBox="0 0 600 500" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M85 123 C190 123 205 220 300 250" />
+          <path d="M515 123 C410 123 395 220 300 250" />
+          <path d="M85 380 C190 380 205 280 300 250" />
+          <path d="M515 380 C410 380 395 280 300 250" />
+        </svg>
+        <div class="system-node node-client"><small>Client</small><strong>Mobile</strong><span>01</span></div>
+        <div class="system-node node-service"><small>Service</small><strong>API</strong><span>02</span></div>
+        <div class="system-node node-core"><small>Core</small><strong>Domain</strong><span>03</span></div>
+        <div class="system-node node-state"><small>State</small><strong>Database</strong><span>04</span></div>
+        <div class="contract-core">
+          <span class="core-orbit orbit-a"></span><span class="core-orbit orbit-b"></span>
+          <small>Interface contract</small>
+          <strong>Explicit<br />boundary</strong>
+          <div><span>Schema</span><b>✓</b></div>
+          <div><span>Ownership</span><b>✓</b></div>
+          <div><span>Verification</span><b>✓</b></div>
+        </div>
+        <div class="visual-foot"><span><i></i> Synchronized</span><span>IFEM / 02</span></div>
+      </div>
+    </section>
+
+    <section class="proof-strip shell" aria-label="IFEM principles">
+      <div><span>01</span><strong>Interfaces before implementation</strong></div>
+      <div><span>02</span><strong>Contracts before coordination</strong></div>
+      <div><span>03</span><strong>Evidence before acceptance</strong></div>
+    </section>
+
+    <section class="doctrine-section" id="doctrine">
+      <div class="shell doctrine-grid">
+        <div class="section-intro">
+          <p class="eyebrow">The engineering problem</p>
+          <h2>Parallel work fails at the <em>unspoken boundary.</em></h2>
+          <p>When responsibilities are divided without an explicit agreement, assumptions become accidental APIs, schemas drift, and integration becomes the place where architecture is finally discovered.</p>
+        </div>
+        <div class="contrast-cards">
+          <article class="contrast-card legacy reveal">
+            <div class="card-top"><span>Implementation-first</span><i>×</i></div>
+            <ol>
+              <li>Teams begin coding</li>
+              <li>Assumptions diverge</li>
+              <li>Interfaces emerge accidentally</li>
+              <li>Integration exposes conflicts</li>
+            </ol>
+            <strong>Rework becomes the coordination layer.</strong>
+          </article>
+          <article class="contrast-card ifem-card reveal">
+            <div class="card-top"><span>Interface-first</span><i>✓</i></div>
+            <ol>
+              <li>Intent becomes architecture</li>
+              <li>Architecture becomes interfaces</li>
+              <li>Interfaces become contracts</li>
+              <li>Contracts bound parallel execution</li>
+            </ol>
+            <strong>Verification becomes the coordination layer.</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-section shell" id="method">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow">The method</p><h2>A controlled path from intent to execution.</h2></div>
+        <p>IFEM turns architectural intent into constraints that independent contributors can implement, test, and enforce without redefining the system along the way.</p>
+      </div>
+      <div class="method-grid" aria-label="Five IFEM stages">
+        <article class="method-card reveal"><span>01</span><h3>Define intent</h3><p>State the system outcome and its constraints before implementation choices take over.</p><i aria-hidden="true">→</i></article>
+        <article class="method-card reveal"><span>02</span><h3>Freeze interfaces</h3><p>Make dependencies and responsibilities explicit enough for independent work to begin.</p><i aria-hidden="true">→</i></article>
+        <article class="method-card featured reveal"><span>03</span><h3>Encode contracts</h3><p>Specify schemas, ownership, error behavior, compatibility rules, and acceptance criteria.</p><i aria-hidden="true">→</i></article>
+        <article class="method-card reveal"><span>04</span><h3>Execute in parallel</h3><p>Build behind bounded interfaces instead of inventing shared behavior midstream.</p><i aria-hidden="true">→</i></article>
+        <article class="method-card reveal"><span>05</span><h3>Verify evidence</h3><p>Use contract checks, CI, integration tests, and runtime controls where appropriate.</p><i aria-hidden="true">✓</i></article>
+      </div>
+    </section>
+
+    <section class="ai-section" id="ai">
+      <div class="shell ai-grid">
+        <div class="ai-copy">
+          <p class="eyebrow">IFEM + AI-assisted engineering</p>
+          <h2>Give the model room to execute—<em>not room to redefine.</em></h2>
+          <p>Coding agents can produce implementation quickly. IFEM makes the permitted scope, contract, and proof of correctness visible first, reducing the surface area in which an agent is allowed to improvise.</p>
+          <blockquote><strong>The model proposes.</strong><br />The contract constrains.<br /><b>Verification decides.</b></blockquote>
+        </div>
+        <div class="governance-card" aria-label="IFEM governance flow for AI engineering">
+          <div class="governance-top"><span>Governance flow</span><i>•</i></div>
+          <div class="governance-flow">
+            <div><span>01</span><strong>Human architect</strong><small>Intent &amp; constraints</small></div>
+            <i>↓</i>
+            <div class="flow-contract"><span>02</span><strong>IFEM contract layer</strong><small>Scope, schema &amp; acceptance</small></div>
+            <i>↓</i>
+            <div><span>03</span><strong>AI coding agent</strong><small>Bounded execution</small></div>
+            <i>↓</i>
+            <div class="flow-verify"><span>04</span><strong>Verification</strong><small>Accept / Reject</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience-section shell">
+      <div class="section-heading">
+        <p class="eyebrow">Designed for coordination</p>
+        <h2>Different roles. One shared source of truth.</h2>
+      </div>
+      <div class="audience-grid">
+        <article class="reveal"><span>01</span><h3>Engineering leaders</h3><p>Make ownership, integration boundaries, and delivery expectations explicit before scale amplifies ambiguity.</p></article>
+        <article class="reveal"><span>02</span><h3>Software engineers</h3><p>Work independently without treating neighboring components as undocumented moving targets.</p></article>
+        <article class="reveal"><span>03</span><h3>AI-assisted teams</h3><p>Constrain coding agents with contracts, scopes, validation rules, and evidence requirements.</p></article>
+        <article class="reveal"><span>04</span><h3>Students</h3><p>Learn architecture as a discipline of boundaries, not just a collection of implementation patterns.</p></article>
+      </div>
+    </section>
+
+    <section class="publications-section" id="publications">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">Authoritative sources</p><h2>Read, verify, and cite the methodology.</h2></div>
+          <p>The methodology is documented in a primary publication and an operational manual for production contract enforcement.</p>
+        </div>
+        <div class="publication-grid">
+          <article class="publication-card primary reveal">
+            <div class="publication-index">01 <span>Primary publication</span></div>
+            <h3>Interface-First Execution Methodology <em>(IFEM)</em></h3>
+            <p>A Unified Framework for High-Parallelism, AI-Assisted Software Engineering. Version 2.2.</p>
+            <div class="doi"><span>DOI</span><code>10.5281/zenodo.20621561</code></div>
+            <div class="pub-actions"><a class="button button-primary" href="https://doi.org/10.5281/zenodo.20621561">Open publication <span aria-hidden="true">↗</span></a><button class="button button-secondary copy-doi" data-copy="10.5281/zenodo.20621561">Copy DOI</button></div>
+          </article>
+          <article class="publication-card reveal">
+            <div class="publication-index">02 <span>Runtime manual</span></div>
+            <h3>Contract Enforcement in Production</h3>
+            <p>Operational Runtime Manual for IFEM, focused on Phases 5 and 6.</p>
+            <div class="doi"><span>DOI</span><code>10.5281/zenodo.21330255</code></div>
+            <div class="pub-actions"><a class="button button-secondary" href="https://doi.org/10.5281/zenodo.21330255">Open manual <span aria-hidden="true">↗</span></a><button class="button button-secondary copy-doi" data-copy="10.5281/zenodo.21330255">Copy DOI</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="author-section shell" id="author">
+      <div class="author-card">
+        <div class="author-title"><p class="eyebrow">Author</p><h2>Soheil<br />Mozaffari</h2><span>Software engineer &amp; systems architect</span></div>
+        <div class="author-copy"><p>Focused on interface-first methodology, contract enforcement, software architecture, automated verification, and AI-assisted development.</p><div class="author-links"><a href="https://orcid.org/0009-0001-2428-1295">ORCID <span>↗</span></a><a href="https://github.com/so-muzaff">GitHub <span>↗</span></a><a href="https://www.linkedin.com/in/su-muzaff/">LinkedIn <span>↗</span></a><a href="https://zenodo.org/records/20621561">Zenodo <span>↗</span></a></div></div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="shell final-cta-inner">
+        <div><p class="eyebrow">Start with the source</p><h2>Understand the agreement<br />before judging the implementation.</h2></div>
+        <a class="button button-dark" href="https://doi.org/10.5281/zenodo.20621561">Read IFEM v2.2 <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div class="footer-brand">
+        <span class="footer-seal" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 72V28H72  M128 28H172V72  M172 128V172H128  M72 172H28V128" stroke="#1257D6" stroke-width="18" stroke-linecap="square"/>
+            <path d="M62 96V62H96  M104 62H138V96  M138 104V138H104  M96 138H62V104" stroke="#10233E" stroke-width="16" stroke-linecap="square"/>
+            <circle cx="100" cy="100" r="18" fill="#74C69D"/>
+          </svg>
+        </span>
+        <div><strong>IFEM</strong><span>Interface-First Execution Methodology</span></div>
+      </div>
+      <div class="footer-links"><a href="https://doi.org/10.5281/zenodo.20621561">Primary DOI</a><a href="https://doi.org/10.5281/zenodo.21330255">Runtime Manual</a><a href="https://orcid.org/0009-0001-2428-1295">ORCID</a></div>
+      <p class="developer-contact">Developed by <strong>Suhail Muzaffari</strong> · <a href="mailto:so.muzaff@gmail.com">so.muzaff@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true">DOI copied</div>
+  <script src="./assets/shared.js"></script>
+</body>
+</html>

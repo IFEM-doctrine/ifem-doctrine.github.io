@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://ifem-doctrine.github.io/</loc><xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/"/><xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/"/></url>
+  <url><loc>https://ifem-doctrine.github.io/doctrine/</loc><xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/doctrine/"/><xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/doctrine/"/></url>
+  <url><loc>https://ifem-doctrine.github.io/how-it-works/</loc><xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/how-it-works/"/><xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/how-it-works/"/></url>
+  <url><loc>https://ifem-doctrine.github.io/ai-engineering/</loc><xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/ai-engineering/"/><xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/ai-engineering/"/></url>
+  <url><loc>https://ifem-doctrine.github.io/examples/</loc><xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/examples/"/><xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/examples/"/></url>
+  <url><loc>https://ifem-doctrine.github.io/publications/</loc><xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/publications/"/><xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/publications/"/></url>
+  <url><loc>https://ifem-doctrine.github.io/about/</loc><xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/about/"/><xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/about/"/></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/</loc><xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/"/><xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/"/></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/doctrine/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/how-it-works/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/ai-engineering/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/examples/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/publications/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/about/</loc></url>
+</urlset>

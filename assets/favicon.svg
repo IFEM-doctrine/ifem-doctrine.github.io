@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#10233E"/>
-  <!-- outer cobalt frame (open corners) -->
-  <path d="M4 10V4H10  M22 4H28V10  M28 22V28H22  M10 28H4V22" stroke="#1257D6" stroke-width="2.8" stroke-linecap="square" fill="none"/>
-  <!-- inner white frame (open corners) -->
-  <path d="M9 14V9H14  M18 9H23V14  M23 18V23H18  M14 23H9V18" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="square" fill="none"/>
-  <!-- mint verification dot -->
-  <circle cx="16" cy="16" r="2.6" fill="#74C69D"/>
-</svg>

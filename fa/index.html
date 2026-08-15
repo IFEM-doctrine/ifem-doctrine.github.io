@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <script src="../assets/theme-init.js?v=20260815-i18n-theme"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f7f4" />
+  <title>IFEM — روش‌شناسی اجرای رابط‌محور</title>
+  <meta name="description" content="IFEM یک روش‌شناسی برای رابط‌های صریح، قراردادهای قابل‌اجرا و توسعهٔ نرم‌افزار موازیِ کنترل‌شده است." />
+  <link rel="canonical" href="https://ifem-doctrine.github.io/fa/" />
+  <link rel="icon" type="image/png" href="../assets/ifem-doctrine-logo.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=20260815-i18n-theme" />
+  <meta property="og:title" content="IFEM — روش‌شناسی اجرای رابط‌محور" />
+  <meta property="og:description" content="پیش از آغاز پیاده‌سازی موازی، رابط‌ها، قراردادها و مرزهای راستی‌آزمایی را صریح کنید." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ifem-doctrine.github.io/fa/" />
+  <meta property="og:image" content="https://ifem-doctrine.github.io/assets/ifem-doctrine-logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://ifem-doctrine.github.io/assets/ifem-doctrine-logo.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Person","@id":"https://ifem-doctrine.github.io/fa/#soheil-muzaffari","name":"Soheil Mozaffari","url":"https://ifem-doctrine.github.io/fa/","sameAs":["https://orcid.org/0009-0001-2428-1295","https://github.com/so-muzaff","https://www.linkedin.com/in/su-muzaff/","https://so-muzaff.github.io"]},
+    {"@type":"TechArticle","@id":"https://doi.org/10.5281/zenodo.20621561","name":"Interface-First Execution Methodology (IFEM): A Unified Framework for High-Parallelism, AI-Assisted Software Engineering (Version 2.2)","author":{"@id":"https://ifem-doctrine.github.io/fa/#soheil-muzaffari"},"identifier":"https://doi.org/10.5281/zenodo.20621561","url":"https://doi.org/10.5281/zenodo.20621561"}
+  ]}
+  </script>
+</head>
+<body>
+  <main id="main">
+
+    <section class="hero shell" id="top">
+      <div class="hero-copy reveal-left">
+        <img class="hero-brand-logo" src="../assets/ifem-doctrine-logo.png" alt="دکترین IFEM — روش‌شناسی اجرای رابط‌محور" width="1254" height="1254" />
+        <p class="eyebrow">روش‌شناسی پژوهشی · نسخهٔ 2.2</p>
+        <h1>توافق را طراحی کنید<br />پیش از آن‌که <em>کار</em> را مقیاس‌دهی کنید.</h1>
+        <p class="hero-lede"><strong>روش‌شناسی اجرای رابط‌محور (IFEM)</strong> پیش از آغاز پیاده‌سازی موازی، رابط‌ها، مسئولیت‌ها و مرزهای راستی‌آزمایی را صریح می‌کند—تا هر تیم، سرویس و عامل بر پایهٔ همان توافق سامانه‌ای کار کند.</p>
+        <div class="hero-actions">
+          <a class="button btn-primary" href="method.html">کاوش روش <span aria-hidden="true">→</span></a>
+          <a class="button btn-secondary" href="https://doi.org/10.5281/zenodo.20621561">مطالعهٔ انتشار <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-identity">
+          <span class="id-mark" aria-hidden="true"><img class="ifem-logo" src="../assets/ifem-doctrine-logo.png" alt="" width="1254" height="1254" /></span>
+          <span>توسعه‌یافته به‌دست <strong>Soheil Mozaffari</strong></span>
+          <a href="https://orcid.org/0009-0001-2428-1295">ORCID 0009-0001-2428-1295 ↗</a>
+        </div>
+      </div>
+
+      <div id="hero-system" class="hero-visual hero-cinematic hero-system" data-hero-state="layers" aria-label="نمودار تعاملیِ چهار مؤلفهٔ سامانه که از طریق یک قرارداد صریح هماهنگ می‌شوند">
+        <div class="hv-meta"><span>IFEM / نقشهٔ زندهٔ سامانه</span><span class="hv-meta-live"><i></i> قرارداد فعال</span></div>
+        <div class="hv-radar" aria-hidden="true"></div>
+        <div class="hv-scanline" aria-hidden="true"></div>
+        <svg class="hv-svg" viewBox="0 0 600 620" preserveAspectRatio="none" aria-hidden="true">
+          <path id="hv-path-client" class="hv-wire" d="M115 110 C190 160 210 230 300 310" />
+          <path id="hv-path-service" class="hv-wire" d="M485 110 C410 160 390 230 300 310" />
+          <path id="hv-path-domain" class="hv-wire" d="M115 510 C190 450 210 385 300 310" />
+          <path id="hv-path-db" class="hv-wire" d="M485 510 C410 450 390 385 300 310" />
+          <circle class="hv-packet" r="4"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" path="M115 110 C190 160 210 230 300 310" /></circle>
+          <circle class="hv-packet" r="4"><animateMotion dur="14s" begin="3.5s" repeatCount="indefinite" path="M485 110 C410 160 390 230 300 310" /></circle>
+          <circle class="hv-packet" r="4"><animateMotion dur="14s" begin="7s" repeatCount="indefinite" path="M115 510 C190 450 210 385 300 310" /></circle>
+          <circle class="hv-packet" r="4"><animateMotion dur="14s" begin="10.5s" repeatCount="indefinite" path="M485 510 C410 450 390 385 300 310" /></circle>
+        </svg>
+        <div class="hv-card hv-node-client"><span class="hv-node-light"></span><small>01 · کلاینت</small><strong>رابط کاربری موبایل</strong><em>درخواست</em></div>
+        <div class="hv-card hv-node-service"><span class="hv-node-light"></span><small>02 · سرویس</small><strong>دروازهٔ API</strong><em>مسیردهی</em></div>
+        <div class="hv-card hv-node-domain"><span class="hv-node-light"></span><small>03 · هسته</small><strong>منطق دامنه</strong><em>قواعد</em></div>
+        <div class="hv-card hv-node-db"><span class="hv-node-light"></span><small>04 · وضعیت</small><strong>پایگاه‌داده</strong><em>پایدارسازی</em></div>
+        <div class="hv-contract">
+          <span class="hv-orbit hv-orbit-one" aria-hidden="true"></span><span class="hv-orbit hv-orbit-two" aria-hidden="true"></span>
+          <p class="hv-contract-kicker">قرارداد رابط</p>
+          <h3>مرزِ<br />صریح</h3>
+          <div class="hv-lock-pill"><i>●</i> قفل‌شده و نسخه‌گذاری‌شده</div>
+          <div class="hv-contract-row"><span>شِما</span><b>✓</b></div>
+          <div class="hv-contract-row"><span>مالکیت</span><b>✓</b></div>
+          <div class="hv-contract-row"><span>راستی‌آزمایی</span><b>✓</b></div>
+        </div>
+        <div class="hv-bottom"><span><i></i> سیگنال‌ها همگام شده‌اند</span><span>04 گره / 01 قرارداد</span></div>
+      </div>
+
+      <section class="hero-explainer" aria-labelledby="hero-explainer-title">
+        <div class="hero-explainer-copy">
+          <p class="hero-explainer-kicker">مرور تعاملی</p>
+          <h2 id="hero-explainer-title">از نیت تا مرزی که <em>پایدار می‌ماند.</em></h2>
+          <p id="hero-explainer-text" class="hero-explainer-text" aria-live="polite">با لایه‌ها آغاز کنید: معمار نیت را تعیین می‌کند، قرارداد آن را به مرزی قابل‌تعریف ترجمه می‌کند، و انسان‌ها یا عامل‌ها درون آن مرز پیاده‌سازی می‌کنند.</p>
+        </div>
+        <div class="hero-explainer-controls" aria-label="گام‌های توضیحی IFEM">
+          <div class="hero-step-list" role="group" aria-label="یک توضیح IFEM را برگزینید">
+            <button class="hero-step is-active" type="button" aria-pressed="true" data-hero-state="layers" data-title="لایه‌بندی سامانه" data-copy="با لایه‌ها آغاز کنید: معمار نیت را تعیین می‌کند، قرارداد آن را به مرزی قابل‌تعریف ترجمه می‌کند، و انسان‌ها یا عامل‌ها درون آن مرز پیاده‌سازی می‌کنند."><span>01</span> لایه‌ها</button>
+            <button class="hero-step" type="button" aria-pressed="false" data-hero-state="interfaces" data-title="رابط‌ها را صریح کنید" data-copy="تحویل‌دهی‌ها را ردیابی کنید. کلاینت، API، دامنه و وضعیت تنها زمانی می‌توانند به‌طور مستقل تکامل یابند که هر مسئولیت و جهت حرکت قابل‌مشاهده باشد."><span>02</span> رابط‌ها</button>
+            <button class="hero-step" type="button" aria-pressed="false" data-hero-state="contract" data-title="قرارداد را کُدگذاری کنید" data-copy="قرارداد یک رابط را به توافقی قابل‌اجرا تبدیل می‌کند: شِما، مالکیت، رفتار خطا، سازگاری و معیارهای پذیرش به یک منبع حقیقت مشترک بدل می‌شوند."><span>03</span> قرارداد</button>
+            <button class="hero-step" type="button" aria-pressed="false" data-hero-state="freeze" data-title="پیش از کار موازی تثبیت کنید" data-copy="تثبیت، مرزِ موردِ توافق را قفل می‌کند. از این پس هر مشارکت‌کننده می‌تواند با سرعت، در حیطهٔ خود اجرا کند، در حالی‌که هر تغییری در مرز مستلزم نسخهٔ جدیدیِ صریح است."><span>04</span> تثبیت</button>
+          </div>
+          <button class="freeze-action" type="button" data-freeze aria-describedby="freeze-status"><span aria-hidden="true">▣</span> تثبیت قرارداد <b>v2.2</b></button>
+          <p id="freeze-status" class="freeze-status" aria-live="polite">آماده برای تثبیت توافق فعلی.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="proof-strip shell" aria-label="اصول بنیادین IFEM">
+      <div class="proof-strip-item reveal"><span class="proof-num">01</span><strong>رابط‌ها پیش از پیاده‌سازی</strong></div>
+      <div class="proof-strip-item reveal"><span class="proof-num">02</span><strong>قراردادها پیش از هماهنگی</strong></div>
+      <div class="proof-strip-item reveal"><span class="proof-num">03</span><strong>شواهد پیش از پذیرش</strong></div>
+    </section>
+
+    <section class="diagram-gallery" aria-labelledby="diagrams-title">
+      <div class="shell">
+        <div class="section-header diagram-gallery-header">
+          <div><p class="eyebrow">IFEM، مرئی‌شده</p><h2 id="diagrams-title">سه نمودار. یک توافق قابل‌اجرا.</h2></div>
+          <p>این نمودارهای زنده نشان می‌دهند که نیت چگونه به قرارداد تبدیل می‌شود، چگونه قراردادها کارِ مستقل را ایمن می‌کنند، و چگونه شواهد بر پیاده‌سازیِ انسانی و مبتنی بر هوش مصنوعی حاکم است.</p>
+        </div>
+        <div class="diagram-gallery-grid">
+          <article class="concept-diagram contract-map" aria-label="نموداری که لایهٔ قرارداد بین نیت معماری و پیاده‌سازی را نشان می‌دهد">
+            <div class="cd-head"><span>01 · لایهٔ قرارداد</span><i>زنده</i></div>
+            <div class="contract-layer-stack">
+              <div class="stack-row stack-intent"><span>نیت انسانی</span><b>خروجی · محدودیت‌ها · دامنه</b></div>
+              <div class="stack-connector">↓</div>
+              <div class="stack-row stack-contract"><span>قراردادِ رابطِ تثبیت‌شده</span><b>شِما · مالکیت · خطاها · پذیرش</b></div>
+              <div class="stack-connector">↓</div>
+              <div class="stack-row stack-build"><span>پیاده‌سازیِ محدود</span><b>تیم انسانی · سرویس · عاملِ AI</b></div>
+            </div>
+            <p class="cd-caption">قرارداد تحویلِ پایدار میان معماری و اجرا است.</p>
+          </article>
+
+          <article class="concept-diagram coordination-map" aria-label="نموداری که کارِ موازیِ انسانی و AI را از طریق یک قراردادِ مشترک هماهنگ نشان می‌دهد">
+            <div class="cd-head"><span>02 · هماهنگیِ موازی</span><i>همگام</i></div>
+            <div class="coord-contract">یک قرارداد مشترک</div>
+            <div class="coord-lanes">
+              <div class="coord-lane"><span class="lane-dot lane-dot-human"></span><b>مهندس انسانی</b><em></em><em></em><em></em></div>
+              <div class="coord-lane"><span class="lane-dot lane-dot-service"></span><b>تیم سرویس</b><em></em><em></em><em></em></div>
+              <div class="coord-lane"><span class="lane-dot lane-dot-ai"></span><b>عامل کدنویسیِ AI</b><em></em><em></em><em></em></div>
+            </div>
+            <div class="coord-evidence"><span>✓</span> شواهد به همان مرز بازمی‌گردد</div>
+          </article>
+
+          <article class="concept-diagram verification-map" aria-label="نموداری که چرخهٔ مداومِ راستی‌آزمایی را از پیاده‌سازیِ تغییرکرده تا تصمیمِ پذیرش نشان می‌دهد">
+            <div class="cd-head"><span>03 · راستی‌آزماییِ پیوسته</span><i>شواهد</i></div>
+            <div class="verify-orbit">
+              <div class="orbit-step orbit-build">تغییر</div>
+              <div class="orbit-step orbit-schema">شِما</div>
+              <div class="orbit-step orbit-tests">آزمون‌ها</div>
+              <div class="orbit-step orbit-accept">پذیرش</div>
+              <div class="orbit-core">قرارداد<br /><strong>تصمیم می‌گیرد</strong></div>
+            </div>
+            <p class="cd-caption">راستی‌آزمایی به‌جای ادغامِ دیرهنگام، لایهٔ هماهنگی می‌شود.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="doctrine-section">
+      <div class="shell doctrine-grid">
+        <div class="doctrine-intro reveal-left">
+          <p class="eyebrow">مسئلهٔ مهندسی</p>
+          <h2>کارِ موازی در مرزِ <em>ناگفته</em> شکست می‌خورد.</h2>
+          <p>وقتی مسئولیت‌ها بدون توافقی صریح تقسیم می‌شوند، مفروضات به APIهای تصادفی بدل می‌گردند، شِماها دچار واگرایی می‌شوند، و ادغام به جایی تبدیل می‌شود که معماری نهایتاً همان‌جا کشف می‌گردد.</p>
+          <a class="button btn-ghost" href="doctrine.html">خواندن دکترین <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="contrast-cards reveal-right">
+          <article class="contrast-card">
+            <div class="cc-header"><span class="cc-title">پیاده‌سازی‌محور</span><i class="cc-badge cc-badge-bad">×</i></div>
+            <ol class="cc-steps"><li>تیم‌ها کدنویسی را آغاز می‌کنند</li><li>مفروضات واگرا می‌شوند</li><li>رابط‌ها به‌طور تصادفی پدید می‌آیند</li><li>ادغام تعارض‌ها را آشکار می‌کند</li></ol>
+            <p class="cc-conclusion">بازکاری به لایهٔ هماهنگی بدل می‌شود.</p>
+          </article>
+          <article class="contrast-card ifem-card">
+            <div class="cc-header"><span class="cc-title">رابط‌محور</span><i class="cc-badge cc-badge-good">✓</i></div>
+            <ol class="cc-steps"><li>نیت به معماری تبدیل می‌شود</li><li>معماری به رابط‌ها تبدیل می‌شود</li><li>رابط‌ها به قراردادها تبدیل می‌شوند</li><li>قراردادها اجرای موازی را مرزبندی می‌کنند</li></ol>
+            <p class="cc-conclusion">راستی‌آزمایی به لایهٔ هماهنگی تبدیل می‌شود.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-section shell">
+      <div class="section-header section-header-split reveal">
+        <div><p class="eyebrow">روش</p><h2>مسیرِ کنترل‌شده از نیت تا اجرا.</h2></div>
+        <p>IFEM نیتِ معماری را به محدودیت‌هایی تبدیل می‌کند که مشارکت‌کنندگانِ مستقل بتوانند بدون بازتعریفِ سامانه در طول مسیر آن‌ها را پیاده‌سازی، آزمون و اعمال کنند.</p>
+      </div>
+      <div class="method-track" aria-label="پنج فازِ IFEM">
+        <article class="method-card reveal"><span class="mc-num">01</span><h3>تعریف نیت</h3><p>پیش از آن‌که انتخاب‌های پیاده‌سازی مسلط شوند، خروجیِ سامانه و محدودیت‌ها را تصریح کنید.</p><i class="mc-arrow">→</i></article>
+        <article class="method-card reveal"><span class="mc-num">02</span><h3>تثبیتِ رابط‌ها</h3><p>وابستگی‌ها و مسئولیت‌ها را به‌اندازهٔ کافی صریح کنید تا کارِ مستقل ممکن شود.</p><i class="mc-arrow">→</i></article>
+        <article class="method-card mc-featured reveal"><span class="mc-num">03</span><h3>کُدگذاریِ قراردادها</h3><p>شِماها، مالکیت، رفتارِ خطا، سازگاری و پذیرش را مشخص کنید.</p><i class="mc-arrow">→</i></article>
+        <article class="method-card reveal"><span class="mc-num">04</span><h3>اجرای موازی</h3><p>به‌جای اختراعِ رفتارِ مشترک در میانهٔ راه، پشتِ رابط‌های مرزبندی‌شده بسازید.</p><i class="mc-arrow">→</i></article>
+        <article class="method-card reveal"><span class="mc-num">05</span><h3>راستی‌آزماییِ شواهد</h3><p>از بررسی‌های قرارداد، CI، آزمون‌های ادغام و کنترل‌های زمان‌اجرا استفاده کنید.</p><i class="mc-arrow">✓</i></article>
+      </div>
+    </section>
+
+    <section class="ai-section">
+      <div class="shell ai-grid">
+        <div class="ai-copy reveal-left">
+          <p class="eyebrow">IFEM + مهندسی با کمک هوش مصنوعی</p>
+          <h2>به مدل مجالِ اجرا بدهید—<em>نه مجالِ بازتعریف.</em></h2>
+          <p>عامل‌های کدنویسی می‌توانند به‌سرعت پیاده‌سازی تولید کنند. IFEM ابتدا دامنهٔ مجاز، قرارداد و گواهِ درستی را مرئی می‌کند و بدین‌ترتیب سطحِ آزادیِ بداهه‌پردازیِ عامل را کاهش می‌دهد.</p>
+          <blockquote><strong>مدل پیشنهاد می‌دهد.</strong><br />قرارداد مقید می‌کند.<br /><b>راستی‌آزمایی تصمیم می‌گیرد.</b></blockquote>
+          <a class="button btn-secondary" href="ai.html">کاوش حکمرانیِ هوش مصنوعی <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="gov-stack" aria-label="جریانِ پویانمایی‌شدهٔ حکمرانی از معمارِ انسانی از طریق قرارداد تا عاملِ AI و راستی‌آزمایی">
+          <div class="gov-layer"><span class="gov-num">01</span><div><strong>معمارِ انسانی</strong><small>نیت و محدودیت‌ها</small></div></div>
+          <div class="gov-arrow-row">↓</div>
+          <div class="gov-layer gl-contract"><span class="gov-num">02</span><div><strong>لایهٔ قرارداد IFEM</strong><small>دامنه، شِما و پذیرش</small></div></div>
+          <div class="gov-arrow-row">↓</div>
+          <div class="gov-layer"><span class="gov-num">03</span><div><strong>عاملِ کدنویسیِ AI</strong><small>اجرای محدود</small></div></div>
+          <div class="gov-arrow-row">↓</div>
+          <div class="gov-layer gl-verify"><span class="gov-num">04</span><div><strong>راستی‌آزمایی</strong><small>پذیرش/رد بر پایهٔ شواهد</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience-section shell">
+      <div class="section-header reveal"><p class="eyebrow">طراحی‌شده برای هماهنگی</p><h2>نقش‌های متفاوت. یک منبعِ حقیقتِ مشترک.</h2></div>
+      <div class="audience-grid">
+        <article class="audience-card reveal"><span class="ac-num">01</span><h3>رهبران مهندسی</h3><p>پیش از آن‌که مقیاس ابهام را تشدید کند، مالکیت، مرزهای ادغام و انتظاراتِ تحویل را صریح کنید.</p></article>
+        <article class="audience-card reveal"><span class="ac-num">02</span><h3>مهندسان نرم‌افزار</h3><p>به‌صورت مستقل کار کنید، بی‌آن‌که مؤلفه‌های مجاور را اهدافِ متغیرِ بدون مستند در نظر بگیرید.</p></article>
+        <article class="audience-card reveal"><span class="ac-num">03</span><h3>تیم‌های با کمک هوش مصنوعی</h3><p>عامل‌های کدنویسی را با قراردادها، دامنه‌ها، قواعدِ اعتبارسنجی و الزاماتِ شواهد مقید کنید.</p></article>
+        <article class="audience-card reveal"><span class="ac-num">04</span><h3>دانشجویان</h3><p>معماری را همچون دانشی مبتنی بر مرزها بیاموزید، نه صرفاً مجموعه‌ای از الگوهای پیاده‌سازی.</p></article>
+      </div>
+    </section>
+
+    <section class="pub-index-section">
+      <div class="shell">
+        <div class="section-header section-header-split reveal">
+          <div><p class="eyebrow">منابع معتبر</p><h2>روش‌شناسی را بخوانید، راستی‌آزمایی کنید و ارجاع دهید.</h2></div>
+          <p>این روش‌شناسی در یک انتشارِ اصلی و یک راهنمای عملیاتی برای اجرای قرارداد در محیطِ تولید مستندسازی شده است.</p>
+        </div>
+        <div class="pub-index-grid">
+          <article class="pub-index-card pic-primary reveal">
+            <p class="pic-type">01 · انتشارِ اصلی</p>
+            <h3>روش‌شناسی اجرای رابط‌محور <em>(IFEM)</em></h3>
+            <p>چارچوبی یکپارچه برای مهندسی نرم‌افزار با موازی‌سازیِ بالا و با کمک هوش مصنوعی. نسخهٔ 2.2.</p>
+            <div class="doi-row"><span>DOI</span><code>10.5281/zenodo.20621561</code></div>
+            <div class="pub-actions"><a class="button btn-primary" href="https://doi.org/10.5281/zenodo.20621561">باز کردن انتشار ↗</a><button class="button btn-secondary copy-doi" data-copy="10.5281/zenodo.20621561">کپی DOI</button></div>
+          </article>
+          <article class="pub-index-card reveal">
+            <p class="pic-type">02 · راهنمای زمان‌اجرا</p>
+            <h3>اعمالِ قرارداد در محیطِ تولید</h3>
+            <p>راهنمای عملیاتیِ زمان‌اجرا برای IFEM، متمرکز بر راستی‌آزمایی و اعمال در زمان‌اجرا.</p>
+            <div class="doi-row"><span>DOI</span><code>10.5281/zenodo.21330255</code></div>
+            <div class="pub-actions"><a class="button btn-secondary" href="https://doi.org/10.5281/zenodo.21330255">باز کردن راهنما ↗</a><button class="button btn-secondary copy-doi" data-copy="10.5281/zenodo.21330255">کپی DOI</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="author-section shell">
+      <div class="author-card reveal-scale">
+        <div><p class="eyebrow">نویسنده</p><h2>Soheil<br /><em>Mozaffari</em></h2><p class="author-role-tag">مهندس نرم‌افزار و معمارِ سامانه‌ها</p></div>
+        <div>
+          <p>متمرکز بر روش‌شناسیِ رابط‌محور، اعمالِ قرارداد، معماری نرم‌افزار، راستی‌آزماییِ خودکار و توسعهٔ با کمک هوش مصنوعی.</p>
+          <div class="author-links">
+            <a class="author-link" href="https://orcid.org/0009-0001-2428-1295">ORCID <span>↗</span></a>
+            <a class="author-link" href="https://github.com/so-muzaff">GitHub <span>↗</span></a>
+            <a class="author-link" href="https://www.linkedin.com/in/su-muzaff/">LinkedIn <span>↗</span></a>
+            <a class="author-link" href="https://so-muzaff.github.io">وب‌سایت شخصی <span>↗</span></a>
+            <a class="author-link" href="author.html">نمایهٔ کامل <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="shell final-cta-inner">
+        <div><p class="eyebrow">از منبع آغاز کنید</p><h2>پیش از داوری دربارهٔ پیاده‌سازی،<br />توافق را بفهمید.</h2></div>
+        <a class="button btn-secondary" href="https://doi.org/10.5281/zenodo.20621561">مطالعهٔ IFEM v2.2 <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <script src="../assets/nav.js?v=20260815-i18n-theme"></script>
+  <script src="../assets/shared.js?v=20260815-i18n-theme"></script>
+</body>
+</html>

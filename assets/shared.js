@@ -33,7 +33,7 @@ document.documentElement.classList.add('motion-ready');
       const value = button.dataset.copy || '';
       try {
         await navigator.clipboard.writeText(value);
-        toast.textContent = button.dataset.label || 'Copied to clipboard';
+        toast.textContent = button.dataset.label || (document.documentElement.lang === 'fa' ? 'در کلیپ‌بورد کپی شد' : 'Copied to clipboard');
       } catch (error) {
         toast.textContent = value;
       }
@@ -117,6 +117,7 @@ document.documentElement.classList.add('motion-ready');
   if (!system || !steps.length || !heading || !copy) return;
 
   const systemSvg = system.querySelector('.hv-svg');
+  const isFarsi = document.documentElement.lang === 'fa';
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let isSystemVisible = true;
 
@@ -159,9 +160,11 @@ document.documentElement.classList.add('motion-ready');
   steps.forEach((step) => step.addEventListener('click', () => {
     applyState(step.dataset.heroState || 'layers', step);
     if (status) status.textContent = step.dataset.heroState === 'freeze'
-      ? 'Ready to lock this agreement as an explicit version.'
-      : 'Select Freeze contract to lock the current agreement.';
-    if (freezeButton) freezeButton.innerHTML = '<span aria-hidden="true">▣</span> Freeze contract <b>v2.2</b>';
+      ? (isFarsi ? 'این توافق برای تثبیت به‌صورت یک نسخهٔ صریح آماده است.' : 'Ready to lock this agreement as an explicit version.')
+      : (isFarsi ? 'برای تثبیت توافق فعلی، «تثبیت قرارداد» را انتخاب کنید.' : 'Select Freeze contract to lock the current agreement.');
+    if (freezeButton) freezeButton.innerHTML = isFarsi
+      ? '<span aria-hidden="true">▣</span> تثبیت قرارداد <b>v2.2</b>'
+      : '<span aria-hidden="true">▣</span> Freeze contract <b>v2.2</b>';
   }));
 
   if (freezeButton) {
@@ -171,9 +174,49 @@ document.documentElement.classList.add('motion-ready');
       system.classList.remove('is-freezing');
       void system.offsetWidth;
       system.classList.add('is-freezing');
-      freezeButton.innerHTML = '<span aria-hidden="true">✓</span> Contract frozen <b>v2.2</b>';
-      if (status) status.textContent = 'Contract v2.2 is frozen. Parallel work is now bounded by the explicit agreement.';
+      freezeButton.innerHTML = isFarsi
+        ? '<span aria-hidden="true">✓</span> قرارداد تثبیت شد <b>v2.2</b>'
+        : '<span aria-hidden="true">✓</span> Contract frozen <b>v2.2</b>';
+      if (status) status.textContent = isFarsi
+        ? 'قرارداد v2.2 تثبیت شد. اکنون کار موازی با توافق صریح محدود و هدایت می‌شود.'
+        : 'Contract v2.2 is frozen. Parallel work is now bounded by the explicit agreement.';
       window.setTimeout(() => system.classList.remove('is-freezing'), 1100);
     });
   }
+})();
+
+/* Appearance preference: persist explicit selection and respect the system default until the user chooses. */
+(function () {
+  const toggle = document.querySelector('.theme-toggle');
+  if (!toggle) return;
+  const isFarsi = document.documentElement.lang === 'fa';
+  const labels = isFarsi
+    ? { light: 'فعال‌کردن حالت روشن', dark: 'فعال‌کردن حالت تیره' }
+    : { light: 'Use light appearance', dark: 'Use dark appearance' };
+  const systemPreference = window.matchMedia('(prefers-color-scheme: dark)');
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+
+  const setTheme = (theme, persist = false) => {
+    const normalized = theme === 'dark' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = normalized;
+    if (themeColor) themeColor.setAttribute('content', normalized === 'dark' ? '#0c1422' : '#f6f7f4');
+    toggle.setAttribute('aria-label', normalized === 'dark' ? labels.light : labels.dark);
+    toggle.setAttribute('title', normalized === 'dark' ? labels.light : labels.dark);
+    toggle.setAttribute('aria-pressed', String(normalized === 'dark'));
+    if (persist) {
+      try { localStorage.setItem('ifem-theme', normalized); } catch (error) { /* Storage may be unavailable. */ }
+    }
+  };
+
+  setTheme(document.documentElement.dataset.theme);
+  toggle.addEventListener('click', () => {
+    setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+  });
+  systemPreference.addEventListener('change', (event) => {
+    try {
+      if (!localStorage.getItem('ifem-theme')) setTheme(event.matches ? 'dark' : 'light');
+    } catch (error) {
+      setTheme(event.matches ? 'dark' : 'light');
+    }
+  });
 })();

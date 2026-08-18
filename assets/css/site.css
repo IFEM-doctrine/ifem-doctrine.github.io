@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/assets/fonts/vazirmatn/Vazirmatn%5Bwght%5D.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   --navy: #0B1F33;
   --blue: #2563EB;
@@ -279,7 +287,12 @@ button { font: inherit; }
 .publication-list .publication-card { min-height: 0; }
 .copy-button { cursor: pointer; }
 .copy-status { color: var(--teal); font-size: .8rem; font-weight: 700; min-height: 1.4em; }
-.farsi { font-family: Tahoma, Arial, sans-serif; }
+.farsi { font-family: "Vazirmatn", Tahoma, Arial, sans-serif; font-synthesis: none; }
+html[lang="fa"], html[lang="fa"] body, html[lang="fa"] button, html[lang="fa"] input, html[lang="fa"] select, html[lang="fa"] textarea { font-family: "Vazirmatn", Tahoma, Arial, sans-serif; font-synthesis: none; }
+html[lang="fa"] .eyebrow, html[lang="fa"] .diagram-label, html[lang="fa"] .principle-num, html[lang="fa"] .phase-number, html[lang="fa"] .pub-type, html[lang="fa"] .footer-heading { font-family: "Vazirmatn", Tahoma, Arial, sans-serif; letter-spacing: 0; text-transform: none; }
+html[lang="fa"] .page-hero h1, html[lang="fa"] .hero h1, html[lang="fa"] .section-heading h2, html[lang="fa"] .prose h2, html[lang="fa"] .prose h3 { letter-spacing: 0; line-height: 1.35; }
+html[lang="fa"] .page-hero p, html[lang="fa"] .prose p, html[lang="fa"] .prose li { line-height: 1.9; }
+html[lang="fa"] .page-hero-meta, html[lang="fa"] .doi, html[lang="fa"] .citation, html[lang="fa"] code, html[lang="fa"] pre, html[lang="fa"] .code-block { font-family: var(--mono); }
 .farsi .primary-nav, .farsi .nav-actions { direction: rtl; }
 .farsi .brand-name { direction: ltr; }
 .farsi .hero h1, .farsi .section-heading h2, .farsi .page-hero h1 { letter-spacing: 0; }

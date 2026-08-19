@@ -104,6 +104,47 @@
         <h2 id="responsibility">3. Responsibility must be assignable</h2>
         <p>Interfaces often fail because no one can say which component owns a rule, data shape, or migration. IFEM makes ownership legible at the boundary. This supports decision-making when a change is requested and makes it clear which group must provide evidence of compliance.</p>
 
+
+        <section class="doctrine-addition execution-handover" id="handover" aria-labelledby="handover-heading">
+          <div class="handover-copy">
+            <p class="eyebrow">Execution package</p>
+            <h2 id="handover-heading">The Handover Is Executable</h2>
+            <p>In IFEM, a handover is not just a document passed downstream. It is a bounded execution package: enough explicit context for a human or software executor to begin work inside a defined boundary without having to reconstruct the architecture from meetings, chat history, or undocumented assumptions.</p>
+            <p>A useful handover names the objective, assigned boundary, applicable contracts, permitted scope, dependencies, acceptance criteria, verification path, and escalation conditions. It does not remove judgment; it limits how much of the surrounding architecture must be inferred before work can begin.</p>
+            <p class="reference-note">The reference fields shown here are not mandated syntax. Teams may encode them differently, provided the decisions that matter to execution remain explicit, reviewable, and stable enough for independent work.</p>
+          </div>
+          <figure class="handover-flow" aria-labelledby="handover-visual-title" aria-describedby="handover-caption">
+            <p class="diagram-label" id="handover-visual-title">Architecture → Executable Handover → Human / Agent Executor → Verification</p>
+            <div class="handover-flow-track">
+              <article class="handover-stage"><span class="stage-number">01</span><strong>Architecture</strong><small>Intent · boundaries · authority</small></article>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <article class="handover-package"><span class="stage-number">02</span><strong>Executable Handover</strong><ul><li>Objective</li><li>Assigned boundary</li><li>Applicable contracts</li><li>Allowed read / modification / forbidden scope</li><li>Dependencies / mocks</li><li>Acceptance / verification</li><li>Escalation conditions</li></ul></article>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <article class="handover-stage"><span class="stage-number">03</span><strong>Human / Software Executor</strong><small>Implementation inside the assigned boundary</small></article>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <article class="handover-stage handover-stage--verify"><span class="stage-number">04</span><strong>Verification</strong><small>Evidence against defined conditions</small></article>
+            </div>
+            <figcaption id="handover-caption">A reference execution package makes the information needed to begin bounded work visible without claiming that all clarification disappears.</figcaption>
+          </figure>
+        </section>
+
+        <section class="doctrine-addition authority-model" id="authorities" aria-labelledby="authorities-heading">
+          <p class="eyebrow">Authority separation</p>
+          <h2 id="authorities-heading">Three Authorities of Execution</h2>
+          <p class="authority-signature">Architecture defines. Execution implements. Verification accepts or rejects.</p>
+          <figure class="authority-flow" aria-labelledby="authority-visual-title" aria-describedby="authority-caption">
+            <p class="diagram-label" id="authority-visual-title">Architect → Executor → Verifier</p>
+            <article><span class="stage-number">01</span><strong>Architect</strong><small>Defines topology, boundaries, contract intent, ownership, allowed authority, and amendment decisions.</small></article>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <article><span class="stage-number">02</span><strong>Executor</strong><small>Implements inside the assigned boundary against applicable contracts. It may be a human engineer, team, AI coding agent, or another automated implementation system.</small></article>
+            <span class="flow-arrow" aria-hidden="true">→</span>
+            <article class="authority-flow--verify"><span class="stage-number">03</span><strong>Verifier</strong><small>Evaluates conformance, tests, compatibility, architecture and policy constraints, and required evidence.</small></article>
+            <figcaption id="authority-caption">The verifier decides whether the defined acceptance conditions were satisfied; it does not prove that the system is globally correct.</figcaption>
+          </figure>
+          <p>IFEM separates three kinds of authority. The Architect defines topology, boundaries, contract intent, ownership, scope of authority, and amendment decisions. The Executor implements within the assigned boundary against the applicable contracts. The executor may be an engineer, a team, an AI coding agent, or another automated system. It has implementation freedom inside the boundary, but not unilateral authority to rewrite shared agreements.</p>
+          <p>The Verifier evaluates whether the defined conditions have been met: contract conformance, tests, compatibility, architecture and policy constraints, and the required evidence. This is an acceptance decision, not a proof of global correctness. In a small project, one person or tool may perform more than one role, but the responsibilities should remain conceptually separate. In particular, the executor should not be the only authority that approves its own output.</p>
+        </section>
+
         <section class="doctrine-addition doctrine-addition--wide" id="assembly" aria-labelledby="assembly-heading">
           <p class="eyebrow">Independent execution under known constraints</p>
           <h2 id="assembly-heading">Integration as Assembly, Not Negotiation</h2>
@@ -168,8 +209,25 @@
           </figure>
         </section>
 
+
+        <section class="doctrine-addition contract-quality-gate" id="quality-gate" aria-labelledby="quality-gate-heading">
+          <p class="eyebrow">IFEM Contract Quality Gate</p>
+          <h2 id="quality-gate-heading">Is the Contract Ready for Independent Execution?</h2>
+          <p>This is a readiness heuristic for independent execution—not a certification, and not proof that the architecture is correct. It asks whether the contract is sufficiently self-contained, complete, unambiguous, verifiable, integrable, and mockable for work to proceed with less hidden coordination.</p>
+          <ol class="quality-grid" aria-label="Six contract readiness questions">
+            <li><span>01</span><strong>Self-contained</strong><p>Can an executor begin without relying on hidden context or undocumented decisions? A self-contained contract does not need to reproduce the entire project history.</p></li>
+            <li><span>02</span><strong>Complete</strong><p>Are interaction-relevant inputs, outputs, errors, constraints, ownership, and acceptance conditions defined?</p></li>
+            <li><span>03</span><strong>Unambiguous</strong><p>Could two competent executors read the same contract and reach materially incompatible interpretations? The question identifies ambiguity risk; it does not promise perfect interpretation.</p></li>
+            <li><span>04</span><strong>Verifiable</strong><p>Can the important obligations be checked through tests, schemas, static analysis, runtime checks, evidence review, or another appropriate mechanism?</p></li>
+            <li><span>05</span><strong>Integrable</strong><p>Can conforming components connect without redesigning the boundary during integration? This does not guarantee defect-free integration.</p></li>
+            <li><span>06</span><strong>Mockable</strong><p>Can a dependent component build a useful test double or mock from the contract alone? A mock enables earlier dependent work; it does not prove production compatibility.</p></li>
+          </ol>
+        </section>
+
         <h2 id="freedom">5. Implementation freedom exists behind stable boundaries</h2>
         <p>IFEM does not prescribe a single internal implementation. Stable external agreements allow teams and agents to make local decisions without redefining shared behavior. This is the source of useful autonomy: implementation can move quickly within a scope whose commitments are known.</p>
+        <aside class="cohesion-principle" aria-label="Cohesion and contracts principle"><p class="diagram-label">Cohesion Within. Contracts Between.</p><p>IFEM aims for strong local cohesion and implementation freedom inside a responsibility boundary, with explicit contracts between boundaries. Internal implementation can evolve. Shared behavior should change through an explicit contract decision.</p></aside>
+
 
         <h2 id="runtime">6. Runtime enforcement extends design intent</h2>
         <p>Where a system requires it, contract discipline continues beyond build and test environments. The Runtime Manual focuses on production enforcement surfaces, including progressive delivery and state-migration contexts, treated as machine-driven contract validation opportunities rather than mere release rituals.</p>

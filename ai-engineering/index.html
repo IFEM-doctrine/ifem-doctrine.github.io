@@ -76,6 +76,13 @@
           <p class="agentic-closing">The agent may propose an implementation. It does not get to redefine the contract or approve its own output. Agentic IFEM is therefore not another coding model. It is a governance and execution layer around coding agents.</p>
         </section>
 
+
+        <section class="agentic-authority-reference" aria-labelledby="agentic-authority-heading">
+          <p class="eyebrow">Compact authority reference</p>
+          <h2 id="agentic-authority-heading">Architect → Agent → Verifier</h2>
+          <p>For agentic execution, the same separation becomes compact: <strong>Architect defines. Agent executes. Verifier accepts or rejects against defined conditions.</strong></p><p>The agent receives an <a href="/doctrine/#handover">executable handover</a> and an explicit execution envelope. It should not have to infer or renegotiate shared architecture from the prompt. The full treatment lives in the Doctrine sections on <a href="/doctrine/#authorities">handover and authority</a>, and in the <a href="/how-it-works/#artifacts">operational artifact set</a>.</p>
+        </section>
+
         <h2>What IFEM makes explicit</h2>
         <p>AI-assisted engineering benefits when the shared state of a project is represented in machine-readable, independently checkable forms. IFEM brings attention to the architectural points at which an agent’s otherwise reasonable local decision could conflict with another component or owner.</p>
         <div class="principle-grid" style="margin-top:2rem"><article class="principle"><span class="principle-num">SCOPE</span><h3>Allowed responsibility</h3><p>The task boundary identifies what the agent may change and what remains outside its authority.</p></article><article class="principle"><span class="principle-num">AGREEMENT</span><h3>Explicit contract</h3><p>Inputs, outputs, errors, compatibility, and acceptance expectations are not left to prompt interpretation alone.</p></article><article class="principle"><span class="principle-num">EVIDENCE</span><h3>Verification path</h3><p>The implementation can be assessed against a known set of checks instead of a vague impression of plausibility.</p></article></div>

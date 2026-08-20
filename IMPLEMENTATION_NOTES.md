@@ -8,7 +8,7 @@ The authoritative primary source is **Interface-First Execution Methodology (IFE
 
 The authoritative supplement is **Operational Runtime Manual: Interface-First Execution Methodology — Contract Enforcement in Production (Phases 5 & 6)**, DOI `10.5281/zenodo.21330255`, published on Zenodo as a project deliverable. Zenodo identifies it as a supplement to the v2.2 primary publication.
 
-The persistent author identity is **Soheil Mozaffari**, linked to ORCID `0009-0001-2428-1295` and the personal site `https://so-muzaff.github.io/`. Zenodo currently displays a creator-name variation, but the site follows the requested public attribution while retaining the authoritative ORCID relationship.
+The persistent author identity is **Soheil Mozaffari**, linked to ORCID `0009-0001-2428-1295` and the personal site `https://smozaff.github.io/`. Zenodo currently displays a creator-name variation, but the site follows the requested public attribution while retaining the authoritative ORCID relationship.
 
 ## Implementation approach
 

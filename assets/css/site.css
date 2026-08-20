@@ -589,3 +589,28 @@ html[lang="fa"] .quality-grid li > span, html[lang="fa"] .artifact-grid article 
   .quality-grid, .artifact-grid { grid-template-columns: 1fr; }
   .reference-structure { grid-template-columns: 1fr; gap: 1rem; }
 }
+
+
+/* Persian native typography refinement */
+html[lang="fa"] .explainer-copy h3,
+html[lang="fa"] .contract-card h3,
+html[lang="fa"] .ai-claim,
+html[lang="fa"] .publication-card h3,
+html[lang="fa"] .author-name h3,
+html[lang="fa"] .final-cta h2,
+html[lang="fa"] .constitution-layout h3,
+html[lang="fa"] .verification-governance-copy h3 {
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+html[lang="fa"] .author-chip {
+  letter-spacing: 0;
+  direction: rtl;
+}
+
+html[lang="fa"] .author-chip a,
+html[lang="fa"] bdi[lang="en"][dir="ltr"] {
+  unicode-bidi: isolate;
+}

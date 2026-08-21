@@ -137,3 +137,38 @@
     });
   });
 })();
+
+/* 2026-08-21 global navigation and scroll-reveal enhancements */
+(() => {
+  'use strict';
+  const isFa = document.documentElement.lang === 'fa' || document.documentElement.dir === 'rtl';
+  let back = document.querySelector('.back-to-top');
+  if (!back) {
+    back = document.createElement('a');
+    back.className = 'back-to-top';
+    back.href = '#main';
+    back.textContent = isFa ? '↑ بالا' : '↑ Top';
+    back.setAttribute('aria-label', isFa ? 'بازگشت به بالای صفحه' : 'Back to top');
+    document.body.append(back);
+  }
+  const updateBack = () => back.classList.toggle('is-visible', window.scrollY > Math.max(520, innerHeight * .7));
+  updateBack();
+  addEventListener('scroll', updateBack, { passive: true });
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const targets = document.querySelectorAll('.page-hero,.hero-grid,.proof-item,.section-heading,.principle,.phase,.example-card,.case-study-media,.publication-card,.author-panel,.doctrine-addition,.final-cta-wrap');
+  targets.forEach((el, index) => {
+    el.classList.add('reveal-item');
+    if (index % 3 === 1) el.classList.add('reveal-side');
+  });
+  if (reduce || !('IntersectionObserver' in window)) targets.forEach(el => el.classList.add('is-visible'));
+  else {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }), { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+    targets.forEach(el => observer.observe(el));
+  }
+})();

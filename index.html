@@ -1,235 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0B1F33">
-  <title>Interface-First Execution Methodology (IFEM) — IFEM Doctrine</title>
-  <meta name="description" content="Interface-First Execution Methodology (IFEM) is a software engineering methodology for explicit interfaces, contracts, responsibility boundaries, parallel execution, and verification.">
-  <link rel="canonical" href="https://ifem-doctrine.github.io/">
-  <link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/">
-  <link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/">
-  <link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/">
-  <link rel="icon" href="/assets/images/ifem-mark.svg" type="image/svg+xml">
-  <meta property="og:title" content="Interface-First Execution Methodology (IFEM) — IFEM Doctrine">
-  <meta property="og:description" content="Explicit interfaces, contracts, responsibility boundaries, parallel execution, and verification.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ifem-doctrine.github.io/">
-  <meta property="og:image" content="https://ifem-doctrine.github.io/assets/images/ifem-social-card.svg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://ifem-doctrine.github.io/assets/images/ifem-social-card.svg">
-  <link rel="stylesheet" href="/assets/css/site.css">
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#0B1F33" name="theme-color"/>
+<title>Interface-First Execution Methodology (IFEM) — IFEM Doctrine</title>
+<meta content="Interface-First Execution Methodology (IFEM) is a software engineering methodology for explicit interfaces, contracts, responsibility boundaries, parallel execution, and verification." name="description"/>
+<link href="https://ifem-doctrine.github.io/" rel="canonical"/>
+<link href="https://ifem-doctrine.github.io/" hreflang="en" rel="alternate"/>
+<link href="https://ifem-doctrine.github.io/fa/" hreflang="fa" rel="alternate"/>
+<link href="https://ifem-doctrine.github.io/" hreflang="x-default" rel="alternate"/>
+<link href="/assets/images/ifem-mark.svg" rel="icon" type="image/svg+xml"/>
+<meta content="Interface-First Execution Methodology (IFEM) — IFEM Doctrine" property="og:title"/>
+<meta content="Explicit interfaces, contracts, responsibility boundaries, parallel execution, and verification." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ifem-doctrine.github.io/" property="og:url"/>
+<meta content="https://ifem-doctrine.github.io/assets/images/ifem-social-card.svg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://ifem-doctrine.github.io/assets/images/ifem-social-card.svg" name="twitter:image"/>
+<link href="/assets/css/site.css" rel="stylesheet"/>
+<script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"WebSite","@id":"https://ifem-doctrine.github.io/#website","url":"https://ifem-doctrine.github.io/","name":"IFEM Doctrine","description":"A technical doctrine site for Interface-First Execution Methodology."},
     {"@type":"Person","@id":"https://ifem-doctrine.github.io/#soheil-muzaffari","name":"Soheil Mozaffari","url":"https://smozaff.github.io/","sameAs":["https://orcid.org/0009-0001-2428-1295","https://github.com/SMozaff","https://www.linkedin.com/in/su-muzaff/"]},
     {"@type":"TechArticle","@id":"https://doi.org/10.5281/zenodo.20621561","name":"Interface-First Execution Methodology (IFEM): A Unified Framework for High-Parallelism, AI-Assisted Software Engineering (Version 2.2)","identifier":"https://doi.org/10.5281/zenodo.20621561","url":"https://doi.org/10.5281/zenodo.20621561","author":{"@id":"https://ifem-doctrine.github.io/#soheil-muzaffari"},"isPartOf":{"@id":"https://ifem-doctrine.github.io/#website"}}
   ]}
   </script>
-
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://doi.org/10.5281/zenodo.21330255","name":"Operational Runtime Manual: Interface-First Execution Methodology — Contract Enforcement in Production (Phases 5 & 6)","author":{"@id":"https://smozaff.github.io/#soheil-muzaffari","@type":"Person","name":"Soheil Mozaffari","sameAs":"https://orcid.org/0009-0001-2428-1295"},"datePublished":"2026-07-13","identifier":"https://doi.org/10.5281/zenodo.21330255","isBasedOn":{"@id":"https://doi.org/10.5281/zenodo.20621561"},"genre":"Project deliverable","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/"}</script>
-<meta content="en_US" property="og:locale"/><meta content="fa_IR" property="og:locale:alternate"/>  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <meta property="og:site_name" content="IFEM Doctrine">
-  <meta property="og:image:alt" content="IFEM Doctrine visual identity">
-  <meta name="twitter:title" content="Interface-First Execution Methodology (IFEM) — IFEM Doctrine">
-  <meta name="twitter:description" content="Interface-First Execution Methodology (IFEM) is a software engineering methodology for explicit interfaces, contracts, responsibility boundaries, parallel execution, and verification.">
-  <meta name="twitter:image:alt" content="IFEM Doctrine visual identity">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://ifem-doctrine.github.io/#webpage","url":"https://ifem-doctrine.github.io/","name":"Interface-First Execution Methodology (IFEM) — IFEM Doctrine","description":"Interface-First Execution Methodology (IFEM) is a software engineering methodology for explicit interfaces, contracts, responsibility boundaries, parallel execution, and verification.","inLanguage":"en","isPartOf":{"@id":"https://ifem-doctrine.github.io/#website"},"about":{"@type":"Thing","name":"Interface-First Execution Methodology (IFEM)","url":"https://ifem-doctrine.github.io/"},"author":{"@id":"https://smozaff.github.io/#person"}}</script>
-</head>
+<meta content="en_US" property="og:locale"><meta content="fa_IR" property="og:locale:alternate"> <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<meta content="IFEM Doctrine" property="og:site_name"/>
+<meta content="IFEM Doctrine visual identity" property="og:image:alt"/>
+<meta content="Interface-First Execution Methodology (IFEM) — IFEM Doctrine" name="twitter:title"/>
+<meta content="Interface-First Execution Methodology (IFEM) is a software engineering methodology for explicit interfaces, contracts, responsibility boundaries, parallel execution, and verification." name="twitter:description"/>
+<meta content="IFEM Doctrine visual identity" name="twitter:image:alt"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://ifem-doctrine.github.io/#webpage","url":"https://ifem-doctrine.github.io/","name":"Interface-First Execution Methodology (IFEM) — IFEM Doctrine","description":"Interface-First Execution Methodology (IFEM) is a software engineering methodology for explicit interfaces, contracts, responsibility boundaries, parallel execution, and verification.","inLanguage":"en","isPartOf":{"@id":"https://ifem-doctrine.github.io/#website"},"about":{"@type":"Thing","name":"Interface-First Execution Methodology (IFEM)","url":"https://ifem-doctrine.github.io/"},"author":{"@id":"https://smozaff.github.io/#person"}}</script>
+</meta></meta></head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="/" aria-label="IFEM Doctrine home">
-        <img class="brand-mark" src="/assets/images/ifem-mark.svg" alt="">
-        <span class="brand-name">IFEM<span>DOCTRINE</span></span>
-      </a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-navigation">Menu</button>
-      <nav class="primary-nav" id="primary-navigation" data-primary-nav aria-label="Primary navigation">
-        <a href="/doctrine/">Doctrine</a>
-        <a href="/how-it-works/">How It Works</a>
-        <a href="/ai-engineering/">AI Engineering</a>
-        <a href="/examples/">Examples</a>
-        <a href="/applications/">Applications</a>
-        <a href="/publications/">Publications</a>
-        <a href="/about/">About IFEM</a>
-      </nav>
-      <div class="nav-actions"><a class="language-link" lang="fa" href="/fa/">فارسی</a><a class="button button--primary button--nav" href="https://doi.org/10.5281/zenodo.20621561">Read IFEM v2.2 <span aria-hidden="true">↗</span></a></div>
-    </div>
-  </header>
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="hero-kicker">A technical doctrine for controlled execution</p>
-          <h1>Interface-First <span>Execution</span> Methodology</h1>
-          <p class="hero-lede">IFEM is a software engineering methodology for defining interfaces, contracts, responsibilities, and verification boundaries before large-scale parallel implementation begins.</p>
-          <div class="hero-actions">
-            <a class="button button--primary" href="#how-ifem-works">See how IFEM works <span aria-hidden="true">↓</span></a>
-            <a class="button button--line" href="https://doi.org/10.5281/zenodo.20621561">Read IFEM v2.2 <span aria-hidden="true">↗</span></a>
-          </div>
-          <p class="author-chip"><span class="chip-mark" aria-hidden="true"></span> Authored by <a href="https://smozaff.github.io/">Soheil Mozaffari</a></p>
-        </div>
-        <div class="hero-diagram" data-hero-diagram data-phase="ambiguity" aria-labelledby="hero-diagram-title">
-          <div class="diagram-topline"><span id="hero-diagram-title">IFEM / system transition</span><span class="live-state">Instructional sequence</span></div>
-          <div class="diagram-stage" aria-hidden="true">
-            <div class="layer-frame"></div>
-            <div class="path path--a"></div><div class="path path--b"></div><div class="path path--c"></div><div class="path path--d"></div>
-            <span class="data-node data-node--a">Client</span><span class="data-node data-node--b">Service</span><span class="data-node data-node--c">State</span><span class="data-node data-node--d">AI agent</span>
-            <div class="plane plane--one"><span>Experience <b>Client boundary</b></span></div>
-            <div class="plane plane--two"><span>Services <b>Domain boundary</b></span></div>
-            <div class="plane plane--three"><span>State <b>Infrastructure boundary</b></span></div>
-            <div class="checkpoint checkpoint--one"></div><div class="checkpoint checkpoint--two"></div>
-          </div>
-          <p class="diagram-caption" data-phase-message aria-live="polite"><b>Ambiguity:</b> implementation begins before boundaries are explicit.</p>
-          <div class="hero-controls" role="group" aria-label="IFEM explanatory sequence">
-            <button type="button" data-hero-phase="ambiguity" data-phase-message="Ambiguity: implementation begins before boundaries are explicit." aria-pressed="true">01 Ambiguity</button>
-            <button type="button" data-hero-phase="interfaces" data-phase-message="Boundaries: define the system before parallel execution." aria-pressed="false" tabindex="-1">02 Boundaries</button>
-            <button type="button" data-hero-phase="contracts" data-phase-message="Contracts: turn interfaces into executable agreements." aria-pressed="false" tabindex="-1">03 Contracts</button>
-            <button type="button" data-hero-phase="parallel" data-phase-message="Parallel execution: independent streams move behind frozen boundaries." aria-pressed="false" tabindex="-1">04 Execute</button>
-            <button type="button" data-hero-phase="verification" data-phase-message="Verification: only contract-compliant paths proceed to controlled integration." aria-pressed="false" tabindex="-1">05 Verify</button>
-          </div>
-          <button class="button button--line button--small" type="button" data-hero-pause aria-pressed="false" style="margin-top:.8rem">Pause sequence</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="proof-strip" aria-label="IFEM core principle">
-      <div class="container proof-grid">
-        <div class="proof-item"><b>01</b><span>Interfaces before implementation</span></div>
-        <div class="proof-item"><b>02</b><span>Contracts before parallel execution</span></div>
-        <div class="proof-item"><b>03</b><span>Verification before acceptance</span></div>
-      </div>
-    </section>
-
-    <section class="section section--white" aria-labelledby="problem-title">
-      <div class="container">
-        <div class="section-heading section-heading--split"><div><p class="eyebrow">The coordination problem</p><h2 id="problem-title">Parallel work is easy. Parallel work with shared assumptions is not.</h2></div><p>Teams and coding agents can move quickly when responsibilities are divided. The failure point is usually the boundary: undocumented assumptions, accidental APIs, incompatible schemas, unclear ownership, and integration rules that exist only in someone’s head.</p></div>
-        <div class="comparison">
-          <article class="flow-card flow-card--danger"><p class="eyebrow eyebrow--orange">Implementation-first</p><h3>Interfaces emerge during the work.</h3><ol class="flow-list"><li>Requirements</li><li>Teams immediately code</li><li>Assumptions diverge</li><li>Interfaces emerge accidentally</li><li>Integration exposes conflicts</li><li>Rework</li></ol></article>
-          <article class="flow-card flow-card--good"><p class="eyebrow">Interface-first</p><h3>Shared rules are established before the work scales.</h3><ol class="flow-list"><li>Intent</li><li>Architecture</li><li>Interfaces</li><li>Contracts</li><li>Responsibility boundaries</li><li>Parallel implementation</li><li>Verification</li><li>Controlled integration</li></ol></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft section--ruled" id="doctrine" aria-labelledby="doctrine-title">
-      <div class="container">
-        <div class="section-heading"><p class="eyebrow">The IFEM doctrine</p><h2 id="doctrine-title">Make the boundary explicit before scaling the execution.</h2><p>IFEM treats interfaces as first-class architectural objects. Contracts make those boundaries explicit enough for independent implementation, while verification turns agreement into evidence.</p></div>
-        <div class="principle-grid">
-          <article class="principle"><span class="principle-num">01 / BOUNDARY</span><h3>Boundaries are design objects.</h3><p>An interface is not a side effect of implementation. It is an explicit architectural object.</p></article>
-          <article class="principle"><span class="principle-num">02 / CONTRACT</span><h3>Contracts precede parallel execution.</h3><p>Shared interaction rules should be explicit enough to support independent execution.</p></article>
-          <article class="principle"><span class="principle-num">03 / OWNER</span><h3>Responsibility must be assignable.</h3><p>Each contract needs legible ownership and accountability.</p></article>
-          <article class="principle"><span class="principle-num">04 / EVIDENCE</span><h3>Verification is part of architecture.</h3><p>A contract is stronger when it can be checked automatically and evidenced.</p></article>
-          <article class="principle"><span class="principle-num">05 / FREEDOM</span><h3>Freedom exists behind stable boundaries.</h3><p>Teams may make local choices while preserving external agreements.</p></article>
-          <article class="principle"><span class="principle-num">06 / RUNTIME</span><h3>Enforcement extends design intent.</h3><p>Where applicable, contract discipline continues through deployment and production.</p></article>
-        </div>
-        <p style="margin-top:2rem"><a class="button button--line" href="/doctrine/">Read the doctrine in detail <span aria-hidden="true">→</span></a></p>
-      </div>
-    </section>
-
-    <section class="section section--white" id="how-ifem-works" aria-labelledby="method-title">
-      <div class="container">
-        <div class="section-heading section-heading--split"><div><p class="eyebrow">How IFEM works</p><h2 id="method-title">From intent to controlled execution.</h2></div><p>The seven-phase framework follows a clear progression: make architectural intent visible, define and freeze contracts, then use verification to govern what integrates.</p></div>
-        <div class="phase-track" aria-label="Seven phases of IFEM">
-          <article class="phase"><span class="phase-number">01</span><h3>Intent</h3><p>Define the engineering outcome and constraints.</p></article>
-          <article class="phase"><span class="phase-number">02</span><h3>Architecture</h3><p>Identify responsibilities and system boundaries.</p></article>
-          <article class="phase"><span class="phase-number">03</span><h3>Interfaces</h3><p>Define how components interact.</p></article>
-          <article class="phase"><span class="phase-number">04</span><h3>Contracts</h3><p>Encode schemas, ownership, errors, compatibility, and acceptance.</p></article>
-          <article class="phase"><span class="phase-number">05</span><h3>Parallel execution</h3><p>Implement independently behind stable boundaries.</p></article>
-          <article class="phase"><span class="phase-number">06</span><h3>Verification</h3><p>Validate compliance with tests, checks, and evidence.</p></article>
-          <article class="phase"><span class="phase-number">07</span><h3>Runtime enforcement</h3><p>Extend discipline into delivery and production where applicable.</p></article>
-        </div>
-        <p style="margin-top:2rem"><a class="button button--primary" href="/how-it-works/">Explore the phase model <span aria-hidden="true">→</span></a></p>
-      </div>
-    </section>
-
-    <section class="section section--soft" aria-labelledby="interfaces-title">
-      <div class="container diagram-grid">
-        <div class="explainer-copy"><p class="eyebrow">Why interfaces first</p><h3 id="interfaces-title">The interface exposes the dependency before implementation hides it.</h3><p>Interfaces clarify ownership, make dependencies legible, create testable expectations, and give distributed teams a stable constraint around which they can work in parallel.</p><ul class="detail-list"><li>Dependencies become visible and negotiable.</li><li>Ownership is assigned rather than inferred.</li><li>Change is constrained by explicit compatibility rules.</li><li>Verification can check expectations at the boundary.</li></ul></div>
-        <figure class="interface-map"><figcaption class="map-title">Illustrative system map</figcaption><div class="map-stage" aria-label="Client, service, domain, and state components coordinate through an explicit contract"><span class="map-line map-line--a"></span><span class="map-line map-line--b"></span><span class="map-line map-line--c"></span><span class="map-line map-line--d"></span><div class="map-box map-box--client">Client</div><div class="map-box map-box--service">Service</div><div class="map-box map-box--domain">Domain</div><div class="map-box map-box--state">State</div><div class="map-contract">Explicit contract<span>schema · owner · compatibility · evidence</span></div></div></figure>
-      </div>
-    </section>
-
-    <section class="section section--white" aria-labelledby="contract-title">
-      <div class="container contract-layout">
-        <div class="contract-card"><header><small>Illustrative contract</small><h3>UserProfile.Read</h3></header><dl><div class="contract-row"><dt>Owner</dt><dd>Identity Service</dd></div><div class="contract-row"><dt>Input</dt><dd>User ID</dd></div><div class="contract-row"><dt>Output</dt><dd>Profile schema v3</dd></div><div class="contract-row"><dt>Errors</dt><dd>NOT_FOUND · UNAUTHORIZED</dd></div><div class="contract-row"><dt>Compatibility</dt><dd>Backward-compatible response fields</dd></div><div class="contract-row"><dt>Verification</dt><dd>Schema, consumer, and integration tests</dd></div></dl></div>
-        <div class="explainer-copy"><p class="eyebrow">Contract model</p><h3 id="contract-title">An interface becomes useful when it becomes a contract.</h3><p>A contract describes the interaction in a form that different contributors can rely upon: inputs, outputs, ownership, error behavior, compatibility expectations, and acceptance criteria. The syntax shown here is illustrative, not a mandated IFEM notation.</p><a class="button button--line" href="/examples/">See illustrative examples <span aria-hidden="true">→</span></a></div>
-      </div>
-    </section>
-
-    <section class="section section--soft" aria-labelledby="verification-title">
-      <div class="container verification-layout">
-        <div class="explainer-copy"><p class="eyebrow">Contracts and verification</p><h3 id="verification-title">Verification is the coordination layer.</h3><p>IFEM does not rely only on human memory or prose documentation. Verification can produce evidence that implementation complies with the governing contract before it proceeds toward integration.</p><p>Validation surfaces may include schema checks, compatibility tests, contract tests, integration tests, CI gates, migration checks, deployment checks, and runtime assertions. The appropriate mechanism depends on the system and contract.</p></div>
-        <div class="gate-stack" aria-label="Illustrative verification gates"><div class="gate"><span>01</span><b>Schema validation</b><em>pass</em></div><div class="gate"><span>02</span><b>Compatibility test</b><em>pass</em></div><div class="gate"><span>03</span><b>Integration evidence</b><em>pass</em></div><div class="gate"><span>04</span><b>CI acceptance gate</b><em>proceed</em></div></div>
-      </div>
-    </section>
-
-    <section class="section section--navy" aria-labelledby="ai-title">
-      <div class="container ai-grid">
-        <div><p class="eyebrow">IFEM for AI-assisted engineering</p><h2 id="ai-title" style="font-size:clamp(2.2rem,4.2vw,4rem);line-height:1.05;letter-spacing:-.055em;margin:0">Give the model room to execute — not room to redefine the system.</h2><p style="color:#D6E0ED;max-width:650px">Coding agents can generate implementation rapidly, but speed is not architectural authority. IFEM reduces the surface area in which an AI coding agent is allowed to improvise by making interfaces, responsibilities, contracts, and verification rules explicit.</p><p class="ai-claim">The model proposes.<br>The contract constrains.<br>Verification decides.</p><a class="button button--on-dark" href="/ai-engineering/">Explore AI engineering <span aria-hidden="true">→</span></a></div>
-        <div class="agent-flow" aria-label="Human Architect then IFEM Contract Layer then AI Coding Agent then Allowed Tools and Sandbox then Verification then Accept or Reject"><div class="agent-node"><strong>Human Architect</strong><span>Intent, constraints, planning authority</span></div><div class="agent-arrow">↓</div><div class="agent-node agent-node--contract"><strong>IFEM Contract Layer</strong><span>Scope, interface, acceptance, compatibility</span></div><div class="agent-arrow">↓</div><div class="agent-node"><strong>AI Coding Agent</strong><span>Bounded implementation</span></div><div class="agent-arrow">↓</div><div class="agent-node"><strong>Allowed Tools + Sandbox</strong><span>Permitted execution environment</span></div><div class="agent-arrow">↓</div><div class="agent-node agent-node--verify"><strong>Verification</strong><span>Machine-checkable evidence → accept / reject</span></div></div>
-      </div>
-    </section>
-
-    <section class="section section--white" aria-labelledby="audience-title"><div class="container"><div class="section-heading"><p class="eyebrow">Who IFEM is for</p><h2 id="audience-title">Different roles. One shared source of truth.</h2></div><div class="audience-grid"><article class="audience-card"><span>01</span><h3>Engineering leaders</h3><p>Make ownership, integration rules, and verification expectations explicit before scale amplifies ambiguity.</p></article><article class="audience-card"><span>02</span><h3>Software engineers</h3><p>Work independently with explicit dependencies instead of undocumented moving targets.</p></article><article class="audience-card"><span>03</span><h3>AI-assisted teams</h3><p>Bound agent scope and make acceptance evidence visible and machine-checkable.</p></article><article class="audience-card"><span>04</span><h3>Students</h3><p>Learn boundaries, interfaces, contracts, and verification as first-class concepts.</p></article><article class="audience-card"><span>05</span><h3>Hiring teams</h3><p>Recognize systems thinking and specification discipline beyond technology lists.</p></article></div></div></section>
-
-    <section class="section section--soft" id="case-studies" aria-labelledby="case-studies-title">
-      <div class="container">
-        <div class="section-heading section-heading--split">
-          <div><p class="eyebrow">Case Studies</p><h2 id="case-studies-title">Practical Applications of IFEM.</h2></div>
-          <p>Explore real-world engineering projects architected using IFEM principles, demonstrating explicit boundaries, interface-driven design, and separated responsibilities.</p>
-        </div>
-        <div class="example-grid">
-          <article class="example-card">
-            <span class="example-label">Framework engineering</span>
-            <h3>ONYX Framework</h3>
-            <div class="example-steps">
-              <div class="example-step"><b>IFEM Principles</b><span>Explicit boundaries, modular architecture</span></div>
-              <div class="example-step"><b>External Reference</b><span><a href="https://smozaff.github.io/#onyx" target="_blank" rel="noreferrer">ONYX case study ↗</a></span></div>
-            </div>
-          </article>
-          <article class="example-card">
-            <span class="example-label">Developer tooling</span>
-            <h3>Raven Metadata Extractor</h3>
-            <div class="example-steps">
-              <div class="example-step"><b>IFEM Principles</b><span>Separated responsibilities, modular architecture</span></div>
-              <div class="example-step"><b>External Reference</b><span><a href="https://smozaff.github.io/#raven" target="_blank" rel="noreferrer">Raven case study ↗</a></span></div>
-            </div>
-          </article>
-          <article class="example-card">
-            <span class="example-label">Graphics processing</span>
-            <h3>RezvanMesh</h3>
-            <div class="example-steps">
-              <div class="example-step"><b>IFEM Principles</b><span>Interface-driven design, separated responsibilities</span></div>
-              <div class="example-step"><b>External Reference</b><span><a href="https://smozaff.github.io/#rezvan" target="_blank" rel="noreferrer">RezvanMesh case study ↗</a></span></div>
-            </div>
-          </article>
-          <article class="example-card">
-            <span class="example-label">Multimedia systems</span>
-            <h3>Watermelon MediaPlayer</h3>
-            <div class="example-steps">
-              <div class="example-step"><b>IFEM Principles</b><span>Explicit boundaries, modular architecture</span></div>
-              <div class="example-step"><b>External Reference</b><span><a href="https://smozaff.github.io/#mediaplayer" target="_blank" rel="noreferrer">MediaPlayer case study ↗</a></span></div>
-            </div>
-          </article>
-          <article class="example-card">
-            <span class="example-label">Mobile systems</span>
-            <h3>Watermelon Vector Graphics Converter</h3>
-            <div class="example-steps">
-              <div class="example-step"><b>IFEM Principles</b><span>Separated responsibilities, interface-driven design</span></div>
-              <div class="example-step"><b>External Reference</b><span><a href="https://smozaff.github.io/#vector-converter" target="_blank" rel="noreferrer">Vector Converter case study ↗</a></span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--white" aria-labelledby="publications-title"><div class="container"><div class="section-heading section-heading--split"><div><p class="eyebrow">Authoritative sources</p><h2 id="publications-title">Read, verify, and cite the methodology.</h2></div><p>The source documents provide the authoritative context for IFEM. The primary publication establishes the unified framework, while the Runtime Manual extends contract enforcement into production contexts.</p></div><div class="publication-grid"><article class="publication-card publication-card--primary"><p class="pub-type">Primary publication / v2.2</p><h3>Interface-First Execution Methodology (IFEM)</h3><p>A Unified Framework for High-Parallelism, AI-Assisted Software Engineering.</p><div class="doi">10.5281/zenodo.20621561</div><div class="pub-buttons"><a class="button button--primary" href="https://zenodo.org/records/20621561">Read on Zenodo <span aria-hidden="true">↗</span></a><a class="button button--line" href="/publications/">Citation options <span aria-hidden="true">→</span></a></div></article><article class="publication-card publication-card--manual"><p class="pub-type">Operational supplement / v1.0</p><h3>Operational Runtime Manual</h3><p>Contract Enforcement in Production (Phases 5 &amp; 6). Supplement to IFEM v2.2.</p><div class="doi">10.5281/zenodo.21330255</div><div class="pub-buttons"><a class="button button--teal" href="https://zenodo.org/records/21330255">Read Runtime Manual <span aria-hidden="true">↗</span></a><a class="button button--line" href="/publications/">Citation options <span aria-hidden="true">→</span></a></div></article></div></div></section>
-
-    <section class="section section--white" aria-labelledby="author-title"><div class="container"><div class="author-panel"><div class="author-name"><p class="eyebrow">Author</p><h3 id="author-title">Soheil<br>Mozaffari</h3><p>Author of Interface-First Execution Methodology.</p></div><div class="author-content"><p>Interface-First Execution Methodology (IFEM) is authored by Soheil Mozaffari, a computer scientist and systems architect working across software architecture, AI-assisted engineering, complex systems, and technical methodology design.</p><ul class="link-list"><li><a href="https://smozaff.github.io/">Personal website ↗</a></li><li><a href="https://orcid.org/0009-0001-2428-1295">ORCID ↗</a></li><li><a href="https://github.com/SMozaff">GitHub ↗</a></li><li><a href="https://www.linkedin.com/in/su-muzaff/">LinkedIn ↗</a></li><li><a href="https://zenodo.org/records/20621561">Zenodo ↗</a></li></ul><p style="margin-top:2rem"><a class="button button--line" href="/about/">About IFEM <span aria-hidden="true">→</span></a></p></div></div></div></section>
-  </main>
-  <section class="final-cta"><div class="container final-cta-wrap"><div><p class="eyebrow">Start with the source</p><h2>Understand the agreement before judging the implementation.</h2></div><a class="button button--line" href="https://doi.org/10.5281/zenodo.20621561">Read IFEM v2.2 <span aria-hidden="true">↗</span></a></div></section>
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="footer-brand" href="/"><img src="/assets/images/ifem-mark.svg" alt=""><span><strong>IFEM</strong><span>DOCTRINE</span></span></a><p class="footer-copy">A technical doctrine site for Interface-First Execution Methodology: explicit interfaces, contracts, responsibility boundaries, and verification.</p></div><div><p class="footer-heading">Explore</p><ul class="footer-links"><li><a href="/doctrine/">Doctrine</a></li><li><a href="/how-it-works/">How It Works</a></li><li><a href="/ai-engineering/">AI Engineering</a></li><li><a href="/examples/">Examples</a></li><li><a href="/applications/">Applications</a></li></ul></div><div><p class="footer-heading">Sources</p><ul class="footer-links"><li><a href="/publications/">Publications</a></li><li><a href="https://doi.org/10.5281/zenodo.20621561">IFEM v2.2 ↗</a></li><li><a href="https://doi.org/10.5281/zenodo.21330255">Runtime Manual ↗</a></li><li><a href="https://orcid.org/0009-0001-2428-1295">ORCID ↗</a></li></ul></div><div><p class="footer-heading">Language</p><ul class="footer-links"><li><a href="/">English</a></li><li><a lang="fa" href="/fa/">فارسی</a></li><li><a href="/about/">About IFEM</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 IFEM Doctrine</span><span>Explicit Interfaces. Confident Execution.</span></div></div></footer>
-  <script src="/assets/js/site.js"></script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="nav-wrap">
+<a aria-label="IFEM Doctrine home" class="brand" href="/">
+<img alt="" class="brand-mark" src="/assets/images/ifem-mark.svg"/>
+<span class="brand-name">IFEM<span>DOCTRINE</span></span>
+</a>
+<button aria-controls="primary-navigation" aria-expanded="false" class="nav-toggle" data-nav-toggle="" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="primary-nav" data-primary-nav="" id="primary-navigation">
+<a href="/doctrine/">Doctrine</a>
+<a href="/how-it-works/">How It Works</a>
+<a href="/ai-engineering/">AI Engineering</a>
+<a href="/examples/">Examples</a>
+<a href="/applications/">Applications</a>
+<a href="/publications/">Publications</a>
+<a href="/about/">About IFEM</a>
+</nav>
+<div class="nav-actions"><a class="language-link" href="/fa/" lang="fa">فارسی</a><a class="button button--primary button--nav" href="https://doi.org/10.5281/zenodo.20621561">Read IFEM v2.2 <span aria-hidden="true">↗</span></a></div>
+</div>
+</header>
+<main id="main">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<p class="hero-kicker">A technical doctrine for controlled execution</p>
+<h1>Interface-First <span>Execution</span> Methodology</h1>
+<p class="hero-lede">IFEM is a software engineering methodology for defining interfaces, contracts, responsibilities, and verification boundaries before large-scale parallel implementation begins.</p>
+<div class="hero-actions">
+<a class="button button--primary" href="#how-ifem-works">See how IFEM works <span aria-hidden="true">↓</span></a>
+<a class="button button--line" href="https://doi.org/10.5281/zenodo.20621561">Read IFEM v2.2 <span aria-hidden="true">↗</span></a>
+</div>
+<p class="author-chip"><span aria-hidden="true" class="chip-mark"></span> Authored by <a href="https://smozaff.github.io/">Soheil Mozaffari</a></p>
+</div>
+<div aria-labelledby="hero-diagram-title" class="hero-diagram" data-hero-diagram="" data-phase="ambiguity">
+<div class="diagram-topline"><span id="hero-diagram-title">IFEM / system transition</span><span class="live-state">Instructional sequence</span></div>
+<div aria-hidden="true" class="diagram-stage">
+<div class="layer-frame"></div>
+<div class="path path--a"></div><div class="path path--b"></div><div class="path path--c"></div><div class="path path--d"></div>
+<span class="data-node data-node--a">Client</span><span class="data-node data-node--b">Service</span><span class="data-node data-node--c">State</span><span class="data-node data-node--d">AI agent</span>
+<div class="plane plane--one"><span>Experience <b>Client boundary</b></span></div>
+<div class="plane plane--two"><span>Services <b>Domain boundary</b></span></div>
+<div class="plane plane--three"><span>State <b>Infrastructure boundary</b></span></div>
+<div class="checkpoint checkpoint--one"></div><div class="checkpoint checkpoint--two"></div>
+</div>
+<p aria-live="polite" class="diagram-caption" data-phase-message=""><b>Ambiguity:</b> implementation begins before boundaries are explicit.</p>
+<div aria-label="IFEM explanatory sequence" class="hero-controls" role="group">
+<button aria-pressed="true" data-hero-phase="ambiguity" data-phase-message="Ambiguity: implementation begins before boundaries are explicit." type="button">01 Ambiguity</button>
+<button aria-pressed="false" data-hero-phase="interfaces" data-phase-message="Boundaries: define the system before parallel execution." tabindex="-1" type="button">02 Boundaries</button>
+<button aria-pressed="false" data-hero-phase="contracts" data-phase-message="Contracts: turn interfaces into executable agreements." tabindex="-1" type="button">03 Contracts</button>
+<button aria-pressed="false" data-hero-phase="parallel" data-phase-message="Parallel execution: independent streams move behind frozen boundaries." tabindex="-1" type="button">04 Execute</button>
+<button aria-pressed="false" data-hero-phase="verification" data-phase-message="Verification: only contract-compliant paths proceed to controlled integration." tabindex="-1" type="button">05 Verify</button>
+</div>
+<button aria-pressed="false" class="button button--line button--small" data-hero-pause="" style="margin-top:.8rem" type="button">Pause sequence</button>
+</div>
+</div>
+</section>
+<section aria-label="IFEM core principle" class="proof-strip">
+<div class="container proof-grid">
+<div class="proof-item"><b>01</b><span>Interfaces before implementation</span></div>
+<div class="proof-item"><b>02</b><span>Contracts before parallel execution</span></div>
+<div class="proof-item"><b>03</b><span>Verification before acceptance</span></div>
+</div>
+</section>
+<section aria-labelledby="problem-title" class="section section--white">
+<div class="container">
+<div class="section-heading section-heading--split"><div><p class="eyebrow">The coordination problem</p><h2 id="problem-title">Parallel work is easy. Parallel work with shared assumptions is not.</h2></div><p>Teams and coding agents can move quickly when responsibilities are divided. The failure point is usually the boundary: undocumented assumptions, accidental APIs, incompatible schemas, unclear ownership, and integration rules that exist only in someone’s head.</p></div>
+<div class="comparison">
+<article class="flow-card flow-card--danger"><p class="eyebrow eyebrow--orange">Implementation-first</p><h3>Interfaces emerge during the work.</h3><ol class="flow-list"><li>Requirements</li><li>Teams immediately code</li><li>Assumptions diverge</li><li>Interfaces emerge accidentally</li><li>Integration exposes conflicts</li><li>Rework</li></ol></article>
+<article class="flow-card flow-card--good"><p class="eyebrow">Interface-first</p><h3>Shared rules are established before the work scales.</h3><ol class="flow-list"><li>Intent</li><li>Architecture</li><li>Interfaces</li><li>Contracts</li><li>Responsibility boundaries</li><li>Parallel implementation</li><li>Verification</li><li>Controlled integration</li></ol></article>
+</div>
+</div>
+</section>
+<section aria-labelledby="doctrine-title" class="section section--soft section--ruled" id="doctrine">
+<div class="container">
+<div class="section-heading"><p class="eyebrow">The IFEM doctrine</p><h2 id="doctrine-title">Make the boundary explicit before scaling the execution.</h2><p>IFEM treats interfaces as first-class architectural objects. Contracts make those boundaries explicit enough for independent implementation, while verification turns agreement into evidence.</p></div>
+<div class="principle-grid">
+<article class="principle"><span class="principle-num">01 / BOUNDARY</span><h3>Boundaries are design objects.</h3><p>An interface is not a side effect of implementation. It is an explicit architectural object.</p></article>
+<article class="principle"><span class="principle-num">02 / CONTRACT</span><h3>Contracts precede parallel execution.</h3><p>Shared interaction rules should be explicit enough to support independent execution.</p></article>
+<article class="principle"><span class="principle-num">03 / OWNER</span><h3>Responsibility must be assignable.</h3><p>Each contract needs legible ownership and accountability.</p></article>
+<article class="principle"><span class="principle-num">04 / EVIDENCE</span><h3>Verification is part of architecture.</h3><p>A contract is stronger when it can be checked automatically and evidenced.</p></article>
+<article class="principle"><span class="principle-num">05 / FREEDOM</span><h3>Freedom exists behind stable boundaries.</h3><p>Teams may make local choices while preserving external agreements.</p></article>
+<article class="principle"><span class="principle-num">06 / RUNTIME</span><h3>Enforcement extends design intent.</h3><p>Where applicable, contract discipline continues through deployment and production.</p></article>
+</div>
+<p style="margin-top:2rem"><a class="button button--line" href="/doctrine/">Read the doctrine in detail <span aria-hidden="true">→</span></a></p>
+</div>
+</section>
+<section aria-labelledby="method-title" class="section section--white" id="how-ifem-works">
+<div class="container">
+<div class="section-heading section-heading--split"><div><p class="eyebrow">How IFEM works</p><h2 id="method-title">From intent to controlled execution.</h2></div><p>The seven-phase framework follows a clear progression: make architectural intent visible, define and freeze contracts, then use verification to govern what integrates.</p></div>
+<div aria-label="Seven phases of IFEM" class="phase-track">
+<article class="phase"><span class="phase-number">01</span><h3>Intent</h3><p>Define the engineering outcome and constraints.</p></article>
+<article class="phase"><span class="phase-number">02</span><h3>Architecture</h3><p>Identify responsibilities and system boundaries.</p></article>
+<article class="phase"><span class="phase-number">03</span><h3>Interfaces</h3><p>Define how components interact.</p></article>
+<article class="phase"><span class="phase-number">04</span><h3>Contracts</h3><p>Encode schemas, ownership, errors, compatibility, and acceptance.</p></article>
+<article class="phase"><span class="phase-number">05</span><h3>Parallel execution</h3><p>Implement independently behind stable boundaries.</p></article>
+<article class="phase"><span class="phase-number">06</span><h3>Verification</h3><p>Validate compliance with tests, checks, and evidence.</p></article>
+<article class="phase"><span class="phase-number">07</span><h3>Runtime enforcement</h3><p>Extend discipline into delivery and production where applicable.</p></article>
+</div>
+<p style="margin-top:2rem"><a class="button button--primary" href="/how-it-works/">Explore the phase model <span aria-hidden="true">→</span></a></p>
+</div>
+</section>
+<section aria-labelledby="interfaces-title" class="section section--soft">
+<div class="container diagram-grid">
+<div class="explainer-copy"><p class="eyebrow">Why interfaces first</p><h3 id="interfaces-title">The interface exposes the dependency before implementation hides it.</h3><p>Interfaces clarify ownership, make dependencies legible, create testable expectations, and give distributed teams a stable constraint around which they can work in parallel.</p><ul class="detail-list"><li>Dependencies become visible and negotiable.</li><li>Ownership is assigned rather than inferred.</li><li>Change is constrained by explicit compatibility rules.</li><li>Verification can check expectations at the boundary.</li></ul></div>
+<figure class="interface-map"><figcaption class="map-title">Illustrative system map</figcaption><div aria-label="Client, service, domain, and state components coordinate through an explicit contract" class="map-stage"><span class="map-line map-line--a"></span><span class="map-line map-line--b"></span><span class="map-line map-line--c"></span><span class="map-line map-line--d"></span><div class="map-box map-box--client">Client</div><div class="map-box map-box--service">Service</div><div class="map-box map-box--domain">Domain</div><div class="map-box map-box--state">State</div><div class="map-contract">Explicit contract<span>schema · owner · compatibility · evidence</span></div></div></figure>
+</div>
+</section>
+<section aria-labelledby="contract-title" class="section section--white">
+<div class="container contract-layout">
+<div class="contract-card"><header><small>Illustrative contract</small><h3>UserProfile.Read</h3></header><dl><div class="contract-row"><dt>Owner</dt><dd>Identity Service</dd></div><div class="contract-row"><dt>Input</dt><dd>User ID</dd></div><div class="contract-row"><dt>Output</dt><dd>Profile schema v3</dd></div><div class="contract-row"><dt>Errors</dt><dd>NOT_FOUND · UNAUTHORIZED</dd></div><div class="contract-row"><dt>Compatibility</dt><dd>Backward-compatible response fields</dd></div><div class="contract-row"><dt>Verification</dt><dd>Schema, consumer, and integration tests</dd></div></dl></div>
+<div class="explainer-copy"><p class="eyebrow">Contract model</p><h3 id="contract-title">An interface becomes useful when it becomes a contract.</h3><p>A contract describes the interaction in a form that different contributors can rely upon: inputs, outputs, ownership, error behavior, compatibility expectations, and acceptance criteria. The syntax shown here is illustrative, not a mandated IFEM notation.</p><a class="button button--line" href="/examples/">See illustrative examples <span aria-hidden="true">→</span></a></div>
+</div>
+</section>
+<section aria-labelledby="verification-title" class="section section--soft">
+<div class="container verification-layout">
+<div class="explainer-copy"><p class="eyebrow">Contracts and verification</p><h3 id="verification-title">Verification is the coordination layer.</h3><p>IFEM does not rely only on human memory or prose documentation. Verification can produce evidence that implementation complies with the governing contract before it proceeds toward integration.</p><p>Validation surfaces may include schema checks, compatibility tests, contract tests, integration tests, CI gates, migration checks, deployment checks, and runtime assertions. The appropriate mechanism depends on the system and contract.</p></div>
+<div aria-label="Illustrative verification gates" class="gate-stack"><div class="gate"><span>01</span><b>Schema validation</b><em>pass</em></div><div class="gate"><span>02</span><b>Compatibility test</b><em>pass</em></div><div class="gate"><span>03</span><b>Integration evidence</b><em>pass</em></div><div class="gate"><span>04</span><b>CI acceptance gate</b><em>proceed</em></div></div>
+</div>
+</section>
+<section aria-labelledby="ai-title" class="section section--navy">
+<div class="container ai-grid">
+<div><p class="eyebrow">IFEM for AI-assisted engineering</p><h2 id="ai-title" style="font-size:clamp(2.2rem,4.2vw,4rem);line-height:1.05;letter-spacing:-.055em;margin:0">Give the model room to execute — not room to redefine the system.</h2><p style="color:#D6E0ED;max-width:650px">Coding agents can generate implementation rapidly, but speed is not architectural authority. IFEM reduces the surface area in which an AI coding agent is allowed to improvise by making interfaces, responsibilities, contracts, and verification rules explicit.</p><p class="ai-claim">The model proposes.<br/>The contract constrains.<br/>Verification decides.</p><a class="button button--on-dark" href="/ai-engineering/">Explore AI engineering <span aria-hidden="true">→</span></a></div>
+<div aria-label="Human Architect then IFEM Contract Layer then AI Coding Agent then Allowed Tools and Sandbox then Verification then Accept or Reject" class="agent-flow"><div class="agent-node"><strong>Human Architect</strong><span>Intent, constraints, planning authority</span></div><div class="agent-arrow">↓</div><div class="agent-node agent-node--contract"><strong>IFEM Contract Layer</strong><span>Scope, interface, acceptance, compatibility</span></div><div class="agent-arrow">↓</div><div class="agent-node"><strong>AI Coding Agent</strong><span>Bounded implementation</span></div><div class="agent-arrow">↓</div><div class="agent-node"><strong>Allowed Tools + Sandbox</strong><span>Permitted execution environment</span></div><div class="agent-arrow">↓</div><div class="agent-node agent-node--verify"><strong>Verification</strong><span>Machine-checkable evidence → accept / reject</span></div></div>
+</div>
+</section>
+<section aria-labelledby="audience-title" class="section section--white"><div class="container"><div class="section-heading"><p class="eyebrow">Who IFEM is for</p><h2 id="audience-title">Different roles. One shared source of truth.</h2></div><div class="audience-grid"><article class="audience-card"><span>01</span><h3>Engineering leaders</h3><p>Make ownership, integration rules, and verification expectations explicit before scale amplifies ambiguity.</p></article><article class="audience-card"><span>02</span><h3>Software engineers</h3><p>Work independently with explicit dependencies instead of undocumented moving targets.</p></article><article class="audience-card"><span>03</span><h3>AI-assisted teams</h3><p>Bound agent scope and make acceptance evidence visible and machine-checkable.</p></article><article class="audience-card"><span>04</span><h3>Students</h3><p>Learn boundaries, interfaces, contracts, and verification as first-class concepts.</p></article><article class="audience-card"><span>05</span><h3>Hiring teams</h3><p>Recognize systems thinking and specification discipline beyond technology lists.</p></article></div></div></section>
+<section aria-labelledby="case-studies-title" class="section section--soft" id="case-studies"><div class="container"><div class="section-heading section-heading--split"><div><p class="eyebrow">Case Studies</p><h2 id="case-studies-title">Engineering evidence behind the methodology.</h2></div><p>Five selected project records show how explicit boundaries, separated responsibilities, contracts, and verification surfaces appear in actual engineering work. The dedicated Applications page explains the IFEM relationship in more detail.</p></div><div class="example-grid case-study-preview-grid"><article class="example-card"><span class="example-label">Systems architecture</span><h3>ONYX Framework</h3><p>An in-progress Rust-centric mission-operations architecture with explicit kernel, domain, application, infrastructure, and transport responsibilities.</p><div class="example-steps"><div class="example-step"><b>Full record</b><span><a href="https://onyxcase-bxl5ndbk.manus.space/" rel="noopener noreferrer" target="_blank">View ONYX case study ↗</a></span></div><div class="example-step"><b>IFEM view</b><span><a href="/applications/#onyx">Methodology relationship →</a></span></div></div></article><article class="example-card"><span class="example-label">Developer tooling</span><h3>Raven Metadata Extractor</h3><p>A cross-platform metadata-analysis tool with separated extractors and an evidence model that keeps indicators distinct from proof.</p><div class="example-steps"><div class="example-step"><b>Full record</b><span><a href="https://ravenmeta-b9c2fz9g.manus.space/" rel="noopener noreferrer" target="_blank">View Raven case study ↗</a></span></div><div class="example-step"><b>IFEM view</b><span><a href="/applications/#raven">Methodology relationship →</a></span></div></div></article><article class="example-card"><span class="example-label">Offline mobile systems</span><h3>Rezvan Mesh</h3><p>An Android peer-to-peer communication prototype that makes the Kotlin/Rust JNI boundary and transport/core responsibilities explicit.</p><div class="example-steps"><div class="example-step"><b>Full record</b><span><a href="https://rezvanmesh-ctebutsc.manus.space/" rel="noopener noreferrer" target="_blank">View Rezvan Mesh case study ↗</a></span></div><div class="example-step"><b>IFEM view</b><span><a href="/applications/#rezvan">Methodology relationship →</a></span></div></div></article><article class="example-card"><span class="example-label">Multimedia architecture</span><h3>Watermelon MediaPlayer</h3><p>An offline Android media architecture with shared interfaces and dedicated playback, storage, subtitle, and presentation modules.</p><div class="example-steps"><div class="example-step"><b>Full record</b><span><a href="https://watermelonmp-b828xakc.manus.space/" rel="noopener noreferrer" target="_blank">View MediaPlayer case study ↗</a></span></div><div class="example-step"><b>IFEM view</b><span><a href="/applications/#mediaplayer">Methodology relationship →</a></span></div></div></article><article class="example-card"><span class="example-label">Mobile graphics</span><h3>Watermelon Vector Graphics Converter</h3><p>A native Android vector-processing application with a clear boundary between the application layer and the processing engine.</p><div class="example-steps"><div class="example-step"><b>Full record</b><span><a href="https://watervector-hz2inn6j.manus.space/" rel="noopener noreferrer" target="_blank">View Vector Converter case study ↗</a></span></div><div class="example-step"><b>IFEM view</b><span><a href="/applications/#vector-converter">Methodology relationship →</a></span></div></div></article></div><p class="case-study-index-cta"><a class="button button--line" href="/applications/">Open the full case-study index <span aria-hidden="true">→</span></a></p></div></section>
+<section aria-labelledby="publications-title" class="section section--white"><div class="container"><div class="section-heading section-heading--split"><div><p class="eyebrow">Authoritative sources</p><h2 id="publications-title">Read, verify, and cite the methodology.</h2></div><p>The source documents provide the authoritative context for IFEM. The primary publication establishes the unified framework, while the Runtime Manual extends contract enforcement into production contexts.</p></div><div class="publication-grid"><article class="publication-card publication-card--primary"><p class="pub-type">Primary publication / v2.2</p><h3>Interface-First Execution Methodology (IFEM)</h3><p>A Unified Framework for High-Parallelism, AI-Assisted Software Engineering.</p><div class="doi">10.5281/zenodo.20621561</div><div class="pub-buttons"><a class="button button--primary" href="https://zenodo.org/records/20621561">Read on Zenodo <span aria-hidden="true">↗</span></a><a class="button button--line" href="/publications/">Citation options <span aria-hidden="true">→</span></a></div></article><article class="publication-card publication-card--manual"><p class="pub-type">Operational supplement / v1.0</p><h3>Operational Runtime Manual</h3><p>Contract Enforcement in Production (Phases 5 &amp; 6). Supplement to IFEM v2.2.</p><div class="doi">10.5281/zenodo.21330255</div><div class="pub-buttons"><a class="button button--teal" href="https://zenodo.org/records/21330255">Read Runtime Manual <span aria-hidden="true">↗</span></a><a class="button button--line" href="/publications/">Citation options <span aria-hidden="true">→</span></a></div></article></div></div></section>
+<section aria-labelledby="author-title" class="section section--white"><div class="container"><div class="author-panel"><div class="author-name"><p class="eyebrow">Author</p><h3 id="author-title">Soheil<br/>Mozaffari</h3><p>Author of Interface-First Execution Methodology.</p></div><div class="author-content"><p>Interface-First Execution Methodology (IFEM) is authored by Soheil Mozaffari, a software engineer and systems architect working across software architecture, AI-assisted engineering, complex systems, and technical methodology design.</p><ul class="link-list"><li><a href="https://smozaff.github.io/">Personal website ↗</a></li><li><a href="https://orcid.org/0009-0001-2428-1295">ORCID ↗</a></li><li><a href="https://github.com/SMozaff">GitHub ↗</a></li><li><a href="https://www.linkedin.com/in/su-muzaff/">LinkedIn ↗</a></li><li><a href="https://zenodo.org/records/20621561">Zenodo ↗</a></li></ul><p style="margin-top:2rem"><a class="button button--line" href="/about/">About IFEM <span aria-hidden="true">→</span></a></p></div></div></div></section>
+</main>
+<section class="final-cta"><div class="container final-cta-wrap"><div><p class="eyebrow">Start with the source</p><h2>Understand the agreement before judging the implementation.</h2></div><a class="button button--line" href="https://doi.org/10.5281/zenodo.20621561">Read IFEM v2.2 <span aria-hidden="true">↗</span></a></div></section>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="footer-brand" href="/"><img alt="" src="/assets/images/ifem-mark.svg"/><span><strong>IFEM</strong><span>DOCTRINE</span></span></a><p class="footer-copy">A technical doctrine site for Interface-First Execution Methodology: explicit interfaces, contracts, responsibility boundaries, and verification.</p></div><div><p class="footer-heading">Explore</p><ul class="footer-links"><li><a href="/doctrine/">Doctrine</a></li><li><a href="/how-it-works/">How It Works</a></li><li><a href="/ai-engineering/">AI Engineering</a></li><li><a href="/examples/">Examples</a></li><li><a href="/applications/">Applications</a></li></ul></div><div><p class="footer-heading">Sources</p><ul class="footer-links"><li><a href="/publications/">Publications</a></li><li><a href="https://doi.org/10.5281/zenodo.20621561">IFEM v2.2 ↗</a></li><li><a href="https://doi.org/10.5281/zenodo.21330255">Runtime Manual ↗</a></li><li><a href="https://orcid.org/0009-0001-2428-1295">ORCID ↗</a></li></ul></div><div><p class="footer-heading">Language</p><ul class="footer-links"><li><a href="/">English</a></li><li><a href="/fa/" lang="fa">فارسی</a></li><li><a href="/about/">About IFEM</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 IFEM Doctrine</span><span>Explicit Interfaces. Confident Execution.</span></div></div></footer>
+<script src="/assets/js/site.js"></script>
 </body>
 </html>

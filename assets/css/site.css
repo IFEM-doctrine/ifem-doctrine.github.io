@@ -614,3 +614,16 @@ html[lang="fa"] .author-chip a,
 html[lang="fa"] bdi[lang="en"][dir="ltr"] {
   unicode-bidi: isolate;
 }
+
+/* Engineering case-study integration */
+.case-study-author-note{max-width:54rem;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.88rem!important}
+.case-study-author-note a,.case-study-lede a{font-weight:800}
+.case-study-lede{max-width:54rem;color:var(--slate-dark)}
+.case-study-grid{align-items:stretch}
+.case-study-card{display:flex;flex-direction:column}
+.case-study-summary{margin:.15rem 0 0;line-height:1.7}
+.case-study-card .case-study-steps{margin-top:auto;padding-top:1.45rem}
+.case-study-card .example-step{line-height:1.55}
+.case-study-card .example-step span{display:block}
+.case-study-card .example-step a{display:inline-block;margin-top:.22rem;font-weight:800;text-decoration-thickness:1px;text-underline-offset:.2em}
+@media (max-width:720px){.case-study-steps{grid-template-columns:1fr}.case-study-author-note{font-size:.84rem!important}}

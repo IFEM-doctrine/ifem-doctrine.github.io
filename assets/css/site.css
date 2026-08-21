@@ -651,3 +651,17 @@ html[lang="fa"] bdi[lang="en"][dir="ltr"] {
 [dir="rtl"] .onyx-case-gallery__grid figcaption{font-family:Vazirmatn,var(--sans);letter-spacing:0}
 @media(max-width:900px){.onyx-case-gallery__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.onyx-case-gallery__grid{grid-template-columns:1fr}.onyx-case-gallery__grid img{aspect-ratio:16/10}}
+
+/* Embedded typography system: readable English text and Vazirmatn-led Persian hierarchy. */
+@font-face{font-family:"Noto Sans Local";src:url("/assets/fonts/english/NotoSans-Regular.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Noto Sans Local";src:url("/assets/fonts/english/NotoSans-SemiBold.ttf") format("truetype");font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:"Noto Sans Local";src:url("/assets/fonts/english/NotoSans-Bold.ttf") format("truetype");font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:"Noto Serif Local";src:url("/assets/fonts/english/NotoSerif-Regular.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Noto Serif Local";src:url("/assets/fonts/english/NotoSerif-SemiBold.ttf") format("truetype");font-style:normal;font-weight:600;font-display:swap}
+:root{--sans:"Noto Sans Local",Arial,sans-serif;--mono:"Noto Sans Local",Arial,sans-serif;--display:"Noto Serif Local",Georgia,serif}
+body,button,input,select,textarea{font-family:var(--sans);font-kerning:normal;letter-spacing:0;word-spacing:normal}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-.014em!important;line-height:1.17!important}
+.hero-lede,.section-heading p,.prose p,.case-study-summary,.example-step span{letter-spacing:0;line-height:1.72}
+html[lang="fa"] body,html[lang="fa"] button,html[lang="fa"] input,html[lang="fa"] select,html[lang="fa"] textarea{font-family:Vazirmatn,Tahoma,sans-serif}
+html[lang="fa"] h1,html[lang="fa"] h2,html[lang="fa"] h3,html[lang="fa"] h4{font-family:Vazirmatn,Tahoma,sans-serif;font-weight:700;letter-spacing:0!important;line-height:1.55!important}
+html[lang="fa"] .eyebrow,html[lang="fa"] .hero-kicker,html[lang="fa"] .example-label,html[lang="fa"] .diagram-topline{font-family:Vazirmatn,Tahoma,sans-serif;letter-spacing:0;text-transform:none}

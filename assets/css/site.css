@@ -637,3 +637,17 @@ html[lang="fa"] bdi[lang="en"][dir="ltr"] {
 @media(prefers-reduced-motion:no-preference){.reveal-item{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.23,1,.32,1),transform .65s cubic-bezier(.23,1,.32,1)}.reveal-item.reveal-side{transform:translateX(-24px)}[dir="rtl"] .reveal-item.reveal-side{transform:translateX(24px)}.reveal-item.is-visible{opacity:1;transform:none}.case-study-media.reveal-item{transition-delay:.08s}}
 @media(prefers-reduced-motion:reduce){.reveal-item{opacity:1!important;transform:none!important}.back-to-top{transition:none}}
 @media(max-width:800px){.language-banner{min-height:3.25rem;font-size:.86rem}.language-banner[lang="fa"]{font-size:.96rem}.site-header{top:3.25rem}.case-study-card .case-study-media{margin-left:-1.25rem;margin-right:-1.25rem}.case-study-card .case-study-media figcaption{padding-left:1.25rem;padding-right:1.25rem}.back-to-top{right:.75rem;bottom:.75rem}[dir="rtl"] .back-to-top{left:.75rem;right:auto}}
+
+/* ONYX case-study media: supplied mark and bounded client-surface evidence. */
+.onyx-case-study-mark img{object-fit:contain!important;background:#f7f9fb;padding:1.25rem}
+.onyx-case-gallery{margin:1.45rem 0 0;padding-top:1.2rem;border-top:1px solid var(--line)}
+.onyx-case-gallery__intro{margin-bottom:.95rem}.onyx-case-gallery__intro .example-label{margin-bottom:.35rem}.onyx-case-gallery__intro h4{margin:0;color:var(--navy);font-size:1.12rem;line-height:1.25}
+.onyx-case-gallery__grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}
+.onyx-case-gallery__grid figure{margin:0;min-width:0;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+.onyx-case-gallery__grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;transition:transform .3s ease}
+.onyx-case-gallery__grid figure:hover img{transform:scale(1.02)}
+.onyx-case-gallery__grid figcaption{padding:.52rem .58rem;color:var(--slate-dark);font-family:var(--mono);font-size:.64rem;font-weight:800;line-height:1.28;letter-spacing:.035em}
+.onyx-case-gallery__note{margin:1rem 0 0;color:var(--slate-dark);font-size:.82rem;line-height:1.55}
+[dir="rtl"] .onyx-case-gallery__grid figcaption{font-family:Vazirmatn,var(--sans);letter-spacing:0}
+@media(max-width:900px){.onyx-case-gallery__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.onyx-case-gallery__grid{grid-template-columns:1fr}.onyx-case-gallery__grid img{aspect-ratio:16/10}}

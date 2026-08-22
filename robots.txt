@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://ifem-doctrine.github.io/sitemap.xml

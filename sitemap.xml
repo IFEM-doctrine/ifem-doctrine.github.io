@@ -1,143 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://ifem-doctrine.github.io/about/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/about/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/about/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/about/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/ai-engineering/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/ai-engineering/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/ai-engineering/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/ai-engineering/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/doctrine/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/doctrine/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/doctrine/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/doctrine/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/examples/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/examples/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/examples/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/examples/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/about/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/about/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/about/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/about/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/ai-engineering/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/ai-engineering/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/ai-engineering/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/ai-engineering/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/doctrine/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/doctrine/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/doctrine/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/doctrine/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/examples/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/examples/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/examples/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/examples/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/how-it-works/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/how-it-works/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/how-it-works/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/how-it-works/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/publications/ifem-v2-2/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/publications/ifem-v2-2/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/publications/ifem-v2-2/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/publications/ifem-v2-2/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/publications/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/publications/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/publications/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/publications/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/publications/runtime-manual/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/publications/runtime-manual/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/publications/runtime-manual/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/publications/runtime-manual/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/how-it-works/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/how-it-works/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/how-it-works/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/how-it-works/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/publications/ifem-v2-2/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/publications/ifem-v2-2/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/publications/ifem-v2-2/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/publications/ifem-v2-2/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/publications/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/publications/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/publications/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/publications/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/publications/runtime-manual/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/publications/runtime-manual/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/publications/runtime-manual/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/publications/runtime-manual/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/applications/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/applications/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/applications/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/applications/" />
-  </url>
-  <url>
-    <loc>https://ifem-doctrine.github.io/fa/applications/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ifem-doctrine.github.io/applications/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://ifem-doctrine.github.io/fa/applications/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ifem-doctrine.github.io/applications/" />
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://ifem-doctrine.github.io/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/intent</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/intent</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/architecture</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/architecture</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/interfaces</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/interfaces</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/contracts</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/contracts</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/execution</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/execution</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/verification</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/verification</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/runtime</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/runtime</loc></url>
 </urlset>

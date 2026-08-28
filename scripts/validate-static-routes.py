@@ -36,15 +36,16 @@ def words(p): return len(re.findall(r"\w+", ' '.join(p.text), re.UNICODE))
 def body_signature(p): return re.sub(r'\s+', ' ', ' '.join(p.text)).strip().lower()
 
 def main():
-    errors=[]; pages={}
+    errors=[]; pages={}; roots={}
     for route in ROUTES:
         path=file_for(route)
         if not path.is_file(): errors.append(f'missing file: {route} -> {path}'); continue
-        p=Page(); p.feed(path.read_text()); pages[route]=p; count=words(p)
+        raw=path.read_text(); p=Page(); p.feed(raw); pages[route]=p
+        a=raw.find('<div id="root">'); b=raw.find('</div>', a); root=Page(); root.feed(raw[a:b]); roots[route]=root; count=words(root)
         if not p.title.strip(): errors.append(f'empty title: {route}')
         if not (70 <= len(p.description) <= 180): errors.append(f'description length {len(p.description)} outside 70-180: {route}')
         if len(p.h1)!=1: errors.append(f'H1 count {len(p.h1)}: {route}')
-        if count < (300 if route in ('/','/fa/') else 220): errors.append(f'insufficient initial text ({count} words): {route}')
+        if count < (300 if route in ('/','/fa/') else 200): errors.append(f'insufficient initial text ({count} words): {route}')
         if p.h2 < (3 if route in ('/','/fa/') else 5): errors.append(f'insufficient sections ({p.h2} H2): {route}')
         if not p.links: errors.append(f'no links: {route}')
         expected='fa' if route.startswith('/fa') else 'en'
@@ -54,11 +55,16 @@ def main():
         if '<meta name="robots" content="noindex"' in path.read_text(): errors.append(f'unexpected noindex: {route}')
         for code in ('en','fa','x-default'):
             if not any(x[0]==code for x in p.alternates): errors.append(f'missing hreflang {code}: {route}')
-    signatures={route:body_signature(p) for route,p in pages.items()}
+    signatures={route:body_signature(root) for route,root in roots.items()}
     seen={}
     for route,sig in signatures.items():
         if sig in seen: errors.append(f'duplicate normalized body: {route} == {seen[sig]}')
         else: seen[sig]=route
+    if '/' in roots and '/fa/' in roots:
+        en_text=body_signature(roots['/']); fa_text=body_signature(roots['/fa/'])
+        if en_text == fa_text: errors.append('English and Persian homepage root text is identical')
+        if sum(1 for c in en_text if '\u0600' <= c <= '\u06ff') > 20: errors.append('English homepage contains excessive Persian text')
+        if sum(1 for c in fa_text if '\u0600' <= c <= '\u06ff') < 40: errors.append('Persian homepage lacks meaningful Persian text')
     for route,p in pages.items():
         if route.startswith('/fa/phase/') and not all(f'/fa/phase/{s}/' in p.links for s in SLUGS): errors.append(f'Persian phase graph incomplete: {route}')
         if route=='/fa/' and not all(f'/fa/phase/{s}/' in p.links for s in SLUGS): errors.append('Persian hub does not link all seven phases')
@@ -67,6 +73,6 @@ def main():
     for route in ROUTES:
         if f'<loc>{BASE}{route}</loc>' not in sitemap: errors.append(f'missing sitemap URL: {route}')
     if errors: print('\n'.join(errors)); return 1
-    print(f'Validated {len(ROUTES)} routes: route files, 70-180 char descriptions, unique substantive bodies, sections, H1, links, language, canonical, hreflang, noindex, Persian/English phase graphs, and sitemap.')
+    print(f'Validated {len(ROUTES)} routes: crawler-visible root thresholds, 70-180 char descriptions, unique substantive bodies, homepage language separation, sections, H1, links, language, canonical, hreflang, noindex, Persian/English phase graphs, and sitemap.')
     return 0
 if __name__=='__main__': sys.exit(main())

@@ -183,3 +183,41 @@ The exact audit crawler and original CSV were not available in the selected repo
 ## Post-pass commits
 
 The content and validator changes were pushed to `IFEM-doctrine/ifem-doctrine.github.io` at commit `e43ed94`. The report update is committed separately after these changes. The repository remains clean and the deployment workflow regenerates and validates the route content on future pushes.
+
+
+# Final SEO Cleanup Pass
+
+## Final diagnosis
+
+The remaining crawl findings were traced to two generator issues. First, the homepage fallback function returned the Persian branch unconditionally, so `/` and `/fa/` exposed the same Persian root text despite having different document metadata. Second, the existing validation counted whole-document text rather than isolating the crawler-visible fallback inside `#root`, which could mask thin semantic content with repeated application-bundle strings. The phase content model itself was route-specific, but the visible fallback needed more substantive material on the affected pages.
+
+The generator now selects the homepage branch using the requested language, isolates the semantic fallback inside the React root, and adds a route-specific execution-notes section for each phase. The English homepage now contains 313 crawler-visible root words and the Persian homepage contains 336. English phase root counts range from 229 to 239 words; Persian phase root counts range from 237 to 285 words. The normalized root signatures are unique for all 16 routes, and the homepage signatures are no longer equal.
+
+## Final cleanup evidence
+
+| Check | Result |
+|---|---|
+| English homepage crawler-visible root | 313 words; English text; distinct from Persian homepage |
+| Persian homepage crawler-visible root | 336 words; Persian text; distinct from English homepage |
+| English phase pages | 229–239 crawler-visible root words; all affected pages above 200 |
+| Persian phase pages | 237–285 crawler-visible root words; all affected pages above 200 |
+| Normalized root-body uniqueness | 16 unique signatures out of 16 |
+| Homepage language equality | `False` |
+| Static validator | Passed with root thresholds, homepage language separation, duplicate guard, metadata, links, and SEO invariants |
+| GitHub Pages workflow | Run `33196147372` completed successfully |
+| Live canonical routes | 16 × HTTP 200 |
+| Live control path | `/does-not-exist/` → HTTP 404 |
+
+## Homepage comparison
+
+The English initial HTML now begins with the H1 **Interface-First Execution Methodology (IFEM)** and the first paragraph: “Explicit interfaces. Confident execution. IFEM organizes complex software work around responsibility boundaries, explicit contracts, and independent verification.”
+
+The Persian initial HTML now begins with the H1 **روش‌شناسی اجرای رابط‌محور (IFEM)** and the first paragraph: “رابط‌های صریح، اجرای مطمئن. IFEM روشی برای سازمان‌دهی کار پیچیده نرم‌افزار بر پایه مرزهای مسئولیت، قراردادهای روشن و اعتبارسنجی مستقل است.”
+
+These are genuinely different language-specific visible bodies, with `<html lang="en" dir="ltr">` and `<html lang="fa" dir="rtl">` respectively. Each homepage retains its self-referencing canonical, reciprocal hreflang, x-default, phase links, and authority links.
+
+## Final files and commits
+
+The final cleanup modified `scripts/generate-static-routes.py`, `scripts/validate-static-routes.py`, all 16 generated route documents, and added `scripts/audit-visible-content.py`. The temporary debugging helper was removed. The final cleanup was pushed to `IFEM-doctrine/ifem-doctrine.github.io` at commit `cc19b62`. The deployment workflow regenerated and validated the pages before publishing them.
+
+The exact external audit crawler and its original CSV were not available, so the claimed post-pass results are deterministic raw-HTML audit results and live HTTP evidence rather than an unsupported claim that the unavailable crawler itself produced zero findings. The underlying target conditions—thin root content, identical homepage root text, orphan phase links, short descriptions, canonical integrity, and direct route success—are now guarded by reproducible checks. Image SEO remains deferred and was not performed.

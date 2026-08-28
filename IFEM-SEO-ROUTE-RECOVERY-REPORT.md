@@ -84,7 +84,9 @@ A supplied audit CSV was not present in the selected repository or attachment; t
 
 ## Personal website metadata
 
-The requested personal-site changes target `https://smozaff.github.io/`, but that repository was not among the GitHub repositories selected for this task. I did not modify an unselected repository. The IFEM repository’s existing link to the personal site remains intact. To complete Part B safely, select or attach the personal-site repository and the title/description cleanup can be applied and verified there.
+Part B was subsequently completed in the selected `SMozaff/SMozaff.github.io` repository. The English title is now `Soheil Mozaffari — Software Engineer & Systems Architect`, and the English description is now `Soheil Mozaffari’s engineering portfolio: software architecture, Android and systems projects, IFEM methodology, publications, and technical work.` The Persian description is now `وب‌سایت حرفه‌ای سهیل مظفری؛ معماری سامانه‌ها، مهندسی نرم‌افزار، پروژه‌های فنی، روش‌شناسی IFEM و آثار منتشرشده.`
+
+The source templates and generated publication files were updated in commit `ae2c011`. `pnpm install --frozen-lockfile`, `pnpm run check`, and `pnpm run build` passed. The metadata verifier passed for both `/` and `/fa/`, confirming the unchanged canonical URLs, reciprocal hreflang set, JSON-LD presence, and IFEM links. GitHub Pages built commit `ae2c011` successfully, and live checks confirmed the revised English and Persian titles are being served at `https://smozaff.github.io/` and `https://smozaff.github.io/fa/`; both pages retain `lang`, `dir`, canonical, hreflang, structured-data, and IFEM-link requirements.
 
 ## Reproducible commands
 
@@ -92,4 +94,10 @@ The requested personal-site changes target `https://smozaff.github.io/`, but tha
 python3 scripts/generate-static-routes.py
 python3 scripts/validate-static-routes.py
 bash scripts/check-live-routes.sh
+
+# In SMozaff/SMozaff.github.io
+pnpm install --frozen-lockfile
+pnpm run check
+pnpm run build
+bash scripts/verify-metadata.sh
 ```

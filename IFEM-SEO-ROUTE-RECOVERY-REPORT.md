@@ -101,3 +101,85 @@ pnpm run check
 pnpm run build
 bash scripts/verify-metadata.sh
 ```
+
+
+# Post-Recovery Content SEO Fix Pass
+
+## Root cause of duplicate and thin content
+
+The first recovery pass made all 16 canonical routes return HTTP 200 and added semantic fallback markup, but its generator reused a largely generic body structure. The audit consequently measured approximately 74 words per route and grouped the pages as duplicate/thin. The canonical strategy and static-route architecture were correct; the remaining defect was insufficient route-specific content and an incomplete internal-link graph, especially for Persian phase pages.
+
+## Content model and generation
+
+The generator now uses one structured `PHASES` content source with separate English and native Persian fields for each of the seven phases. Each record contains route ID, labels, meta description, introduction, purpose, inputs, outputs/artifacts, verification expectations, and failure modes. The generator derives all 16 HTML documents from this source and one shared HTML template. It emits route-specific `<h1>`, five phase sections, descriptions, language counterpart links, homepage links, full same-language phase navigation, and previous/next links. No hidden crawler-only text or independent hand-maintained page copies were introduced.
+
+The homepage fallback now contains a methodology definition, rationale, seven-phase overview, links to every phase, author attribution, and publication/authority links. Phase fallbacks contain route-specific explanatory material and approximately 220–330 words of initial semantic text each; the homepage contains approximately 430 words. The Persian content is authored as native technical Persian rather than a literal English copy.
+
+## Internal-link graph
+
+The English homepage links directly to `/phase/intent/`, `/phase/architecture/`, `/phase/interfaces/`, `/phase/contracts/`, `/phase/execution/`, `/phase/verification/`, and `/phase/runtime/`. Every English phase page links to the homepage, all seven phase pages, its language counterpart, and adjacent phase pages where available. The Persian homepage links directly to all seven `/fa/phase/.../` routes. Every Persian phase page links to `/fa/`, all seven Persian phase pages, its English counterpart, and adjacent Persian phases. The upgraded validator checks these graph requirements rather than relying on the sitemap or hreflang alone.
+
+## Final route metadata
+
+| Route | Title | Meta description |
+|---|---|---|
+| `/` | Interface-First Execution Methodology (IFEM) — IFEM Doctrine | Interface-First Execution Methodology for responsibility boundaries, explicit contracts, and independent verification in software engineering. |
+| `/fa/` | روش‌شناسی اجرای رابط‌محور (IFEM) — دکترین IFEM | روش‌شناسی اجرای رابط‌محور برای مرزهای مسئولیت، قراردادها و اعتبارسنجی در مهندسی نرم‌افزار. |
+| `/phase/intent/` | Intent — IFEM Doctrine | Explore how IFEM frames outcomes, constraints, stakeholders, and decisions before solution language takes over. |
+| `/fa/phase/intent/` | مقصود — IFEM Doctrine | در این فاز، نتیجه، محدودیت‌ها، ذی‌نفعان و تصمیم‌های مهندسی پیش از غلبه زبان راه‌حل روشن می‌شوند. |
+| `/phase/architecture/` | Architecture — IFEM Doctrine | See how IFEM makes responsibility boundaries, dependencies, and system structure explicit before implementation begins. |
+| `/fa/phase/architecture/` | معماری — IFEM Doctrine | ببینید IFEM چگونه پیش از پیاده‌سازی، مرزهای مسئولیت، وابستگی‌ها و ساختار سیستم را روشن می‌کند. |
+| `/phase/interfaces/` | Interfaces — IFEM Doctrine | Learn how IFEM defines the dependable surface that crosses each responsibility boundary while keeping local choices local. |
+| `/fa/phase/interfaces/` | رابط‌ها — IFEM Doctrine | ببینید IFEM چگونه سطح قابل‌اتکای عبوری از هر مرز مسئولیت را تعریف می‌کند و انتخاب‌های محلی را محلی نگه می‌دارد. |
+| `/phase/contracts/` | Contracts — IFEM Doctrine | Understand how IFEM turns interface expectations into explicit, verifiable contracts for implementation and integration. |
+| `/fa/phase/contracts/` | قرارداد — IFEM Doctrine | بفهمید IFEM چگونه انتظارهای رابط را به قراردادهای صریح و قابل‌راستی‌آزمایی برای پیاده‌سازی و یکپارچه‌سازی تبدیل می‌کند. |
+| `/phase/execution/` | Execution — IFEM Doctrine | Explore how IFEM enables independent implementation behind stable rules without redefining the system boundary. |
+| `/fa/phase/execution/` | اجرا — IFEM Doctrine | ببینید IFEM چگونه پیاده‌سازی مستقل را پشت قواعد پایدار ممکن می‌کند، بدون آن‌که مرز سیستم دوباره تعریف شود. |
+| `/phase/verification/` | Verification — IFEM Doctrine | See how IFEM turns contract agreement into evidence before integration, release, and continued system evolution. |
+| `/fa/phase/verification/` | اعتبارسنجی — IFEM Doctrine | ببینید IFEM چگونه توافق قراردادی را پیش از یکپارچه‌سازی، انتشار و تکامل سیستم به شواهد تبدیل می‌کند. |
+| `/phase/runtime/` | Runtime — IFEM Doctrine | Learn how IFEM carries contract enforcement into observable production and operational contexts after release. |
+| `/fa/phase/runtime/` | زمان اجرا — IFEM Doctrine | بفهمید IFEM چگونه پس از انتشار، اجرای قرارداد را به زمینه‌های قابل مشاهده عملیاتی و تولید منتقل می‌کند. |
+
+All descriptions are route-specific and within the validator’s 70–180 character useful range. Canonicals remain self-referencing, English/Persian hreflang pairs remain reciprocal, and no current canonical route was redirected or noindexed.
+
+## Files changed in this pass
+
+| File | Change |
+|---|---|
+| `scripts/generate-static-routes.py` | Replaced generic fallback generation with the structured seven-phase English/Persian content model and route-specific metadata/linking. |
+| `scripts/validate-static-routes.py` | Added description-length checks, substantive section checks, normalized duplicate-body detection, noindex protection, and complete English/Persian phase-graph checks. |
+| `index.html`, `fa/index.html` | Regenerated richer homepage fallbacks. |
+| `phase/*/index.html`, `fa/phase/*/index.html` | Regenerated seven English and seven Persian unique phase documents. |
+| `visual-qa-notes.md` | Recorded visual inspections of English/Persian homepages and Contracts phase pages. |
+
+No image files, image formats, image loading behavior, OpenGraph images, or image SEO metadata were changed in this pass.
+
+## Visual QA
+
+The locally served English homepage rendered the existing React/Vite application with its established visual identity, navigation, hero, execution-field interactions, project sections, and theme control. The English Contracts phase rendered its established phase hero, reading outline, seven-phase navigation, inspection controls, and previous/next navigation. The Persian homepage and Persian Contracts phase rendered with the existing RTL typography and composition, Persian navigation, phase controls, and language switching. In all four inspections, the semantic fallback was replaced by the mounted React application; no duplicate fallback navigation, persistent fallback content, obvious layout shift, or hydration error was observed. The existing application assets, animations, theme switching, and interactive controls were not redesigned or removed. A dedicated narrow mobile viewport was not available in the inspection harness; responsive CSS remains unchanged and the static markup is structurally valid for the existing mobile layout.
+
+## Static and live QA
+
+The upgraded validator passed with the following output:
+
+```text
+Validated 16 routes: route files, 70-180 char descriptions, unique substantive bodies, sections, H1, links, language, canonical, hreflang, noindex, Persian/English phase graphs, and sitemap.
+```
+
+Local static-server checks returned HTTP 200 for all 16 canonical routes, `robots.txt`, and `sitemap.xml`; `/does-not-exist/` returned HTTP 404. The GitHub Pages workflow run `33193784787` completed successfully for the deployment commit `e43ed94`. Live post-deployment checks returned HTTP 200 for all 16 canonical routes, `robots.txt`, and `sitemap.xml`, with HTTP 404 for the invalid control path. Live HTML checks confirmed distinct route titles and descriptions for the homepage, Intent, Contracts, and their Persian counterparts.
+
+## Re-crawl status and acceptance targets
+
+| Issue | Supplied pre-pass count | Post-pass implementation evidence | Same-tool re-crawl count |
+|---|---:|---|---:|
+| Duplicate page content | 16 | Validator confirms all 16 normalized initial bodies are unique | Not available in the repository/session |
+| Thin content | 16 | Homepage and phase thresholds pass with route-specific substantive sections | Not available in the repository/session |
+| Meta description too short | 13 | All 16 descriptions pass the 70–180 character validator range | Not available in the repository/session |
+| Orphan page | 7 | Validator confirms complete English/Persian hub and phase graphs | Not available in the repository/session |
+| Canonical-route 404 | 0 after recovery | All 16 live routes remain HTTP 200 | Confirmed live |
+
+The exact audit crawler and original CSV were not available in the selected repository or session, so the four issue counts cannot be claimed as independently re-crawled numeric results. The deterministic validator and live checks demonstrate that the underlying conditions targeted by those findings are now addressed. Image SEO was explicitly deferred to the separate subsequent task.
+
+## Post-pass commits
+
+The content and validator changes were pushed to `IFEM-doctrine/ifem-doctrine.github.io` at commit `e43ed94`. The report update is committed separately after these changes. The repository remains clean and the deployment workflow regenerates and validates the route content on future pushes.

@@ -1,5 +1,6 @@
-from pathlib import Path
+from __future__ import annotations
 from html.parser import HTMLParser
+from pathlib import Path
 import re
 import sys
 
@@ -10,48 +11,62 @@ ROUTES = ["/"] + [f"/phase/{s}/" for s in SLUGS] + ["/fa/"] + [f"/fa/phase/{s}/"
 
 class Page(HTMLParser):
     def __init__(self):
-        super().__init__(); self.title = ''; self.h1 = []; self.text = []; self.links = []; self.lang = ''; self.dir = ''; self.canonical = ''; self.description = ''; self.hreflang = []
+        super().__init__(); self.title=''; self.h1=[]; self.text=[]; self.links=[]; self.lang=''; self.dir=''; self.canonical=''; self.description=''; self.alternates=[]; self.h2=0
     def handle_starttag(self, tag, attrs):
-        a = dict(attrs)
-        if tag == 'html': self.lang, self.dir = a.get('lang', ''), a.get('dir', '')
-        if tag == 'link':
-            if a.get('rel') == 'canonical': self.canonical = a.get('href', '')
-            if a.get('rel') == 'alternate': self.hreflang.append((a.get('hreflang'), a.get('href')))
-        if tag == 'meta' and a.get('name') == 'description': self.description = a.get('content', '')
-        if tag == 'a' and a.get('href', '').startswith('/'): self.links.append(a['href'])
-        self._capture = tag in ('title', 'h1')
-        self._tag = tag
-    def handle_endtag(self, tag): self._capture = False
+        a=dict(attrs)
+        if tag=='html': self.lang, self.dir = a.get('lang',''), a.get('dir','')
+        if tag=='link':
+            if a.get('rel')=='canonical': self.canonical=a.get('href','')
+            if a.get('rel')=='alternate': self.alternates.append((a.get('hreflang'),a.get('href')))
+        if tag=='meta' and a.get('name')=='description': self.description=a.get('content','')
+        if tag=='a' and a.get('href'): self.links.append(a['href'])
+        if tag=='h2': self.h2 += 1
+        if tag in ('title','h1'): self._capture=tag; self._buf=''
+    def handle_endtag(self, tag):
+        if getattr(self,'_capture',None)==tag:
+            if tag=='title': self.title=self._buf
+            else: self.h1.append(self._buf)
+            self._capture=None
     def handle_data(self, data):
-        if getattr(self, '_capture', False):
-            if self._tag == 'title': self.title += data
-            if self._tag == 'h1': self.h1.append(data)
+        if getattr(self,'_capture',None): self._buf += data
         self.text.append(data)
 
-def file_for(route): return ROOT / (Path("index.html") if route == "/" else Path(route.strip("/")) / "index.html")
+def file_for(route): return ROOT / (Path('index.html') if route=='/' else Path(route.strip('/'))/'index.html')
+def words(p): return len(re.findall(r"\w+", ' '.join(p.text), re.UNICODE))
+def body_signature(p): return re.sub(r'\s+', ' ', ' '.join(p.text)).strip().lower()
+
 def main():
-    errors = []
+    errors=[]; pages={}
     for route in ROUTES:
-        path = file_for(route)
-        if not path.is_file(): errors.append(f"missing file: {route} -> {path}"); continue
-        p = Page(); p.feed(path.read_text())
-        word_count = len(re.findall(r"\w+", ' '.join(p.text), re.UNICODE))
-        if not p.title.strip(): errors.append(f"empty title: {route}")
-        if not p.description.strip(): errors.append(f"empty description: {route}")
-        if len(p.h1) != 1: errors.append(f"H1 count {len(p.h1)}: {route}")
-        if word_count < 20: errors.append(f"low meaningful text ({word_count} words): {route}")
-        if not p.links: errors.append(f"no internal links: {route}")
-        expected_lang = 'fa' if route.startswith('/fa') else 'en'
-        if p.lang != expected_lang: errors.append(f"wrong lang {p.lang}: {route}")
-        if expected_lang == 'fa' and p.dir != 'rtl': errors.append(f"wrong dir {p.dir}: {route}")
-        if p.canonical != BASE + route: errors.append(f"wrong canonical {p.canonical}: {route}")
-        for code in ('en', 'fa', 'x-default'):
-            if not any(x[0] == code for x in p.hreflang): errors.append(f"missing hreflang {code}: {route}")
-    sitemap = (ROOT / 'sitemap.xml').read_text()
+        path=file_for(route)
+        if not path.is_file(): errors.append(f'missing file: {route} -> {path}'); continue
+        p=Page(); p.feed(path.read_text()); pages[route]=p; count=words(p)
+        if not p.title.strip(): errors.append(f'empty title: {route}')
+        if not (70 <= len(p.description) <= 180): errors.append(f'description length {len(p.description)} outside 70-180: {route}')
+        if len(p.h1)!=1: errors.append(f'H1 count {len(p.h1)}: {route}')
+        if count < (300 if route in ('/','/fa/') else 220): errors.append(f'insufficient initial text ({count} words): {route}')
+        if p.h2 < (3 if route in ('/','/fa/') else 5): errors.append(f'insufficient sections ({p.h2} H2): {route}')
+        if not p.links: errors.append(f'no links: {route}')
+        expected='fa' if route.startswith('/fa') else 'en'
+        if p.lang != expected: errors.append(f'wrong lang {p.lang}: {route}')
+        if expected=='fa' and p.dir!='rtl': errors.append(f'wrong dir {p.dir}: {route}')
+        if p.canonical != BASE+route: errors.append(f'wrong canonical {p.canonical}: {route}')
+        if '<meta name="robots" content="noindex"' in path.read_text(): errors.append(f'unexpected noindex: {route}')
+        for code in ('en','fa','x-default'):
+            if not any(x[0]==code for x in p.alternates): errors.append(f'missing hreflang {code}: {route}')
+    signatures={route:body_signature(p) for route,p in pages.items()}
+    seen={}
+    for route,sig in signatures.items():
+        if sig in seen: errors.append(f'duplicate normalized body: {route} == {seen[sig]}')
+        else: seen[sig]=route
+    for route,p in pages.items():
+        if route.startswith('/fa/phase/') and not all(f'/fa/phase/{s}/' in p.links for s in SLUGS): errors.append(f'Persian phase graph incomplete: {route}')
+        if route=='/fa/' and not all(f'/fa/phase/{s}/' in p.links for s in SLUGS): errors.append('Persian hub does not link all seven phases')
+        if route.startswith('/phase/') and not all(f'/phase/{s}/' in p.links for s in SLUGS): errors.append(f'English phase graph incomplete: {route}')
+    sitemap=(ROOT/'sitemap.xml').read_text()
     for route in ROUTES:
-        if f'<loc>{BASE}{route}</loc>' not in sitemap: errors.append(f"missing sitemap URL: {route}")
-    if errors:
-        print('\n'.join(errors)); return 1
-    print(f"Validated {len(ROUTES)} canonical routes: files, metadata, H1, text, links, language, canonical, hreflang, and sitemap.")
+        if f'<loc>{BASE}{route}</loc>' not in sitemap: errors.append(f'missing sitemap URL: {route}')
+    if errors: print('\n'.join(errors)); return 1
+    print(f'Validated {len(ROUTES)} routes: route files, 70-180 char descriptions, unique substantive bodies, sections, H1, links, language, canonical, hreflang, noindex, Persian/English phase graphs, and sitemap.')
     return 0
-if __name__ == '__main__': sys.exit(main())
+if __name__=='__main__': sys.exit(main())

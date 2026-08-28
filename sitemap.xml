@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ifem-doctrine.github.io/</loc></url>
   <url><loc>https://ifem-doctrine.github.io/fa/</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/phase/intent</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/fa/phase/intent</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/phase/architecture</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/fa/phase/architecture</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/phase/interfaces</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/fa/phase/interfaces</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/phase/contracts</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/fa/phase/contracts</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/phase/execution</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/fa/phase/execution</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/phase/verification</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/fa/phase/verification</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/phase/runtime</loc></url>
-  <url><loc>https://ifem-doctrine.github.io/fa/phase/runtime</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/intent/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/intent/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/architecture/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/architecture/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/interfaces/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/interfaces/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/contracts/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/contracts/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/execution/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/execution/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/verification/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/verification/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/phase/runtime/</loc></url>
+  <url><loc>https://ifem-doctrine.github.io/fa/phase/runtime/</loc></url>
 </urlset>

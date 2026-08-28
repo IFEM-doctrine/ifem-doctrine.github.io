@@ -1,0 +1,58 @@
+name: Deploy IFEM Doctrine
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate static routes
+        run: python3 scripts/generate-static-routes.py
+      - name: Validate static routes
+        run: python3 scripts/validate-static-routes.py
+      - name: Verify required files
+        run: |
+          test -f index.html
+          test -f fa/index.html
+          test -f phase/intent/index.html
+          test -f fa/phase/intent/index.html
+          test -f sitemap.xml
+          test -f robots.txt
+      - name: Assemble Pages artifact
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -r assets fa phase index.html 404.html robots.txt sitemap.xml .nojekyll dist/
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
